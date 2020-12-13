@@ -123,6 +123,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Cannot be used outside of {0} activity'.
+        /// </summary>
+        public static string Validation_ScopeError {
+            get {
+                return ResourceManager.GetString(ResourceNames.Validation_ScopeError, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Please provide a value of type {0} for {1}'.
         /// </summary>
         public static string Validation_TypeError {
@@ -147,6 +156,15 @@ namespace Autossential.Activities.Properties {
             get {
                 return ResourceManager.GetString(ResourceNames.WaitFile_Validation_Interval, _resourceCulture);
             }
+        }
+        
+        /// <summary>
+        /// Formats a localized string similar to 'Cannot be used outside of {0} activity'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string Validation_ScopeErrorFormat(object arg0) {
+            return string.Format(_resourceCulture, Validation_ScopeError, arg0);
         }
         
         /// <summary>
@@ -202,6 +220,11 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Output_Category'.
             /// </summary>
             public const string Output_Category = "Output_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'Validation_ScopeError'.
+            /// </summary>
+            public const string Validation_ScopeError = "Validation_ScopeError";
             
             /// <summary>
             /// Stores the resource name 'Validation_TypeError'.

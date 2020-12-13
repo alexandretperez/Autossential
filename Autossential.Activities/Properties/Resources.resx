@@ -129,6 +129,9 @@
   <data name="Output_Category" xml:space="preserve">
     <value>Output</value>
   </data>
+  <data name="Validation_ScopeError" xml:space="preserve">
+    <value>Cannot be used outside of {0} activity</value>
+  </data>
   <data name="Validation_TypeError" xml:space="preserve">
     <value>Please provide a value of type {0} for {1}</value>
   </data>

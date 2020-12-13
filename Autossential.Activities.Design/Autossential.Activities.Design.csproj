@@ -32,6 +32,9 @@
     <None Remove="Controls\FilePickerControl.xaml" />
     <None Remove="Controls\FolderPickerControl.xaml" />
     <None Remove="Designers\AggregateDesigner.xaml" />
+    <None Remove="Designers\CheckPointDesigner.xaml" />
+    <None Remove="Designers\ContainerDesigner.xaml" />
+    <None Remove="Designers\ExitDesigner.xaml" />
     <None Remove="Designers\WaitFileDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
@@ -45,6 +48,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="Designers\AggregateDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\CheckPointDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\ContainerDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\ExitDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="Designers\WaitFileDesigner.xaml">

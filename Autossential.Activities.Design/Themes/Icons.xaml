@@ -16,7 +16,6 @@
     <DrawingBrush x:Key="AggregateIcon" Drawing="{StaticResource AggregateIconSource}" />
 
 
-
     <!--WaitFile Icon-->
     <DrawingGroup x:Key="WaitFileIconSource">
         <DrawingGroup.ClipGeometry>
@@ -31,5 +30,43 @@
     <DrawingBrush x:Key="WaitFileIcon" Drawing="{StaticResource WaitFileIconSource}" />
 
 
+    <!--Container Icon-->
+    <DrawingGroup x:Key="ContainerIconSource">
+        <DrawingGroup.ClipGeometry>
+            <RectangleGeometry Rect="0,0,24,24" />
+        </DrawingGroup.ClipGeometry>
+        <GeometryDrawing Brush="#FF7769FF">
+            <GeometryDrawing.Geometry>
+                <PathGeometry FillRule="Nonzero" Figures="M19,3L5,3C3.89,3,3,3.89,3,5L3,19A2,2,0,0,0,5,21L19,21A2,2,0,0,0,21,19L21,5C21,3.89,20.1,3,19,3 M19,5L19,19 5,19 5,5 19,5z" />
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+    </DrawingGroup>
+    <DrawingBrush x:Key="ContainerIcon" Drawing="{StaticResource ContainerIconSource}" />
+
+    <!--Exit Icon-->
+    <DrawingGroup x:Key="ExitIconSource">
+        <DrawingGroup.ClipGeometry>
+            <RectangleGeometry Rect="0,0,24,24" />
+        </DrawingGroup.ClipGeometry>
+        <GeometryDrawing Brush="#FF7769FF">
+            <GeometryDrawing.Geometry>
+                <PathGeometry FillRule="Nonzero" Figures="M22.11,21.46L2.39,1.73 1.11,3 3,4.9 3,19C3,20.11,3.9,21,5,21L19.1,21 20.84,22.73 22.11,21.46 M5,19L5,6.89 17.11,19 5,19 M8.2,5L6.2,3 19,3C20.1,3,21,3.89,21,5L21,17.8 19,15.8 19,5 8.2,5z" />
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+    </DrawingGroup>
+    <DrawingBrush x:Key="ExitIcon" Drawing="{StaticResource ExitIconSource}" />
+
+    <!--CheckPoint Icon-->
+    <DrawingGroup x:Key="CheckPointIconSource">
+        <DrawingGroup.ClipGeometry>
+            <RectangleGeometry Rect="0,0,24,24" />
+        </DrawingGroup.ClipGeometry>
+        <GeometryDrawing Brush="#FF7769FF">
+            <GeometryDrawing.Geometry>
+                <PathGeometry FillRule="Nonzero" Figures="M14.4,6L20,6 20,16 13,16 12.6,14 7,14 7,21 5,21 5,4 14,4 14.4,6 M14,14L16,14 16,12 18,12 18,10 16,10 16,8 14,8 14,10 13,8 13,6 11,6 11,8 9,8 9,6 7,6 7,8 9,8 9,10 7,10 7,12 9,12 9,10 11,10 11,12 13,12 13,10 14,12 14,14 M11,10L11,8 13,8 13,10 11,10 M14,10L16,10 16,12 14,12 14,10z" />
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+    </DrawingGroup>
+    <DrawingBrush x:Key="CheckPointIcon" Drawing="{StaticResource CheckPointIconSource}" />
     
 </ResourceDictionary>
