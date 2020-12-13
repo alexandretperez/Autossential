@@ -1,0 +1,55 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.AggregateDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:c="clr-namespace:Autossential.Activities.Design.Controls" Collapsible="False" >
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource AggregateIconSource}"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+
+        <StackPanel>
+            <Label Content="DataTable" />
+            <sapv:ExpressionTextBox
+            ExpressionType="{Binding ModelItem.Properties[DataTable].PropertyType.GenericTypeArguments[0]}"
+            OwnerActivity="{Binding ModelItem}"
+            UseLocationExpression="False"
+            Expression="{Binding ModelItem.DataTable, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+            />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Content="Function" Grid.Row="0" Grid.Column="0"/>
+                <ComboBox Grid.Row="1" Grid.Column="0" x:Name="cbFunction" SelectedValue="{Binding Path=ModelItem.Function, Mode=TwoWay}" />
+                <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2"/>
+                <sapv:ExpressionTextBox
+                Grid.Row="1" Grid.Column="2"
+                ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="True"
+                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
+            />
+            </Grid>
+        </StackPanel>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

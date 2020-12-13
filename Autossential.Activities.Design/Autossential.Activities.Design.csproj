@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <Version>2.0.0-alpha</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Description>A set of custom activities designed to work with the RPA tool UiPath or any other based on Windows Workflow Foundation.</Description>
+    <Authors>Alexandre Toledo Perez</Authors>
+    <Company>Alexandre Toledo Perez</Company>
+    <Copyright>© 2020 Alexandre Toledo Perez</Copyright>
+    <PackageProjectUrl>https://github.com/alexandretperez/Autossential</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/alexandretperez/Autossential</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Custom Activity Windows Workflow Foundation</PackageTags>
+    <PackageId>Autossential.Activities</PackageId>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
+    <PackageVersion>2.0.0.$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
+  </PropertyGroup>
+
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadatavalue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
+  
+  <ItemGroup>
+    <None Remove="Controls\FilePickerControl.xaml" />
+    <None Remove="Controls\FolderPickerControl.xaml" />
+    <None Remove="Designers\AggregateDesigner.xaml" />
+    <None Remove="Designers\WaitFileDesigner.xaml" />
+    <None Remove="Themes\Default.xaml" />
+    <None Remove="Themes\Icons.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Controls\FilePickerControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Controls\FolderPickerControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\AggregateDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\WaitFileDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Themes\Icons.xaml">
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Themes\Default.xaml">
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Autossential.Activities\Autossential.Activities.csproj">
+      <PrivateAssets>All</PrivateAssets>
+      <Private>true</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Autossential\Autossential.csproj">
+      <PrivateAssets>All</PrivateAssets>
+      <Private>true</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+</Project>
