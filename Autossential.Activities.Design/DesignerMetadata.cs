@@ -14,7 +14,7 @@ namespace Autossential.Activities.Design
             var dataTableCategory = new CategoryAttribute($"{main}.DataTable");
             var fileCategory = new CategoryAttribute($"{main}.File");
             //var fileCompressionCategory = new CategoryAttribute($"{main}.File.Compression");
-            //var programmingCategory = new CategoryAttribute($"{main}.Programming");
+            var programmingCategory = new CategoryAttribute($"{main}.Programming");
             var workflowCategory = new CategoryAttribute($"{main}.Workflow");
             //var securityCategory = new CategoryAttribute($"{main}.Security");
 
@@ -32,6 +32,9 @@ namespace Autossential.Activities.Design
 
             builder.AddCustomAttributes(typeof(CheckPoint), workflowCategory);
             builder.AddCustomAttributes(typeof(CheckPoint), new DesignerAttribute(typeof(CheckPointDesigner)));
+
+            builder.AddCustomAttributes(typeof(CultureScope), programmingCategory);
+            builder.AddCustomAttributes(typeof(CultureScope), new DesignerAttribute(typeof(CultureScopeDesigner)));
 
             builder.ValidateTable();
             MetadataStore.AddAttributeTable(builder.CreateTable());

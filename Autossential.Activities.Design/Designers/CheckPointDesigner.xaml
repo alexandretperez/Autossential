@@ -16,7 +16,7 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource CheckPointIconSource}"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource CheckPointIcon}"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">

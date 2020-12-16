@@ -26,6 +26,8 @@ namespace Autossential.Activities
 
         [LocalizedCategory(nameof(Resources.Options_Category))]
         public InArgument Columns { get; set; }
+        [LocalizedCategory(nameof(Resources.Options_Category))]
+        public bool Incorporate { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -66,6 +68,13 @@ namespace Autossential.Activities
                     GetConvertibleColumns(dt, columnIndexes),
                     row
                 );
+            }
+
+            if (Incorporate)
+            {
+                dt.BeginLoadData();
+                dt.LoadDataRow(row.ItemArray, true);
+                dt.EndLoadData();
             }
 
             Result.Set(context, row);

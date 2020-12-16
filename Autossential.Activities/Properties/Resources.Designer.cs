@@ -96,6 +96,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'The decrement value cannot be smaller than 1'.
+        /// </summary>
+        public static string Decrement_Value_Error {
+            get {
+                return ResourceManager.GetString(ResourceNames.Decrement_Value_Error, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The increment value cannot be smaller than 1'.
+        /// </summary>
+        public static string Increment_Value_Error {
+            get {
+                return ResourceManager.GetString(ResourceNames.Increment_Value_Error, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Input'.
         /// </summary>
         public static string Input_Category {
@@ -119,6 +137,15 @@ namespace Autossential.Activities.Properties {
         public static string Output_Category {
             get {
                 return ResourceManager.GetString(ResourceNames.Output_Category, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Reference'.
+        /// </summary>
+        public static string Reference_Category {
+            get {
+                return ResourceManager.GetString(ResourceNames.Reference_Category, _resourceCulture);
             }
         }
         
@@ -152,9 +179,9 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         /// Looks up a localized string similar to 'The accepted value range is between {0} and {1}. The value will be reseted to its nearest limit'.
         /// </summary>
-        public static string WaitFile_Validation_Interval {
+        public static string WaitFile_Interval_Error {
             get {
-                return ResourceManager.GetString(ResourceNames.WaitFile_Validation_Interval, _resourceCulture);
+                return ResourceManager.GetString(ResourceNames.WaitFile_Interval_Error, _resourceCulture);
             }
         }
         
@@ -192,8 +219,8 @@ namespace Autossential.Activities.Properties {
         /// <param name="arg0">An object (0) to format.</param>
         /// <param name="arg1">An object (1) to format.</param>
         /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
-        public static string WaitFile_Validation_IntervalFormat(object arg0, object arg1) {
-            return string.Format(_resourceCulture, WaitFile_Validation_Interval, arg0, arg1);
+        public static string WaitFile_Interval_ErrorFormat(object arg0, object arg1) {
+            return string.Format(_resourceCulture, WaitFile_Interval_Error, arg0, arg1);
         }
         
         /// <summary>
@@ -205,6 +232,16 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Common_Category'.
             /// </summary>
             public const string Common_Category = "Common_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'Decrement_Value_Error'.
+            /// </summary>
+            public const string Decrement_Value_Error = "Decrement_Value_Error";
+            
+            /// <summary>
+            /// Stores the resource name 'Increment_Value_Error'.
+            /// </summary>
+            public const string Increment_Value_Error = "Increment_Value_Error";
             
             /// <summary>
             /// Stores the resource name 'Input_Category'.
@@ -222,6 +259,11 @@ namespace Autossential.Activities.Properties {
             public const string Output_Category = "Output_Category";
             
             /// <summary>
+            /// Stores the resource name 'Reference_Category'.
+            /// </summary>
+            public const string Reference_Category = "Reference_Category";
+            
+            /// <summary>
             /// Stores the resource name 'Validation_ScopeError'.
             /// </summary>
             public const string Validation_ScopeError = "Validation_ScopeError";
@@ -237,9 +279,9 @@ namespace Autossential.Activities.Properties {
             public const string Validation_ValueError = "Validation_ValueError";
             
             /// <summary>
-            /// Stores the resource name 'WaitFile_Validation_Interval'.
+            /// Stores the resource name 'WaitFile_Interval_Error'.
             /// </summary>
-            public const string WaitFile_Validation_Interval = "WaitFile_Validation_Interval";
+            public const string WaitFile_Interval_Error = "WaitFile_Interval_Error";
         }
     }
 }

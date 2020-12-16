@@ -120,6 +120,12 @@
   <data name="Common_Category" xml:space="preserve">
     <value>Common</value>
   </data>
+  <data name="Decrement_Value_Error" xml:space="preserve">
+    <value>The decrement value cannot be smaller than 1</value>
+  </data>
+  <data name="Increment_Value_Error" xml:space="preserve">
+    <value>The increment value cannot be smaller than 1</value>
+  </data>
   <data name="Input_Category" xml:space="preserve">
     <value>Input</value>
   </data>
@@ -128,6 +134,9 @@
   </data>
   <data name="Output_Category" xml:space="preserve">
     <value>Output</value>
+  </data>
+  <data name="Reference_Category" xml:space="preserve">
+    <value>Reference</value>
   </data>
   <data name="Validation_ScopeError" xml:space="preserve">
     <value>Cannot be used outside of {0} activity</value>
@@ -138,7 +147,7 @@
   <data name="Validation_ValueError" xml:space="preserve">
     <value>Please provide a value for {0}</value>
   </data>
-  <data name="WaitFile_Validation_Interval" xml:space="preserve">
+  <data name="WaitFile_Interval_Error" xml:space="preserve">
     <value>The accepted value range is between {0} and {1}. The value will be reseted to its nearest limit</value>
   </data>
 </root>

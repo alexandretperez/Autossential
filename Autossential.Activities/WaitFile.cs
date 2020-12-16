@@ -35,7 +35,7 @@ namespace Autossential.Activities
         {
             if (FilePath == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(FilePath)));
             if (Interval < MINIMUM_INTERVAL || Interval > MAXIMUM_INTERVAL)
-                metadata.AddValidationError(new ValidationError(Resources.WaitFile_Validation_IntervalFormat(MINIMUM_INTERVAL, MAXIMUM_INTERVAL)));
+                metadata.AddValidationError(new ValidationError(Resources.WaitFile_Interval_ErrorFormat(MINIMUM_INTERVAL, MAXIMUM_INTERVAL)));
 
             base.CacheMetadata(metadata);
         }
