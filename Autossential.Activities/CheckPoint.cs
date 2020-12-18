@@ -9,10 +9,10 @@ namespace Autossential.Activities
 {
     public class CheckPoint : Activity
     {
-        [LocalizedCategory(nameof(Resources.Input_Category))]
+        [LocalCateg(nameof(Resources.Input_Category))]
         public InArgument<bool> Expression { get; set; }
 
-        [LocalizedCategory(nameof(Resources.Input_Category))]
+        [LocalCateg(nameof(Resources.Input_Category))]
         public InArgument<Exception> Exception { get; set; }
 
         public CheckPoint()

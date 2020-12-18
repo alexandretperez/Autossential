@@ -1,43 +1,54 @@
 ﻿using Autossential.Activities.Design.Designers;
+using System;
 using System.Activities.Presentation.Metadata;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Autossential.Activities.Design
 {
     public class DesignerMetadata : IRegisterMetadata
     {
+        public const string MAIN_CATEGORY = "Autossential";
+        public const string DATA_TABLE_CATEGORY = MAIN_CATEGORY + ".DataTable";
+        public const string FILE_CATEGORY = MAIN_CATEGORY + ".File";
+        public const string FILE_COMPRESSION_CATEGORY = FILE_CATEGORY + ".Compression";
+        public const string PROGRAMMING_CATEGORY = MAIN_CATEGORY + ".Programming";
+        public const string WORKFLOW_CATEGORY = MAIN_CATEGORY + ".Workflow";
+        public const string SECURITY_CATEGORY = MAIN_CATEGORY + ".Security";
+
         public void Register()
         {
             var builder = new AttributeTableBuilder();
 
-            const string main = "Autossential";
-            var dataTableCategory = new CategoryAttribute($"{main}.DataTable");
-            var fileCategory = new CategoryAttribute($"{main}.File");
-            //var fileCompressionCategory = new CategoryAttribute($"{main}.File.Compression");
-            var programmingCategory = new CategoryAttribute($"{main}.Programming");
-            var workflowCategory = new CategoryAttribute($"{main}.Workflow");
-            //var securityCategory = new CategoryAttribute($"{main}.Security");
+            var dataTable = new CategoryAttribute(DATA_TABLE_CATEGORY);
+            AddCustomAttributes(builder, dataTable, typeof(Aggregate), typeof(AggregateDesigner));
+            AddCustomAttributes(builder, dataTable, typeof(PromoteHeaders), typeof(PromoteHeadersDesigner));
+            AddCustomAttributes(builder, dataTable, typeof(DataRowToDictionary), typeof(DataRowToDictionaryDesigner));
+            AddCustomAttributes(builder, dataTable, typeof(DictionaryToDataTable), typeof(DictionaryToDataTableDesigner));
 
-            builder.AddCustomAttributes(typeof(Aggregate), dataTableCategory);
-            builder.AddCustomAttributes(typeof(Aggregate), new DesignerAttribute(typeof(AggregateDesigner)));
+            var file = new CategoryAttribute(FILE_CATEGORY);
+            AddCustomAttributes(builder, file, typeof(WaitFile), typeof(WaitFileDesigner));
+            AddCustomAttributes(builder, file, typeof(EnumerateFiles), typeof(EnumerateFilesDesigner));
 
-            builder.AddCustomAttributes(typeof(WaitFile), fileCategory);
-            builder.AddCustomAttributes(typeof(WaitFile), new DesignerAttribute(typeof(WaitFileDesigner)));
+            var workflow = new CategoryAttribute(WORKFLOW_CATEGORY);
+            AddCustomAttributes(builder, workflow, typeof(Exit), typeof(ExitDesigner));
+            AddCustomAttributes(builder, workflow, typeof(Container), typeof(ContainerDesigner));
+            AddCustomAttributes(builder, workflow, typeof(CheckPoint), typeof(CheckPointDesigner));
 
-            builder.AddCustomAttributes(typeof(Container), workflowCategory);
-            builder.AddCustomAttributes(typeof(Container), new DesignerAttribute(typeof(ContainerDesigner)));
-
-            builder.AddCustomAttributes(typeof(Exit), workflowCategory);
-            builder.AddCustomAttributes(typeof(Exit), new DesignerAttribute(typeof(ExitDesigner)));
-
-            builder.AddCustomAttributes(typeof(CheckPoint), workflowCategory);
-            builder.AddCustomAttributes(typeof(CheckPoint), new DesignerAttribute(typeof(CheckPointDesigner)));
-
-            builder.AddCustomAttributes(typeof(CultureScope), programmingCategory);
-            builder.AddCustomAttributes(typeof(CultureScope), new DesignerAttribute(typeof(CultureScopeDesigner)));
+            var programming = new CategoryAttribute(PROGRAMMING_CATEGORY);
+            AddCustomAttributes(builder, programming, typeof(Increment), typeof(IncrementDesigner));
+            AddCustomAttributes(builder, programming, typeof(Decrement), typeof(DecrementDesigner));
+            AddCustomAttributes(builder, programming, typeof(CultureScope), typeof(CultureScopeDesigner));
+            
 
             builder.ValidateTable();
             MetadataStore.AddAttributeTable(builder.CreateTable());
+        }
+
+        private void AddCustomAttributes(AttributeTableBuilder builder, CategoryAttribute category, Type activityType, Type designerType)
+        {
+            builder.AddCustomAttributes(activityType, category);
+            builder.AddCustomAttributes(activityType, new DesignerAttribute(designerType));
         }
     }
 }

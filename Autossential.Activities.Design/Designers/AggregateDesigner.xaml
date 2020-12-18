@@ -16,7 +16,7 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource AggregateIcon}"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource AggregateIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">

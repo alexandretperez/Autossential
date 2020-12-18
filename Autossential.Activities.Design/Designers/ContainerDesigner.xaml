@@ -16,7 +16,7 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource ContainerIcon}"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource ContainerIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     <Border Padding="4,0" MinWidth="240">

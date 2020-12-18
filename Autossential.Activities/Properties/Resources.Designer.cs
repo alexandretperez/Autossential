@@ -96,6 +96,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results.'.
+        /// </summary>
+        public static string CultureScope_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CultureScope_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The decrement value cannot be smaller than 1'.
         /// </summary>
         public static string Decrement_Value_Error {
@@ -177,6 +186,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'The specified file path does not exists'.
+        /// </summary>
+        public static string WaitFile_ErrorMsgs_FilePathDoesNotExists {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_ErrorMsgs_FilePathDoesNotExists, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The accepted value range is between {0} and {1}. The value will be reseted to its nearest limit'.
         /// </summary>
         public static string WaitFile_Interval_Error {
@@ -234,6 +252,11 @@ namespace Autossential.Activities.Properties {
             public const string Common_Category = "Common_Category";
             
             /// <summary>
+            /// Stores the resource name 'CultureScope_Description'.
+            /// </summary>
+            public const string CultureScope_Description = "CultureScope_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Decrement_Value_Error'.
             /// </summary>
             public const string Decrement_Value_Error = "Decrement_Value_Error";
@@ -277,6 +300,11 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Validation_ValueError'.
             /// </summary>
             public const string Validation_ValueError = "Validation_ValueError";
+            
+            /// <summary>
+            /// Stores the resource name 'WaitFile_ErrorMsgs_FilePathDoesNotExists'.
+            /// </summary>
+            public const string WaitFile_ErrorMsgs_FilePathDoesNotExists = "WaitFile_ErrorMsgs_FilePathDoesNotExists";
             
             /// <summary>
             /// Stores the resource name 'WaitFile_Interval_Error'.

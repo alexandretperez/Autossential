@@ -12,21 +12,22 @@ namespace Autossential.Activities
 {
     public class Aggregate : CodeActivity
     {
-        [LocalizedCategory(nameof(Resources.Input_Category))]
+        [LocalCateg(nameof(Resources.Input_Category))]
         public InArgument<DataTable> DataTable { get; set; }
 
-        [LocalizedCategory(nameof(Resources.Options_Category))]
+        [LocalCateg(nameof(Resources.Options_Category))]
         public AggregateFunction Function { get; set; } = AggregateFunction.Sum;
 
-        [LocalizedCategory(nameof(Resources.Output_Category))]
+        [LocalCateg(nameof(Resources.Output_Category))]
         public bool Detached { get; set; }
 
-        [LocalizedCategory(nameof(Resources.Output_Category))]
+        [LocalCateg(nameof(Resources.Output_Category))]
         public OutArgument<DataRow> Result { get; set; }
 
-        [LocalizedCategory(nameof(Resources.Options_Category))]
+        [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument Columns { get; set; }
-        [LocalizedCategory(nameof(Resources.Options_Category))]
+
+        [LocalCateg(nameof(Resources.Options_Category))]
         public bool Incorporate { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

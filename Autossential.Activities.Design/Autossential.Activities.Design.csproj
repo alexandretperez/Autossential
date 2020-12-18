@@ -35,7 +35,13 @@
     <None Remove="Designers\CheckPointDesigner.xaml" />
     <None Remove="Designers\ContainerDesigner.xaml" />
     <None Remove="Designers\CultureScopeDesigner.xaml" />
+    <None Remove="Designers\DataRowToDictionaryDesigner.xaml" />
+    <None Remove="Designers\DecrementDesigner.xaml" />
+    <None Remove="Designers\DictionaryToDataTableDesigner.xaml" />
+    <None Remove="Designers\EnumerateFilesDesigner.xaml" />
     <None Remove="Designers\ExitDesigner.xaml" />
+    <None Remove="Designers\IncrementDesigner.xaml" />
+    <None Remove="Designers\PromoteHeadersDesigner.xaml" />
     <None Remove="Designers\WaitFileDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
@@ -60,7 +66,25 @@
     <Page Include="Designers\CultureScopeDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
+    <Page Include="Designers\DataRowToDictionaryDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\DecrementDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\DictionaryToDataTableDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\EnumerateFilesDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
     <Page Include="Designers\ExitDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\IncrementDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\PromoteHeadersDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="Designers\WaitFileDesigner.xaml">

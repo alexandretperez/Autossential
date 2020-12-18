@@ -5,9 +5,9 @@ using System.ComponentModel;
 namespace Autossential.Activities.Localization
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class LocalizedCategory : CategoryAttribute
+    public class LocalCategAttribute : CategoryAttribute
     {
-        public LocalizedCategory(string name) : base(name)
+        public LocalCategAttribute(string name) : base(name)
         {
         }
 

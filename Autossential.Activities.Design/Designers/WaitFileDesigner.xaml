@@ -16,7 +16,7 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource WaitFileIcon}"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource WaitFileIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">

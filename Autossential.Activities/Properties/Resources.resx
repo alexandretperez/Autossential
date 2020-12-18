@@ -120,6 +120,9 @@
   <data name="Common_Category" xml:space="preserve">
     <value>Common</value>
   </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results.</value>
+  </data>
   <data name="Decrement_Value_Error" xml:space="preserve">
     <value>The decrement value cannot be smaller than 1</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Validation_ValueError" xml:space="preserve">
     <value>Please provide a value for {0}</value>
+  </data>
+  <data name="WaitFile_ErrorMsgs_FilePathDoesNotExists" xml:space="preserve">
+    <value>The specified file path does not exists</value>
   </data>
   <data name="WaitFile_Interval_Error" xml:space="preserve">
     <value>The accepted value range is between {0} and {1}. The value will be reseted to its nearest limit</value>

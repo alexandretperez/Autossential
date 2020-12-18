@@ -9,7 +9,7 @@ namespace Autossential.Activities.Base
 {
     public abstract class ContinuableAsyncTaskCodeActivity : AsyncTaskCodeActivity
     {
-        [LocalizedCategory(nameof(Resources.Common_Category))]
+        [LocalCateg(nameof(Resources.Common_Category))]
         public InArgument<bool> ContinueOnError { get; set; }
 
         protected override IAsyncResult BeginExecute(AsyncCodeActivityContext context, AsyncCallback callback, object state)

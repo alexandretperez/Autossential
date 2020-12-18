@@ -16,7 +16,7 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource CultureScopeIcon}"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource CultureScopeIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     

@@ -6,7 +6,7 @@ using System.Activities;
 
 namespace Autossential.Activities
 {
-    public class Increment : CodeActivity
+    public class Decrement : CodeActivity
     {
         [LocalCateg(nameof(Resources.Input_Category))]
         public InArgument<int> Value { get; set; }
@@ -14,7 +14,7 @@ namespace Autossential.Activities
         [LocalCateg(nameof(Resources.Reference_Category))]
         public InOutArgument<int> Variable { get; set; }
 
-        public Increment()
+        public Decrement()
         {
             Value = new VisualBasicValue<int>("1");
         }
@@ -23,9 +23,9 @@ namespace Autossential.Activities
         {
             var value = Value.Get(context);
             if (value < 1)
-                throw new InvalidOperationException(Resources.Increment_Value_Error);
+                throw new InvalidOperationException(Resources.Decrement_Value_Error);
 
-            Variable.Set(context, Variable.Get(context) + value);
+            Variable.Set(context, Variable.Get(context) - value);
         }
     }
 }
