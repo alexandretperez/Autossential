@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Activities;
-using System.Diagnostics;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities.Base
 {
-
     public abstract class AsyncTaskCodeActivity : AsyncCodeActivity<Action<AsyncCodeActivityContext>>, IDisposable
     {
         private CancellationTokenSource _tokenSource;

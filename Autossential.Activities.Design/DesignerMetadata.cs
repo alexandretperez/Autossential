@@ -32,14 +32,21 @@ namespace Autossential.Activities.Design
 
             var workflow = new CategoryAttribute(WORKFLOW_CATEGORY);
             AddCustomAttributes(builder, workflow, typeof(Exit), typeof(ExitDesigner));
+            AddCustomAttributes(builder, workflow, typeof(Next), typeof(NextDesigner));
             AddCustomAttributes(builder, workflow, typeof(Container), typeof(ContainerDesigner));
             AddCustomAttributes(builder, workflow, typeof(CheckPoint), typeof(CheckPointDesigner));
+            AddCustomAttributes(builder, workflow, typeof(Iterate), typeof(IterateDesigner));
 
             var programming = new CategoryAttribute(PROGRAMMING_CATEGORY);
             AddCustomAttributes(builder, programming, typeof(Increment), typeof(IncrementDesigner));
             AddCustomAttributes(builder, programming, typeof(Decrement), typeof(DecrementDesigner));
             AddCustomAttributes(builder, programming, typeof(CultureScope), typeof(CultureScopeDesigner));
-            
+
+            var security = new CategoryAttribute(SECURITY_CATEGORY);
+            AddCustomAttributes(builder, security, typeof(EncryptText), typeof(EncryptTextDesigner));
+            AddCustomAttributes(builder, security, typeof(DecryptText), typeof(DecryptTextDesigner));
+            AddCustomAttributes(builder, security, typeof(EncryptDataTable), typeof(EncryptDataTableDesigner));
+            AddCustomAttributes(builder, security, typeof(DecryptDataTable), typeof(DecryptDataTableDesigner));
 
             builder.ValidateTable();
             MetadataStore.AddAttributeTable(builder.CreateTable());

@@ -8,7 +8,7 @@ namespace Autossential.Activities.Constraints
     {
         protected override bool IsInValidScope(Activity activity)
         {
-            return activity != null && (activity is Container/* || activity is Iterate*/);
+            return activity != null && (activity is Container || activity is Iterate);
         }
 
         protected override void OnScopeValidationError(NativeActivityContext context)
