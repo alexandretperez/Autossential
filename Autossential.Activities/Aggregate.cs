@@ -52,8 +52,9 @@ namespace Autossential.Activities
         {
             DataRow row = null;
             var dt = DataTable.Get(context);
+            var columns = Columns?.Get(context);
 
-            var columnIndexes = DataTableUtil.IdentifyDataColumns(dt, Columns?.Get(context));
+            var columnIndexes = DataTableUtil.IdentifyDataColumns(dt, columns);
 
             if (dt.Rows.Count > 0)
             {

@@ -92,9 +92,15 @@ namespace Autossential.Activities.Design
             yield return typeof(Unzip);
         }
 
-
         private void ApplyPropertyAttributes(AttributeTableBuilder builder, Type activityType)
         {
+            if (!activityType.GetCustomAttributes().Any(attr => attr is LocalDescriptionAttribute))
+            {
+                var key = activityType.Name + "_Description";
+                if (Resources.ResourceManager.GetString(key) != null)
+                    builder.AddCustomAttributes(activityType, new LocalDescriptionAttribute(key));
+            }
+
             foreach (var prop in activityType.GetProperties())
             {
                 var attrs = prop.GetCustomAttributes();
@@ -110,7 +116,7 @@ namespace Autossential.Activities.Design
                         builder.AddCustomAttributes(activityType, prop, new LocalDisplayNameAttribute(prop.Name.Substring(6)));
                     }
                 }
-                
+
                 if (!attrs.Any(attr => attr is LocalCategAttribute))
                 {
                     if (typeof(InArgument).IsAssignableFrom(prop.PropertyType))

@@ -8,6 +8,7 @@ using System.Activities;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities
@@ -28,6 +29,8 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
+            base.CacheMetadata(metadata);
+
             if (InputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(InputDataTable)));
             if (OutputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(OutputDataTable)));
             if (Columns != null)
@@ -44,22 +47,20 @@ namespace Autossential.Activities
                     metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
                 }
             }
-
-            base.CacheMetadata(metadata);
         }
 
         protected override void Execute(CodeActivityContext context)
         {
             var inputDt = InputDataTable.Get(context);
             var sortBy = Sort.Get(context);
-            var columns = DataTableUtil.IdentifyDataColumns(inputDt, Columns.Get(context));
+            var columns = DataTableUtil.IdentifyDataColumns(inputDt, Columns?.Get(context));
             
             var outputDt = CreateCryptoDataTable(inputDt, new HashSet<int>(columns));
 
             ExecuteCrypto(context, (crypto, key) =>
             {
                 outputDt.BeginLoadData();
-                AddToDataTable(inputDt, outputDt, key, crypto);
+                AddToDataTable(inputDt, outputDt, key, crypto, columns);
                 outputDt.AcceptChanges();
                 outputDt.EndLoadData();
             });
@@ -73,14 +74,15 @@ namespace Autossential.Activities
             OutputDataTable.Set(context, outputDt);
         }
 
-        private void AddToDataTable(DataTable inDt, DataTable outDt, string key, Crypto crypto)
+
+        private void AddToDataTable(DataTable inDt, DataTable outDt, string key, Crypto crypto, IEnumerable<int> dataColumnsIndex)
         {
             if (ParallelProcessing)
             {
                 var safeList = new ConcurrentBag<object[]>();
                 Parallel.ForEach(inDt.AsEnumerable(), row =>
                 {
-                    var values = ApplyEncryption(row.ItemArray, outDt.Columns, crypto, key);
+                    var values = ApplyEncryption(row.ItemArray, dataColumnsIndex, crypto, key);
                     safeList.Add(values);
                 });
 
@@ -95,20 +97,20 @@ namespace Autossential.Activities
 
             foreach (DataRow row in inDt.Rows)
             {
-                var values = ApplyEncryption(row.ItemArray, outDt.Columns, crypto, key);
+                var values = ApplyEncryption(row.ItemArray, dataColumnsIndex, crypto, key);
                 outDt.LoadDataRow(values, false);
             }
         }
 
-        private object[] ApplyEncryption(object[] values, DataColumnCollection dataColumns, Crypto crypto, string key)
+        private object[] ApplyEncryption(object[] values, IEnumerable<int> dataColumnsIndex, Crypto crypto, string key)
         {
-            foreach (DataColumn col in dataColumns)
+            foreach (var colIndex in dataColumnsIndex)
             {
-                var content = values[col.Ordinal];
+                var content = values[colIndex];
                 if (content == null || content == DBNull.Value || Equals(content, ""))
                     continue;
 
-                values[col.Ordinal] = crypto.Encrypt(content.ToString(), key);
+                values[colIndex] = crypto.Encrypt(content.ToString(), key);
             }
 
             return values;

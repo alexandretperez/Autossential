@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace Autossential.Activities
 {
-    public class CultureScope : ScopeActivity
+     public class CultureScope : ScopeActivity
     {
         [LocalCateg("")]
         public InArgument<string> CultureName { get; set; }
