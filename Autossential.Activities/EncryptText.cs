@@ -8,6 +8,7 @@ namespace Autossential.Activities
     public class EncryptText : CryptographyBaseActivity
     {
         public InArgument<string> Text { get; set; }
+
         public OutArgument<string> Result { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

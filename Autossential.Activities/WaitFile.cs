@@ -13,11 +13,8 @@ namespace Autossential.Activities
 {
     public class WaitFile : ContinuableAsyncTaskCodeActivity
     {
-        [LocalCateg(nameof(Resources.Common_Category))]
+        [LocalCateg("")]
         public InArgument<int> Timeout { get; set; } = 30000;
-
-        [LocalCateg(nameof(Resources.Input_Category))]
-        public InArgument<string> FilePath { get; set; }
 
         [LocalCateg(nameof(Resources.Options_Category))]
         public bool WaitForExists { get; set; }
@@ -25,7 +22,7 @@ namespace Autossential.Activities
         [LocalCateg(nameof(Resources.Options_Category))]
         public int Interval { get; set; } = 500;
 
-        [LocalCateg(nameof(Resources.Output_Category))]
+        public InArgument<string> FilePath { get; set; }
         public OutArgument<FileInfo> FileInfo { get; set; }
 
         private const int MINIMUM_INTERVAL = 100;
@@ -69,7 +66,7 @@ namespace Autossential.Activities
             {
                 var done = false;
                 if (!WaitForExists && !File.Exists(path))
-                    throw new IOException(Resources.WaitFile_ErrorMsgs_FilePathDoesNotExists);
+                    throw new IOException(Resources.WaitFile_ErrorMsg_FilePathDoesNotExists);
 
                 do
                 {

@@ -87,6 +87,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'The aggregate function'.
+        /// </summary>
+        public static string Aggregate_Function_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Aggregate_Function_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Common'.
         /// </summary>
         public static string Common_Category {
@@ -159,6 +168,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Zip entry name ends in directory separator character but contains data'.
+        /// </summary>
+        public static string Unzip_ErrorMsg_DirNameWithData {
+            get {
+                return ResourceManager.GetString(ResourceNames.Unzip_ErrorMsg_DirNameWithData, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Extracting Zip entry would have resulted in a file outside the specified destination directory'.
+        /// </summary>
+        public static string Unzip_ErrorMsg_OutsideDir {
+            get {
+                return ResourceManager.GetString(ResourceNames.Unzip_ErrorMsg_OutsideDir, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activity'.
         /// </summary>
         public static string Validation_ScopeError {
@@ -188,9 +215,9 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         /// Looks up a localized string similar to 'The specified file path does not exists'.
         /// </summary>
-        public static string WaitFile_ErrorMsgs_FilePathDoesNotExists {
+        public static string WaitFile_ErrorMsg_FilePathDoesNotExists {
             get {
-                return ResourceManager.GetString(ResourceNames.WaitFile_ErrorMsgs_FilePathDoesNotExists, _resourceCulture);
+                return ResourceManager.GetString(ResourceNames.WaitFile_ErrorMsg_FilePathDoesNotExists, _resourceCulture);
             }
         }
         
@@ -247,6 +274,11 @@ namespace Autossential.Activities.Properties {
         public class ResourceNames {
             
             /// <summary>
+            /// Stores the resource name 'Aggregate_Function_Description'.
+            /// </summary>
+            public const string Aggregate_Function_Description = "Aggregate_Function_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Common_Category'.
             /// </summary>
             public const string Common_Category = "Common_Category";
@@ -287,6 +319,16 @@ namespace Autossential.Activities.Properties {
             public const string Reference_Category = "Reference_Category";
             
             /// <summary>
+            /// Stores the resource name 'Unzip_ErrorMsg_DirNameWithData'.
+            /// </summary>
+            public const string Unzip_ErrorMsg_DirNameWithData = "Unzip_ErrorMsg_DirNameWithData";
+            
+            /// <summary>
+            /// Stores the resource name 'Unzip_ErrorMsg_OutsideDir'.
+            /// </summary>
+            public const string Unzip_ErrorMsg_OutsideDir = "Unzip_ErrorMsg_OutsideDir";
+            
+            /// <summary>
             /// Stores the resource name 'Validation_ScopeError'.
             /// </summary>
             public const string Validation_ScopeError = "Validation_ScopeError";
@@ -302,9 +344,9 @@ namespace Autossential.Activities.Properties {
             public const string Validation_ValueError = "Validation_ValueError";
             
             /// <summary>
-            /// Stores the resource name 'WaitFile_ErrorMsgs_FilePathDoesNotExists'.
+            /// Stores the resource name 'WaitFile_ErrorMsg_FilePathDoesNotExists'.
             /// </summary>
-            public const string WaitFile_ErrorMsgs_FilePathDoesNotExists = "WaitFile_ErrorMsgs_FilePathDoesNotExists";
+            public const string WaitFile_ErrorMsg_FilePathDoesNotExists = "WaitFile_ErrorMsg_FilePathDoesNotExists";
             
             /// <summary>
             /// Stores the resource name 'WaitFile_Interval_Error'.

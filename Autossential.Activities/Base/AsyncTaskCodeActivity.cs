@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities.Base
 {
-    public abstract class AsyncTaskCodeActivity : AsyncCodeActivity<Action<AsyncCodeActivityContext>>, IDisposable
+    public abstract class AsyncTaskCodeActivity : AsyncCodeActivity, IDisposable
     {
         private CancellationTokenSource _tokenSource;
         private bool _disposed;
@@ -47,7 +47,7 @@ namespace Autossential.Activities.Base
             return taskCompletionSource.Task;
         }
 
-        protected override Action<AsyncCodeActivityContext> EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+        protected override void EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
         {
             var task = (Task<Action<AsyncCodeActivityContext>>)result;
             try
@@ -59,8 +59,14 @@ namespace Autossential.Activities.Base
                 ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
                 throw;
             }
-
-            return Result.Get(context);
+            finally
+            {
+                if (!_tokenDisposed)
+                {
+                    _tokenSource?.Dispose();
+                    _tokenDisposed = true;
+                }
+            }
         }
 
         protected abstract Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token);
@@ -87,10 +93,9 @@ namespace Autossential.Activities.Base
             if (_disposed)
                 return;
 
-            if (disposing)
+            if (disposing && !_tokenDisposed)
             {
-                if (!_tokenDisposed)
-                    _tokenSource?.Dispose();
+                _tokenSource?.Dispose();
             }
 
             _tokenDisposed = true;

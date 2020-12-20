@@ -1,5 +1,4 @@
-﻿using Autossential.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Microsoft.VisualBasic.Activities;
 using System;
 using System.Activities;
@@ -8,10 +7,8 @@ namespace Autossential.Activities
 {
     public class Increment : CodeActivity
     {
-        [LocalCateg(nameof(Resources.Input_Category))]
         public InArgument<int> Value { get; set; }
 
-        [LocalCateg(nameof(Resources.Reference_Category))]
         public InOutArgument<int> Variable { get; set; }
 
         public Increment()

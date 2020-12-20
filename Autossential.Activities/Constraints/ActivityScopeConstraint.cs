@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Autossential.Activities.Constraints
 {
-    internal abstract class ActivityScopeConstraint : NativeActivity<bool>
+    public abstract class ActivityScopeConstraint : NativeActivity<bool>
     {
         [RequiredArgument]
         [DefaultValue(null)]

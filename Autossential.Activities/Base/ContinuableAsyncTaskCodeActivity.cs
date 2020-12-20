@@ -33,20 +33,18 @@ namespace Autossential.Activities.Base
             }
         }
 
-        protected override Action<AsyncCodeActivityContext> EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+        protected override void EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
         {
             try
             {
-                return base.EndExecute(context, result);
+                base.EndExecute(context, result);
             }
             catch (Exception e)
             {
                 if (ContinueOnError.Get(context))
                 {
                     Trace.TraceError(e.ToString());
-                    return Result.Get(context);
                 }
-
                 throw;
             }
         }

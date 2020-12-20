@@ -8,10 +8,9 @@ using System.Threading;
 
 namespace Autossential.Activities
 {
-    [LocalDescription(nameof(Resources.CultureScope_Description))]
     public class CultureScope : ScopeActivity
     {
-        [LocalCateg(nameof(Resources.Input_Category))]
+        [LocalCateg("")]
         public InArgument<string> CultureName { get; set; }
 
         private readonly CultureInfo _originalCulture;

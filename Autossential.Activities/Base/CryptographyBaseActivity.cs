@@ -1,4 +1,5 @@
-﻿using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Localization;
+using Autossential.Activities.Properties;
 using Autossential.Enums;
 using Autossential.Security;
 using Microsoft.VisualBasic.Activities;
@@ -12,10 +13,17 @@ namespace Autossential.Activities.Base
 {
     public abstract class CryptographyBaseActivity : CodeActivity
     {
+        [LocalCateg(nameof(Resources.Options_Category))]
         public SymmetricAlgorithms Algorithm { get; set; }
+
+        [LocalCateg(nameof(Resources.Options_Category))]
+        [LocalDisplayName("Encoding")]
         public InArgument<Encoding> TextEncoding { get; set; }
-        public InArgument<string> Key { get; set; }
+
+        [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument<int> Iterations { get; set; }
+
+        public InArgument<string> Key { get; set; }
 
         protected CryptographyBaseActivity()
         {
@@ -31,13 +39,14 @@ namespace Autossential.Activities.Base
             base.CacheMetadata(metadata);
         }
 
-        protected virtual DataTable CreateCryptoDataTable(DataTable sourceDataTable, HashSet<DataColumn> cryptoColumns)
+        protected virtual DataTable CreateCryptoDataTable(DataTable sourceDataTable, HashSet<int> cryptoColumns)
         {
+            var allColumns = cryptoColumns.Count == 0;
             var result = new DataTable();
             foreach (DataColumn col in sourceDataTable.Columns)
             {
                 result.Columns.Add(col.ColumnName,
-                    cryptoColumns.Contains(col) ? typeof(string) : col.DataType
+                   allColumns || cryptoColumns.Contains(col.Ordinal) ? typeof(string) : col.DataType
                 );
             }
             return result;

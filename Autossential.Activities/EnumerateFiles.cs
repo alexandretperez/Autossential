@@ -1,4 +1,5 @@
-﻿using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Localization;
+using Autossential.Activities.Properties;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
@@ -11,8 +12,11 @@ namespace Autossential.Activities
     {
         public InArgument Path { get; set; }
         public InArgument SearchPattern { get; set; }
+
+        [LocalCateg(nameof(Resources.Options_Category))]
         public SearchOption SearchOption { get; set; }
 
+        [LocalCateg(nameof(Resources.Options_Category))]
         public FileAttributes Exclusions { get; set; } = FileAttributes.Hidden
                                                         | FileAttributes.System
                                                         | FileAttributes.Temporary

@@ -48,7 +48,10 @@
     <None Remove="Designers\IterateDesigner.xaml" />
     <None Remove="Designers\NextDesigner.xaml" />
     <None Remove="Designers\PromoteHeadersDesigner.xaml" />
+    <None Remove="Designers\RemoveEmptyRowsDesigner.xaml" />
+    <None Remove="Designers\UnzipDesigner.xaml" />
     <None Remove="Designers\WaitFileDesigner.xaml" />
+    <None Remove="Designers\ZipDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
   </ItemGroup>
@@ -111,7 +114,16 @@
     <Page Include="Designers\PromoteHeadersDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
+    <Page Include="Designers\RemoveEmptyRowsDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\UnzipDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
     <Page Include="Designers\WaitFileDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\ZipDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="Themes\Icons.xaml">

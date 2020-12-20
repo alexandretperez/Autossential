@@ -38,6 +38,9 @@ namespace Autossential.Activities.Design.Controls
         public string Filter { get; set; }
         public string Title { get; set; }
         public bool Multiselect { get; set; }
+        public bool? CheckFileExists { get; set; }
+        public bool? CheckPathExists { get; set; }
+        public bool? ValidateNames { get; set; }
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +57,15 @@ namespace Autossential.Activities.Design.Controls
 
             ofd.Title = Title;
             ofd.InitialDirectory = Directory.GetCurrentDirectory();
+
+            if (CheckFileExists.HasValue)
+                ofd.CheckFileExists = CheckFileExists.Value;
+
+            if (CheckPathExists.HasValue)
+                ofd.CheckPathExists = CheckPathExists.Value;
+
+            if (ValidateNames.HasValue)
+                ofd.ValidateNames = ValidateNames.Value;
 
             if (ofd.ShowDialog() == true)
             {

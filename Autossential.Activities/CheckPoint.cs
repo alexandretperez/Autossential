@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Localization;
-using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Activities.Expressions;
@@ -9,10 +8,10 @@ namespace Autossential.Activities
 {
     public class CheckPoint : Activity
     {
-        [LocalCateg(nameof(Resources.Input_Category))]
+        [LocalCateg("")]
         public InArgument<bool> Expression { get; set; }
 
-        [LocalCateg(nameof(Resources.Input_Category))]
+        [LocalCateg("")]
         public InArgument<Exception> Exception { get; set; }
 
         public CheckPoint()

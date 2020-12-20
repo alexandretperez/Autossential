@@ -1,4 +1,5 @@
-﻿using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Localization;
+using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace Autossential.Activities
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataTable> OutputDataTable { get; set; }
+
+        [LocalCateg(nameof(Resources.Options_Category))]
         public bool AutoRename { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

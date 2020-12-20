@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Aggregate_Function_Description" xml:space="preserve">
+    <value>The aggregate function</value>
+  </data>
   <data name="Common_Category" xml:space="preserve">
     <value>Common</value>
   </data>
@@ -141,6 +144,12 @@
   <data name="Reference_Category" xml:space="preserve">
     <value>Reference</value>
   </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>Zip entry name ends in directory separator character but contains data</value>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>Extracting Zip entry would have resulted in a file outside the specified destination directory</value>
+  </data>
   <data name="Validation_ScopeError" xml:space="preserve">
     <value>Cannot be used outside of {0} activity</value>
   </data>
@@ -150,7 +159,7 @@
   <data name="Validation_ValueError" xml:space="preserve">
     <value>Please provide a value for {0}</value>
   </data>
-  <data name="WaitFile_ErrorMsgs_FilePathDoesNotExists" xml:space="preserve">
+  <data name="WaitFile_ErrorMsg_FilePathDoesNotExists" xml:space="preserve">
     <value>The specified file path does not exists</value>
   </data>
   <data name="WaitFile_Interval_Error" xml:space="preserve">

@@ -1,8 +1,13 @@
 ﻿using Autossential.Activities.Design.Designers;
+using Autossential.Activities.Localization;
+using Autossential.Activities.Properties;
 using System;
+using System.Activities;
 using System.Activities.Presentation.Metadata;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 
 namespace Autossential.Activities.Design
 {
@@ -25,10 +30,15 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, dataTable, typeof(PromoteHeaders), typeof(PromoteHeadersDesigner));
             AddCustomAttributes(builder, dataTable, typeof(DataRowToDictionary), typeof(DataRowToDictionaryDesigner));
             AddCustomAttributes(builder, dataTable, typeof(DictionaryToDataTable), typeof(DictionaryToDataTableDesigner));
+            AddCustomAttributes(builder, dataTable, typeof(RemoveEmptyRows), typeof(RemoveEmptyRowsDesigner));
 
             var file = new CategoryAttribute(FILE_CATEGORY);
             AddCustomAttributes(builder, file, typeof(WaitFile), typeof(WaitFileDesigner));
             AddCustomAttributes(builder, file, typeof(EnumerateFiles), typeof(EnumerateFilesDesigner));
+
+            var fileCompression = new CategoryAttribute(FILE_COMPRESSION_CATEGORY);
+            AddCustomAttributes(builder, file, typeof(Zip), typeof(ZipDesigner));
+            AddCustomAttributes(builder, file, typeof(Unzip), typeof(UnzipDesigner));
 
             var workflow = new CategoryAttribute(WORKFLOW_CATEGORY);
             AddCustomAttributes(builder, workflow, typeof(Exit), typeof(ExitDesigner));
@@ -48,8 +58,77 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, security, typeof(EncryptDataTable), typeof(EncryptDataTableDesigner));
             AddCustomAttributes(builder, security, typeof(DecryptDataTable), typeof(DecryptDataTableDesigner));
 
+            foreach (var activityType in GetActivities())
+            {
+                ApplyPropertyAttributes(builder, activityType);
+            }
+
             builder.ValidateTable();
             MetadataStore.AddAttributeTable(builder.CreateTable());
+        }
+
+        private static IEnumerable<Type> GetActivities()
+        {
+            yield return typeof(Aggregate);
+            yield return typeof(PromoteHeaders);
+            yield return typeof(DataRowToDictionary);
+            yield return typeof(DictionaryToDataTable);
+            yield return typeof(RemoveEmptyRows);
+            yield return typeof(WaitFile);
+            yield return typeof(EnumerateFiles);
+            yield return typeof(Exit);
+            yield return typeof(Next);
+            yield return typeof(Container);
+            yield return typeof(CheckPoint);
+            yield return typeof(Iterate);
+            yield return typeof(Increment);
+            yield return typeof(Decrement);
+            yield return typeof(CultureScope);
+            yield return typeof(EncryptText);
+            yield return typeof(EncryptDataTable);
+            yield return typeof(DecryptText);
+            yield return typeof(DecryptDataTable);
+            yield return typeof(Zip);
+            yield return typeof(Unzip);
+        }
+
+
+        private void ApplyPropertyAttributes(AttributeTableBuilder builder, Type activityType)
+        {
+            foreach (var prop in activityType.GetProperties())
+            {
+                var attrs = prop.GetCustomAttributes();
+
+                if (!attrs.Any(attr => attr is LocalDisplayNameAttribute))
+                {
+                    if (prop.Name.StartsWith("Input") && prop.Name.Length > 5)
+                    {
+                        builder.AddCustomAttributes(activityType, prop, new LocalDisplayNameAttribute(prop.Name.Substring(5)));
+                    }
+                    else if (prop.Name.StartsWith("Output") && prop.Name.Length > 6)
+                    {
+                        builder.AddCustomAttributes(activityType, prop, new LocalDisplayNameAttribute(prop.Name.Substring(6)));
+                    }
+                }
+                
+                if (!attrs.Any(attr => attr is LocalCategAttribute))
+                {
+                    if (typeof(InArgument).IsAssignableFrom(prop.PropertyType))
+                    {
+                        builder.AddCustomAttributes(activityType, prop, new LocalCategAttribute(Resources.Input_Category));
+                        continue;
+                    }
+
+                    if (typeof(OutArgument).IsAssignableFrom(prop.PropertyType))
+                    {
+                        builder.AddCustomAttributes(activityType, prop, new LocalCategAttribute(Resources.Output_Category));
+                        continue;
+                    }
+
+                    if (typeof(InOutArgument).IsAssignableFrom(prop.PropertyType))
+                        builder.AddCustomAttributes(activityType, prop, new LocalCategAttribute(Resources.Reference_Category));
+                }
+            }
         }
 
         private void AddCustomAttributes(AttributeTableBuilder builder, CategoryAttribute category, Type activityType, Type designerType)

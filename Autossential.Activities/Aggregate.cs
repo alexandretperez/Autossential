@@ -12,17 +12,14 @@ namespace Autossential.Activities
 {
     public class Aggregate : CodeActivity
     {
-        [LocalCateg(nameof(Resources.Input_Category))]
         public InArgument<DataTable> DataTable { get; set; }
-
-        [LocalCateg(nameof(Resources.Options_Category))]
-        public AggregateFunction Function { get; set; } = AggregateFunction.Sum;
+        public OutArgument<DataRow> Result { get; set; }
 
         [LocalCateg(nameof(Resources.Output_Category))]
         public bool Detached { get; set; }
 
-        [LocalCateg(nameof(Resources.Output_Category))]
-        public OutArgument<DataRow> Result { get; set; }
+        [LocalCateg(nameof(Resources.Options_Category))]
+        public AggregateFunction Function { get; set; } = AggregateFunction.Sum;
 
         [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument Columns { get; set; }
@@ -46,7 +43,7 @@ namespace Autossential.Activities
                 }
                 else
                 {
-                    metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string[] or int[]", nameof(Columns)));
+                    metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
                 }
             }
         }

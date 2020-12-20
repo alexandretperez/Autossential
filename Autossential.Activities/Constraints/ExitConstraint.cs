@@ -4,7 +4,7 @@ using System.Activities.Validation;
 
 namespace Autossential.Activities.Constraints
 {
-    internal class ExitConstraint : ActivityScopeConstraint
+    public class ExitConstraint : ActivityScopeConstraint
     {
         protected override bool IsInValidScope(Activity activity)
         {
