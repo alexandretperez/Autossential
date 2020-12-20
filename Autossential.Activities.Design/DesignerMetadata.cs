@@ -6,6 +6,7 @@ using System.Activities;
 using System.Activities.Presentation.Metadata;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection;
 
@@ -37,8 +38,8 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, file, typeof(EnumerateFiles), typeof(EnumerateFilesDesigner));
 
             var fileCompression = new CategoryAttribute(FILE_COMPRESSION_CATEGORY);
-            AddCustomAttributes(builder, file, typeof(Zip), typeof(ZipDesigner));
-            AddCustomAttributes(builder, file, typeof(Unzip), typeof(UnzipDesigner));
+            AddCustomAttributes(builder, fileCompression, typeof(Zip), typeof(ZipDesigner));
+            AddCustomAttributes(builder, fileCompression, typeof(Unzip), typeof(UnzipDesigner));
 
             var workflow = new CategoryAttribute(WORKFLOW_CATEGORY);
             AddCustomAttributes(builder, workflow, typeof(Exit), typeof(ExitDesigner));
@@ -147,7 +148,7 @@ namespace Autossential.Activities.Design
         private void AddCustomAttributes(AttributeTableBuilder builder, CategoryAttribute category, Type activityType, Type designerType)
         {
             builder.AddCustomAttributes(activityType, category);
-            builder.AddCustomAttributes(activityType, new DesignerAttribute(designerType));
+            builder.AddCustomAttributes(activityType, new DesignerAttribute(designerType));            
         }
     }
 }

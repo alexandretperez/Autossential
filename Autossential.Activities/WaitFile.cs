@@ -4,6 +4,7 @@ using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Activities.Validation;
+using System.ComponentModel;
 using System.IO;
 using System.Runtime.ExceptionServices;
 using System.Threading;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Wait File")]
     public class WaitFile : ContinuableAsyncTaskCodeActivity
     {
         [LocalCateg("")]

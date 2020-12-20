@@ -2,12 +2,14 @@
 using Autossential.Activities.Properties;
 using System.Activities;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Enumerate Files")]
     public class EnumerateFiles : CodeActivity
     {
         public InArgument Path { get; set; }

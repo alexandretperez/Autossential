@@ -3,10 +3,12 @@ using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Promote Headers")]
     public class PromoteHeaders : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }

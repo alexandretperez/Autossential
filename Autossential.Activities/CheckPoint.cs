@@ -3,9 +3,11 @@ using System;
 using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
+using System.ComponentModel;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Check Point")]
     public class CheckPoint : Activity
     {
         [LocalCateg("")]

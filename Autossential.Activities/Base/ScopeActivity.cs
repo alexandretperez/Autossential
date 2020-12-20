@@ -28,8 +28,6 @@ namespace Autossential.Activities.Base
         }
     }
 
-
-
     //public abstract class AsyncTaskCodeActivity<T, TState> : AsyncCodeActivity<T>
     //{
     //    protected sealed override IAsyncResult BeginExecute(AsyncCodeActivityContext context, AsyncCallback callback, object state)

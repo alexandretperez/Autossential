@@ -3,7 +3,6 @@ using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Activities.Expressions;
-using System.Text.RegularExpressions;
 
 namespace Autossential.Activities
 {

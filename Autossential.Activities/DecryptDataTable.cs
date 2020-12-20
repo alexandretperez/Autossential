@@ -7,12 +7,14 @@ using System;
 using System.Activities;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Decrypt DataTable")]
     public class DecryptDataTable : CryptographyBaseActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }

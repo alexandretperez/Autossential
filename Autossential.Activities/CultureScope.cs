@@ -3,12 +3,14 @@ using Autossential.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
+using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 
 namespace Autossential.Activities
 {
-     public class CultureScope : ScopeActivity
+    [DisplayName("Culture Scope")]
+    public class CultureScope : ScopeActivity
     {
         [LocalCateg("")]
         public InArgument<string> CultureName { get; set; }

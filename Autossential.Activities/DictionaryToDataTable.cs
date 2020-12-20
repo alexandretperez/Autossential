@@ -1,11 +1,13 @@
 ﻿using Autossential.Activities.Properties;
 using System.Activities;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Dictionary To DataTable")]
     public class DictionaryToDataTable : CodeActivity
     {
         public InArgument<Dictionary<string, object>> InputDictionary { get; set; }

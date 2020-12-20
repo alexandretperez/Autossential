@@ -5,11 +5,13 @@ using Autossential.Utils;
 using System;
 using System.Activities;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
 namespace Autossential.Activities
 {
+    [DisplayName("Remove Empty Rows")]
     public class RemoveEmptyRows : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
