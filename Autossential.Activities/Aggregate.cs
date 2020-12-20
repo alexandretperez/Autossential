@@ -12,7 +12,7 @@ namespace Autossential.Activities
 {
     public class Aggregate : CodeActivity
     {
-        public InArgument<DataTable> DataTable { get; set; }
+        public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataRow> Result { get; set; }
 
         [LocalCateg(nameof(Resources.Output_Category))]
@@ -24,14 +24,11 @@ namespace Autossential.Activities
         [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument Columns { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
-        public bool Incorporate { get; set; }
-
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
 
-            if (DataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(DataTable)));
+            if (InputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(InputDataTable)));
             if (Columns != null)
             {
                 var argType = Columns.ArgumentType;
@@ -51,7 +48,7 @@ namespace Autossential.Activities
         protected override void Execute(CodeActivityContext context)
         {
             DataRow row = null;
-            var dt = DataTable.Get(context);
+            var dt = InputDataTable.Get(context);
             var columns = Columns?.Get(context);
 
             var columnIndexes = DataTableUtil.IdentifyDataColumns(dt, columns);
@@ -67,13 +64,6 @@ namespace Autossential.Activities
                     GetConvertibleColumns(dt, columnIndexes),
                     row
                 );
-            }
-
-            if (Incorporate)
-            {
-                dt.BeginLoadData();
-                dt.LoadDataRow(row.ItemArray, true);
-                dt.EndLoadData();
             }
 
             Result.Set(context, row);

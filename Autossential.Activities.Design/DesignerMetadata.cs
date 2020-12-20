@@ -117,6 +117,13 @@ namespace Autossential.Activities.Design
                     }
                 }
 
+                if (!attrs.Any(attr=>attr is LocalDescriptionAttribute))
+                {
+                    var key = $"{activityType.Name}_{prop.Name}_Description";
+                    if (Resources.ResourceManager.GetString(key) != null)
+                        builder.AddCustomAttributes(activityType, prop, new LocalDescriptionAttribute(key));
+                }
+
                 if (!attrs.Any(attr => attr is LocalCategAttribute))
                 {
                     if (typeof(InArgument).IsAssignableFrom(prop.PropertyType))

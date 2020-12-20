@@ -1,5 +1,9 @@
 ﻿using Autossential.Activities.Base;
+using Autossential.Activities.Properties;
+using System;
 using System.Activities;
+using System.Activities.Expressions;
+using System.Text.RegularExpressions;
 
 namespace Autossential.Activities
 {
@@ -8,6 +12,20 @@ namespace Autossential.Activities
         public InArgument<int> Iterations { get; set; }
 
         public OutArgument<int> Index { get; set; }
+
+        protected override void CacheMetadata(NativeActivityMetadata metadata)
+        {
+            base.CacheMetadata(metadata);
+
+            if (Iterations == null)
+            {
+                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Iterations)));
+            }
+            else if (Iterations.Expression is Literal<int> expr && expr.Value < 1)
+            {
+                metadata.AddValidationError(Resources.Iterate_ErrorMsg_IterationsMinValue);
+            }
+        }
 
         protected override void Execute(NativeActivityContext context)
         {
@@ -18,6 +36,8 @@ namespace Autossential.Activities
             context.Properties.Add(Next.BOOKMARK_NAME, nextBookmark);
 
             _iterations = Iterations.Get(context);
+            if (_iterations <= 0)
+                throw new InvalidOperationException(Resources.Iterate_ErrorMsg_IterationsMinValue);
 
             ExecuteNext(context);
         }

@@ -8,6 +8,7 @@ using System.Activities;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities
@@ -24,7 +25,7 @@ namespace Autossential.Activities
         public InArgument<string> Sort { get; set; }
 
         [LocalCateg(nameof(Resources.Options_Category))]
-        public bool ParallelProcessing { get; set; }
+        public bool ParallelProcessing { get; set; } = true;
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -52,7 +53,7 @@ namespace Autossential.Activities
         {
             var inputDt = InputDataTable.Get(context);
             var sortBy = Sort.Get(context);
-            var columns = DataTableUtil.IdentifyDataColumns(inputDt, Columns?.Get(context));
+            var columns = DataTableUtil.IdentifyDataColumns(inputDt, Columns?.Get(context), Enumerable.Range(0, inputDt.Columns.Count));
 
             var outputDt = CreateCryptoDataTable(inputDt, new HashSet<int>(columns));
 

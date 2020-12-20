@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Autossential.Enums;
+using Autossential.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,10 @@ namespace Autossential.Activities.Design.Designers
         public DecryptTextDesigner()
         {
             InitializeComponent();
+
+            cbAlgorithms.ItemsSource = EnumUtil.EnumAsDictionary<SymmetricAlgorithms>();
+            cbAlgorithms.DisplayMemberPath = "Key";
+            cbAlgorithms.SelectedValuePath = "Value";
         }
     }
 }

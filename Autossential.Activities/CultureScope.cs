@@ -22,8 +22,9 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
-            if (CultureName == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(CultureName)));
             base.CacheMetadata(metadata);
+
+            if (CultureName == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(CultureName)));
         }
 
         protected override void Execute(NativeActivityContext context)

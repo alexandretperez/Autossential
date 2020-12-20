@@ -87,11 +87,83 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'The column indexes or column names to apply the aggregation'.
+        /// </summary>
+        public static string Aggregate_Columns_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Aggregate_Columns_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Provides aggregate functions for data table'.
+        /// </summary>
+        public static string Aggregate_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Aggregate_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns a data row detached from the data table'.
+        /// </summary>
+        public static string Aggregate_Detached_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Aggregate_Detached_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The aggregate function'.
         /// </summary>
         public static string Aggregate_Function_Description {
             get {
                 return ResourceManager.GetString(ResourceNames.Aggregate_Function_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The data table which the aggregate function will be applied'.
+        /// </summary>
+        public static string Aggregate_InputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Aggregate_InputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The aggregate data row'.
+        /// </summary>
+        public static string Aggregate_Result_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Aggregate_Result_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Checks if a given expression is true, if not, thrown the specified exception'.
+        /// </summary>
+        public static string CheckPoint_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CheckPoint_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The exception that will be thrown if the expression is not true'.
+        /// </summary>
+        public static string CheckPoint_Exception_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CheckPoint_Exception_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The expression to be evaluated'.
+        /// </summary>
+        public static string CheckPoint_Expression_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CheckPoint_Expression_Description, _resourceCulture);
             }
         }
         
@@ -105,6 +177,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand'.
+        /// </summary>
+        public static string Container_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Container_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The desired culture, eg.: en-US, pt-BR, jp-JP, etc.'.
+        /// </summary>
+        public static string CultureScope_CultureName_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CultureScope_CultureName_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results.'.
         /// </summary>
         public static string CultureScope_Description {
@@ -114,20 +204,515 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Converts a DataRow to Dictionary'.
+        /// </summary>
+        public static string DataRowToDictionary_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DataRowToDictionary_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The input data row'.
+        /// </summary>
+        public static string DataRowToDictionary_InputDataRow_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DataRowToDictionary_InputDataRow_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The output dictionary'.
+        /// </summary>
+        public static string DataRowToDictionary_OutputDictionary_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DataRowToDictionary_OutputDictionary_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Decrements the value of a variable by the specified decrement value'.
+        /// </summary>
+        public static string Decrement_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Decrement_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The decrement value cannot be smaller than 1'.
         /// </summary>
-        public static string Decrement_Value_Error {
+        public static string Decrement_ErrorMsg_MinValue {
             get {
-                return ResourceManager.GetString(ResourceNames.Decrement_Value_Error, _resourceCulture);
+                return ResourceManager.GetString(ResourceNames.Decrement_ErrorMsg_MinValue, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The decrement value'.
+        /// </summary>
+        public static string Decrement_Value_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Decrement_Value_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The variable to decrement'.
+        /// </summary>
+        public static string Decrement_Variable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Decrement_Variable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The decrypt algorithm to be used by this activity'.
+        /// </summary>
+        public static string DecryptDataTable_Algorithm_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Algorithm_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The column indexes or column names to be decrypted'.
+        /// </summary>
+        public static string DecryptDataTable_Columns_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Columns_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Decrypts the data of a DataTable'.
+        /// </summary>
+        public static string DecryptDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The DataTable to be decrypted'.
+        /// </summary>
+        public static string DecryptDataTable_InputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_InputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The number of iterations to be used in operation. The default and minimum recommended is 1000'.
+        /// </summary>
+        public static string DecryptDataTable_Iterations_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Iterations_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The key used to decrypt the data'.
+        /// </summary>
+        public static string DecryptDataTable_Key_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Key_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The decrypted DataTable'.
+        /// </summary>
+        public static string DecryptDataTable_OutputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_OutputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Uses parallel processing to scan through the DataTable and decrypt the data. Although this can drastically increase the processing speed, the rows in the resulting DataTable may have its order changed. Combine it with Sort property to reorder the DataTable when necessary'.
+        /// </summary>
+        public static string DecryptDataTable_ParallelProcessing_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_ParallelProcessing_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Sets the sort column or columns, and sort order for the output DataTable. The value must be a string that contains the column name followed by &quot;ASC&quot; (ascending) or &quot;DESC&quot; (descending). Columns are sorted ascending by default. Multiple columns can be separated by commas'.
+        /// </summary>
+        public static string DecryptDataTable_Sort_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Sort_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encoding used to interpret the data and key'.
+        /// </summary>
+        public static string DecryptDataTable_TextEncoding_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptDataTable_TextEncoding_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The decrypt algorithm to be used by this activity'.
+        /// </summary>
+        public static string DecryptText_Algorithm_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_Algorithm_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Decrypts the text using the specified algorithm and key'.
+        /// </summary>
+        public static string DecryptText_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The number of iterations to be used in operation. The default and minimum recommended is 1000'.
+        /// </summary>
+        public static string DecryptText_Iterations_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_Iterations_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The key used to decrypt the text'.
+        /// </summary>
+        public static string DecryptText_Key_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_Key_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The decrypted text'.
+        /// </summary>
+        public static string DecryptText_Result_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_Result_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The text to be decrypted'.
+        /// </summary>
+        public static string DecryptText_Text_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_Text_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encoding used to interpret the text and key'.
+        /// </summary>
+        public static string DecryptText_TextEncoding_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DecryptText_TextEncoding_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Converts a Dictionary to DataTable'.
+        /// </summary>
+        public static string DictionaryToDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DictionaryToDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The input dictionary'.
+        /// </summary>
+        public static string DictionaryToDataTable_InputDictionary_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DictionaryToDataTable_InputDictionary_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The output data table'.
+        /// </summary>
+        public static string DictionaryToDataTable_OutputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.DictionaryToDataTable_OutputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encrypt algorithm to be used by this activity'.
+        /// </summary>
+        public static string EncryptDataTable_Algorithm_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Algorithm_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The column names to be encrypted'.
+        /// </summary>
+        public static string EncryptDataTable_ColumnNames_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_ColumnNames_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The column indexes or column names to be encrypted'.
+        /// </summary>
+        public static string EncryptDataTable_Columns_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Columns_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Encrypts the data of a DataTable'.
+        /// </summary>
+        public static string EncryptDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The DataTable to be encrypted'.
+        /// </summary>
+        public static string EncryptDataTable_InputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_InputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The number of iterations to be used in operation. The default and minimum recommended is 1000'.
+        /// </summary>
+        public static string EncryptDataTable_Iterations_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Iterations_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The key used to encrypt the data'.
+        /// </summary>
+        public static string EncryptDataTable_Key_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Key_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encrypted DataTable'.
+        /// </summary>
+        public static string EncryptDataTable_OutputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_OutputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Uses parallel processing to scan through the DataTable and encrypt the data. Although this can drastically increase the processing speed, the rows in the resulting DataTable may have its order changed. Combine it with Sort property to reorder the DataTable when necessary'.
+        /// </summary>
+        public static string EncryptDataTable_ParallelProcessing_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_ParallelProcessing_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Sets the sort column or columns, and sort order for the output DataTable. The value must be a string that contains the column name followed by &quot;ASC&quot; (ascending) or &quot;DESC&quot; (descending). Columns are sorted ascending by default. Multiple columns can be separated by commas'.
+        /// </summary>
+        public static string EncryptDataTable_Sort_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Sort_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encoding used to interpret the data and key'.
+        /// </summary>
+        public static string EncryptDataTable_TextEncoding_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptDataTable_TextEncoding_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encrypt algorithm to be used by this activity'.
+        /// </summary>
+        public static string EncryptText_Algorithm_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_Algorithm_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Encrypts a text using the specified algorithm and key'.
+        /// </summary>
+        public static string EncryptText_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Encrypt Text'.
+        /// </summary>
+        public static string EncryptText_DisplayName {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_DisplayName, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The number of iterations to be used in operation. The default and minimum recommended is 1000'.
+        /// </summary>
+        public static string EncryptText_Iterations_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_Iterations_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The key used to encrypt the text'.
+        /// </summary>
+        public static string EncryptText_Key_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_Key_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The base64 string representation of the encrypted text'.
+        /// </summary>
+        public static string EncryptText_Result_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_Result_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The text to be encrypted'.
+        /// </summary>
+        public static string EncryptText_Text_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_Text_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encoding used to interpret the text and key'.
+        /// </summary>
+        public static string EncryptText_TextEncoding_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EncryptText_TextEncoding_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns an enumerable collection of file names that match the provided search patterns and directories. Optionally also searches into subdirectories.'.
+        /// </summary>
+        public static string EnumerateFiles_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EnumerateFiles_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Excludes from the enumeration the files with any of the specified attributes.'.
+        /// </summary>
+        public static string EnumerateFiles_Exclusions_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EnumerateFiles_Exclusions_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The relative or absolute path (or collection of paths) to the directory (or directories) to search.'.
+        /// </summary>
+        public static string EnumerateFiles_Path_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EnumerateFiles_Path_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'An enumerable collection of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern and option.'.
+        /// </summary>
+        public static string EnumerateFiles_Result_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EnumerateFiles_Result_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'One of the enumeration values that specifies whether the search operation should include only the current directory or should include all subdirectories.'.
+        /// </summary>
+        public static string EnumerateFiles_SearchOption_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EnumerateFiles_SearchOption_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions.'.
+        /// </summary>
+        public static string EnumerateFiles_SearchPattern_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.EnumerateFiles_SearchPattern_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Exits from the Container Activity interrupting any child executions after it.'.
+        /// </summary>
+        public static string Exit_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Exit_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Increments the value of a variable by the specified increment value'.
+        /// </summary>
+        public static string Increment_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Increment_Description, _resourceCulture);
             }
         }
         
         /// <summary>
         /// Looks up a localized string similar to 'The increment value cannot be smaller than 1'.
         /// </summary>
-        public static string Increment_Value_Error {
+        public static string Increment_ErrorMsg_MinValue {
             get {
-                return ResourceManager.GetString(ResourceNames.Increment_Value_Error, _resourceCulture);
+                return ResourceManager.GetString(ResourceNames.Increment_ErrorMsg_MinValue, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The increment value'.
+        /// </summary>
+        public static string Increment_Value_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Increment_Value_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The variable to be incremented'.
+        /// </summary>
+        public static string Increment_Variable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Increment_Variable_Description, _resourceCulture);
             }
         }
         
@@ -137,6 +722,60 @@ namespace Autossential.Activities.Properties {
         public static string Input_Category {
             get {
                 return ResourceManager.GetString(ResourceNames.Input_Category, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Reference'.
+        /// </summary>
+        public static string InputOutput_Category {
+            get {
+                return ResourceManager.GetString(ResourceNames.InputOutput_Category, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Iterates the activity execution for the specified number of times.'.
+        /// </summary>
+        public static string Iterate_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Iterate_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Iterations must have a value greater than zero'.
+        /// </summary>
+        public static string Iterate_ErrorMsg_IterationsMinValue {
+            get {
+                return ResourceManager.GetString(ResourceNames.Iterate_ErrorMsg_IterationsMinValue, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The zero-based iteration index.'.
+        /// </summary>
+        public static string Iterate_Index_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Iterate_Index_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The number of iterations that must be run'.
+        /// </summary>
+        public static string Iterate_Iterations_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Iterate_Iterations_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration.'.
+        /// </summary>
+        public static string Next_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Next_Description, _resourceCulture);
             }
         }
         
@@ -159,11 +798,119 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'When true, it avoids the &quot;column name already belongs to DataTable&quot; error by adding a numeric suffix to it.'.
+        /// </summary>
+        public static string PromoteHeaders_AutoRename_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.PromoteHeaders_AutoRename_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Promotes the first row of values to new column headers.'.
+        /// </summary>
+        public static string PromoteHeaders_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.PromoteHeaders_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The input datatable'.
+        /// </summary>
+        public static string PromoteHeaders_InputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.PromoteHeaders_InputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The output datatable'.
+        /// </summary>
+        public static string PromoteHeaders_OutputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.PromoteHeaders_OutputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Reference'.
         /// </summary>
         public static string Reference_Category {
             get {
                 return ResourceManager.GetString(ResourceNames.Reference_Category, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The column indexes or column names to verify'.
+        /// </summary>
+        public static string RemoveEmptyRows_Columns_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_Columns_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Options (Custom Mode)'.
+        /// </summary>
+        public static string RemoveEmptyRows_CustomOptions_Category {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_CustomOptions_Category, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Removes the empty rows from a data table'.
+        /// </summary>
+        public static string RemoveEmptyRows_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The data table'.
+        /// </summary>
+        public static string RemoveEmptyRows_InputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_InputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Determines when a row should be removed. (All) means that all columns of must be empty to remove the row. (Any) for any column empty and (Custom) to the user defined rules'.
+        /// </summary>
+        public static string RemoveEmptyRows_Mode_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_Mode_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Determines how evaluate the custom columns'.
+        /// </summary>
+        public static string RemoveEmptyRows_Operator_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_Operator_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The result data table'.
+        /// </summary>
+        public static string RemoveEmptyRows_OutputDataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_OutputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Decompress files from a zip archive.'.
+        /// </summary>
+        public static string Unzip_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Unzip_Description, _resourceCulture);
             }
         }
         
@@ -182,6 +929,33 @@ namespace Autossential.Activities.Properties {
         public static string Unzip_ErrorMsg_OutsideDir {
             get {
                 return ResourceManager.GetString(ResourceNames.Unzip_ErrorMsg_OutsideDir, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Path to the folder where files will be extracted.'.
+        /// </summary>
+        public static string Unzip_ExtractTo_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Unzip_ExtractTo_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'When true, overwrites an existing file that has the same name as the destination file.'.
+        /// </summary>
+        public static string Unzip_Overwrite_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Unzip_Overwrite_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The compressed file.'.
+        /// </summary>
+        public static string Unzip_ZipFilePath_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Unzip_ZipFilePath_Description, _resourceCulture);
             }
         }
         
@@ -213,6 +987,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Waits till the file be available.'.
+        /// </summary>
+        public static string WaitFile_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The specified file path does not exists'.
         /// </summary>
         public static string WaitFile_ErrorMsg_FilePathDoesNotExists {
@@ -224,9 +1007,108 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         /// Looks up a localized string similar to 'The accepted value range is between {0} and {1}. The value will be reseted to its nearest limit'.
         /// </summary>
-        public static string WaitFile_Interval_Error {
+        public static string WaitFile_ErrorMsg_IntervalRange {
             get {
-                return ResourceManager.GetString(ResourceNames.WaitFile_Interval_Error, _resourceCulture);
+                return ResourceManager.GetString(ResourceNames.WaitFile_ErrorMsg_IntervalRange, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to '(Optional) Returns the information about the file.'.
+        /// </summary>
+        public static string WaitFile_FileInfo_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_FileInfo_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The storage path of the file.'.
+        /// </summary>
+        public static string WaitFile_FilePath_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_FilePath_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-30000 milliseconds is reseted to its nearest limit. The default value is 500.'.
+        /// </summary>
+        public static string WaitFile_Interval_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_Interval_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Waits until the file exists.'.
+        /// </summary>
+        public static string WaitFile_WaitForExist_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_WaitForExist_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'When true, renames the entry if the entry&apos;s name already exists in zip archive. It uses the pattern &lt;entry&gt;.&lt;counter&gt;.&lt;extension&gt;'.
+        /// </summary>
+        public static string Zip_AutoRenaming_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_AutoRenaming_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'One of the enumeration values that indicates whether to emphasize speed or compression'.
+        /// </summary>
+        public static string Zip_CompressionLevel_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_CompressionLevel_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Compress files into a zip archive.'.
+        /// </summary>
+        public static string Zip_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns the amount of files added to zip archive.'.
+        /// </summary>
+        public static string Zip_FilesCount_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_FilesCount_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The encoding to use when writing entry names in this archive. Specify a value for this parameter only when an encoding is required for interoperability with zip archive tools and libraries that do not support UTF-8 encoding for entry names.'.
+        /// </summary>
+        public static string Zip_TextEncoding_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_TextEncoding_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Path of the file(s) or folder(s) that will be compressed. Can be a string or a collection of strings.'.
+        /// </summary>
+        public static string Zip_ToCompress_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_ToCompress_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Path of the zip archive.'.
+        /// </summary>
+        public static string Zip_ZipFilePath_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Zip_ZipFilePath_Description, _resourceCulture);
             }
         }
         
@@ -264,8 +1146,8 @@ namespace Autossential.Activities.Properties {
         /// <param name="arg0">An object (0) to format.</param>
         /// <param name="arg1">An object (1) to format.</param>
         /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
-        public static string WaitFile_Interval_ErrorFormat(object arg0, object arg1) {
-            return string.Format(_resourceCulture, WaitFile_Interval_Error, arg0, arg1);
+        public static string WaitFile_ErrorMsg_IntervalRangeFormat(object arg0, object arg1) {
+            return string.Format(_resourceCulture, WaitFile_ErrorMsg_IntervalRange, arg0, arg1);
         }
         
         /// <summary>
@@ -274,9 +1156,49 @@ namespace Autossential.Activities.Properties {
         public class ResourceNames {
             
             /// <summary>
+            /// Stores the resource name 'Aggregate_Columns_Description'.
+            /// </summary>
+            public const string Aggregate_Columns_Description = "Aggregate_Columns_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Aggregate_Description'.
+            /// </summary>
+            public const string Aggregate_Description = "Aggregate_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Aggregate_Detached_Description'.
+            /// </summary>
+            public const string Aggregate_Detached_Description = "Aggregate_Detached_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Aggregate_Function_Description'.
             /// </summary>
             public const string Aggregate_Function_Description = "Aggregate_Function_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Aggregate_InputDataTable_Description'.
+            /// </summary>
+            public const string Aggregate_InputDataTable_Description = "Aggregate_InputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Aggregate_Result_Description'.
+            /// </summary>
+            public const string Aggregate_Result_Description = "Aggregate_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CheckPoint_Description'.
+            /// </summary>
+            public const string CheckPoint_Description = "CheckPoint_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CheckPoint_Exception_Description'.
+            /// </summary>
+            public const string CheckPoint_Exception_Description = "CheckPoint_Exception_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CheckPoint_Expression_Description'.
+            /// </summary>
+            public const string CheckPoint_Expression_Description = "CheckPoint_Expression_Description";
             
             /// <summary>
             /// Stores the resource name 'Common_Category'.
@@ -284,24 +1206,339 @@ namespace Autossential.Activities.Properties {
             public const string Common_Category = "Common_Category";
             
             /// <summary>
+            /// Stores the resource name 'Container_Description'.
+            /// </summary>
+            public const string Container_Description = "Container_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CultureScope_CultureName_Description'.
+            /// </summary>
+            public const string CultureScope_CultureName_Description = "CultureScope_CultureName_Description";
+            
+            /// <summary>
             /// Stores the resource name 'CultureScope_Description'.
             /// </summary>
             public const string CultureScope_Description = "CultureScope_Description";
             
             /// <summary>
-            /// Stores the resource name 'Decrement_Value_Error'.
+            /// Stores the resource name 'DataRowToDictionary_Description'.
             /// </summary>
-            public const string Decrement_Value_Error = "Decrement_Value_Error";
+            public const string DataRowToDictionary_Description = "DataRowToDictionary_Description";
             
             /// <summary>
-            /// Stores the resource name 'Increment_Value_Error'.
+            /// Stores the resource name 'DataRowToDictionary_InputDataRow_Description'.
             /// </summary>
-            public const string Increment_Value_Error = "Increment_Value_Error";
+            public const string DataRowToDictionary_InputDataRow_Description = "DataRowToDictionary_InputDataRow_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DataRowToDictionary_OutputDictionary_Description'.
+            /// </summary>
+            public const string DataRowToDictionary_OutputDictionary_Description = "DataRowToDictionary_OutputDictionary_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Decrement_Description'.
+            /// </summary>
+            public const string Decrement_Description = "Decrement_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Decrement_ErrorMsg_MinValue'.
+            /// </summary>
+            public const string Decrement_ErrorMsg_MinValue = "Decrement_ErrorMsg_MinValue";
+            
+            /// <summary>
+            /// Stores the resource name 'Decrement_Value_Description'.
+            /// </summary>
+            public const string Decrement_Value_Description = "Decrement_Value_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Decrement_Variable_Description'.
+            /// </summary>
+            public const string Decrement_Variable_Description = "Decrement_Variable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_Algorithm_Description'.
+            /// </summary>
+            public const string DecryptDataTable_Algorithm_Description = "DecryptDataTable_Algorithm_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_Columns_Description'.
+            /// </summary>
+            public const string DecryptDataTable_Columns_Description = "DecryptDataTable_Columns_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_Description'.
+            /// </summary>
+            public const string DecryptDataTable_Description = "DecryptDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_InputDataTable_Description'.
+            /// </summary>
+            public const string DecryptDataTable_InputDataTable_Description = "DecryptDataTable_InputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_Iterations_Description'.
+            /// </summary>
+            public const string DecryptDataTable_Iterations_Description = "DecryptDataTable_Iterations_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_Key_Description'.
+            /// </summary>
+            public const string DecryptDataTable_Key_Description = "DecryptDataTable_Key_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_OutputDataTable_Description'.
+            /// </summary>
+            public const string DecryptDataTable_OutputDataTable_Description = "DecryptDataTable_OutputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_ParallelProcessing_Description'.
+            /// </summary>
+            public const string DecryptDataTable_ParallelProcessing_Description = "DecryptDataTable_ParallelProcessing_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_Sort_Description'.
+            /// </summary>
+            public const string DecryptDataTable_Sort_Description = "DecryptDataTable_Sort_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptDataTable_TextEncoding_Description'.
+            /// </summary>
+            public const string DecryptDataTable_TextEncoding_Description = "DecryptDataTable_TextEncoding_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_Algorithm_Description'.
+            /// </summary>
+            public const string DecryptText_Algorithm_Description = "DecryptText_Algorithm_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_Description'.
+            /// </summary>
+            public const string DecryptText_Description = "DecryptText_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_Iterations_Description'.
+            /// </summary>
+            public const string DecryptText_Iterations_Description = "DecryptText_Iterations_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_Key_Description'.
+            /// </summary>
+            public const string DecryptText_Key_Description = "DecryptText_Key_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_Result_Description'.
+            /// </summary>
+            public const string DecryptText_Result_Description = "DecryptText_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_Text_Description'.
+            /// </summary>
+            public const string DecryptText_Text_Description = "DecryptText_Text_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DecryptText_TextEncoding_Description'.
+            /// </summary>
+            public const string DecryptText_TextEncoding_Description = "DecryptText_TextEncoding_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DictionaryToDataTable_Description'.
+            /// </summary>
+            public const string DictionaryToDataTable_Description = "DictionaryToDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DictionaryToDataTable_InputDictionary_Description'.
+            /// </summary>
+            public const string DictionaryToDataTable_InputDictionary_Description = "DictionaryToDataTable_InputDictionary_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'DictionaryToDataTable_OutputDataTable_Description'.
+            /// </summary>
+            public const string DictionaryToDataTable_OutputDataTable_Description = "DictionaryToDataTable_OutputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_Algorithm_Description'.
+            /// </summary>
+            public const string EncryptDataTable_Algorithm_Description = "EncryptDataTable_Algorithm_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_ColumnNames_Description'.
+            /// </summary>
+            public const string EncryptDataTable_ColumnNames_Description = "EncryptDataTable_ColumnNames_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_Columns_Description'.
+            /// </summary>
+            public const string EncryptDataTable_Columns_Description = "EncryptDataTable_Columns_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_Description'.
+            /// </summary>
+            public const string EncryptDataTable_Description = "EncryptDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_InputDataTable_Description'.
+            /// </summary>
+            public const string EncryptDataTable_InputDataTable_Description = "EncryptDataTable_InputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_Iterations_Description'.
+            /// </summary>
+            public const string EncryptDataTable_Iterations_Description = "EncryptDataTable_Iterations_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_Key_Description'.
+            /// </summary>
+            public const string EncryptDataTable_Key_Description = "EncryptDataTable_Key_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_OutputDataTable_Description'.
+            /// </summary>
+            public const string EncryptDataTable_OutputDataTable_Description = "EncryptDataTable_OutputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_ParallelProcessing_Description'.
+            /// </summary>
+            public const string EncryptDataTable_ParallelProcessing_Description = "EncryptDataTable_ParallelProcessing_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_Sort_Description'.
+            /// </summary>
+            public const string EncryptDataTable_Sort_Description = "EncryptDataTable_Sort_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptDataTable_TextEncoding_Description'.
+            /// </summary>
+            public const string EncryptDataTable_TextEncoding_Description = "EncryptDataTable_TextEncoding_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_Algorithm_Description'.
+            /// </summary>
+            public const string EncryptText_Algorithm_Description = "EncryptText_Algorithm_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_Description'.
+            /// </summary>
+            public const string EncryptText_Description = "EncryptText_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_DisplayName'.
+            /// </summary>
+            public const string EncryptText_DisplayName = "EncryptText_DisplayName";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_Iterations_Description'.
+            /// </summary>
+            public const string EncryptText_Iterations_Description = "EncryptText_Iterations_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_Key_Description'.
+            /// </summary>
+            public const string EncryptText_Key_Description = "EncryptText_Key_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_Result_Description'.
+            /// </summary>
+            public const string EncryptText_Result_Description = "EncryptText_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_Text_Description'.
+            /// </summary>
+            public const string EncryptText_Text_Description = "EncryptText_Text_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EncryptText_TextEncoding_Description'.
+            /// </summary>
+            public const string EncryptText_TextEncoding_Description = "EncryptText_TextEncoding_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_Description'.
+            /// </summary>
+            public const string EnumerateFiles_Description = "EnumerateFiles_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_Exclusions_Description'.
+            /// </summary>
+            public const string EnumerateFiles_Exclusions_Description = "EnumerateFiles_Exclusions_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_Path_Description'.
+            /// </summary>
+            public const string EnumerateFiles_Path_Description = "EnumerateFiles_Path_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_Result_Description'.
+            /// </summary>
+            public const string EnumerateFiles_Result_Description = "EnumerateFiles_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_SearchOption_Description'.
+            /// </summary>
+            public const string EnumerateFiles_SearchOption_Description = "EnumerateFiles_SearchOption_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_SearchPattern_Description'.
+            /// </summary>
+            public const string EnumerateFiles_SearchPattern_Description = "EnumerateFiles_SearchPattern_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Exit_Description'.
+            /// </summary>
+            public const string Exit_Description = "Exit_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Increment_Description'.
+            /// </summary>
+            public const string Increment_Description = "Increment_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Increment_ErrorMsg_MinValue'.
+            /// </summary>
+            public const string Increment_ErrorMsg_MinValue = "Increment_ErrorMsg_MinValue";
+            
+            /// <summary>
+            /// Stores the resource name 'Increment_Value_Description'.
+            /// </summary>
+            public const string Increment_Value_Description = "Increment_Value_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Increment_Variable_Description'.
+            /// </summary>
+            public const string Increment_Variable_Description = "Increment_Variable_Description";
             
             /// <summary>
             /// Stores the resource name 'Input_Category'.
             /// </summary>
             public const string Input_Category = "Input_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'InputOutput_Category'.
+            /// </summary>
+            public const string InputOutput_Category = "InputOutput_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'Iterate_Description'.
+            /// </summary>
+            public const string Iterate_Description = "Iterate_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Iterate_ErrorMsg_IterationsMinValue'.
+            /// </summary>
+            public const string Iterate_ErrorMsg_IterationsMinValue = "Iterate_ErrorMsg_IterationsMinValue";
+            
+            /// <summary>
+            /// Stores the resource name 'Iterate_Index_Description'.
+            /// </summary>
+            public const string Iterate_Index_Description = "Iterate_Index_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Iterate_Iterations_Description'.
+            /// </summary>
+            public const string Iterate_Iterations_Description = "Iterate_Iterations_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Next_Description'.
+            /// </summary>
+            public const string Next_Description = "Next_Description";
             
             /// <summary>
             /// Stores the resource name 'Options_Category'.
@@ -314,9 +1551,69 @@ namespace Autossential.Activities.Properties {
             public const string Output_Category = "Output_Category";
             
             /// <summary>
+            /// Stores the resource name 'PromoteHeaders_AutoRename_Description'.
+            /// </summary>
+            public const string PromoteHeaders_AutoRename_Description = "PromoteHeaders_AutoRename_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_Description'.
+            /// </summary>
+            public const string PromoteHeaders_Description = "PromoteHeaders_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_InputDataTable_Description'.
+            /// </summary>
+            public const string PromoteHeaders_InputDataTable_Description = "PromoteHeaders_InputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_OutputDataTable_Description'.
+            /// </summary>
+            public const string PromoteHeaders_OutputDataTable_Description = "PromoteHeaders_OutputDataTable_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Reference_Category'.
             /// </summary>
             public const string Reference_Category = "Reference_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Columns_Description'.
+            /// </summary>
+            public const string RemoveEmptyRows_Columns_Description = "RemoveEmptyRows_Columns_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_CustomOptions_Category'.
+            /// </summary>
+            public const string RemoveEmptyRows_CustomOptions_Category = "RemoveEmptyRows_CustomOptions_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Description'.
+            /// </summary>
+            public const string RemoveEmptyRows_Description = "RemoveEmptyRows_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_InputDataTable_Description'.
+            /// </summary>
+            public const string RemoveEmptyRows_InputDataTable_Description = "RemoveEmptyRows_InputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Mode_Description'.
+            /// </summary>
+            public const string RemoveEmptyRows_Mode_Description = "RemoveEmptyRows_Mode_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Operator_Description'.
+            /// </summary>
+            public const string RemoveEmptyRows_Operator_Description = "RemoveEmptyRows_Operator_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_OutputDataTable_Description'.
+            /// </summary>
+            public const string RemoveEmptyRows_OutputDataTable_Description = "RemoveEmptyRows_OutputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Unzip_Description'.
+            /// </summary>
+            public const string Unzip_Description = "Unzip_Description";
             
             /// <summary>
             /// Stores the resource name 'Unzip_ErrorMsg_DirNameWithData'.
@@ -327,6 +1624,21 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Unzip_ErrorMsg_OutsideDir'.
             /// </summary>
             public const string Unzip_ErrorMsg_OutsideDir = "Unzip_ErrorMsg_OutsideDir";
+            
+            /// <summary>
+            /// Stores the resource name 'Unzip_ExtractTo_Description'.
+            /// </summary>
+            public const string Unzip_ExtractTo_Description = "Unzip_ExtractTo_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Unzip_Overwrite_Description'.
+            /// </summary>
+            public const string Unzip_Overwrite_Description = "Unzip_Overwrite_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Unzip_ZipFilePath_Description'.
+            /// </summary>
+            public const string Unzip_ZipFilePath_Description = "Unzip_ZipFilePath_Description";
             
             /// <summary>
             /// Stores the resource name 'Validation_ScopeError'.
@@ -344,14 +1656,74 @@ namespace Autossential.Activities.Properties {
             public const string Validation_ValueError = "Validation_ValueError";
             
             /// <summary>
+            /// Stores the resource name 'WaitFile_Description'.
+            /// </summary>
+            public const string WaitFile_Description = "WaitFile_Description";
+            
+            /// <summary>
             /// Stores the resource name 'WaitFile_ErrorMsg_FilePathDoesNotExists'.
             /// </summary>
             public const string WaitFile_ErrorMsg_FilePathDoesNotExists = "WaitFile_ErrorMsg_FilePathDoesNotExists";
             
             /// <summary>
-            /// Stores the resource name 'WaitFile_Interval_Error'.
+            /// Stores the resource name 'WaitFile_ErrorMsg_IntervalRange'.
             /// </summary>
-            public const string WaitFile_Interval_Error = "WaitFile_Interval_Error";
+            public const string WaitFile_ErrorMsg_IntervalRange = "WaitFile_ErrorMsg_IntervalRange";
+            
+            /// <summary>
+            /// Stores the resource name 'WaitFile_FileInfo_Description'.
+            /// </summary>
+            public const string WaitFile_FileInfo_Description = "WaitFile_FileInfo_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'WaitFile_FilePath_Description'.
+            /// </summary>
+            public const string WaitFile_FilePath_Description = "WaitFile_FilePath_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'WaitFile_Interval_Description'.
+            /// </summary>
+            public const string WaitFile_Interval_Description = "WaitFile_Interval_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'WaitFile_WaitForExist_Description'.
+            /// </summary>
+            public const string WaitFile_WaitForExist_Description = "WaitFile_WaitForExist_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_AutoRenaming_Description'.
+            /// </summary>
+            public const string Zip_AutoRenaming_Description = "Zip_AutoRenaming_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_CompressionLevel_Description'.
+            /// </summary>
+            public const string Zip_CompressionLevel_Description = "Zip_CompressionLevel_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_Description'.
+            /// </summary>
+            public const string Zip_Description = "Zip_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_FilesCount_Description'.
+            /// </summary>
+            public const string Zip_FilesCount_Description = "Zip_FilesCount_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_TextEncoding_Description'.
+            /// </summary>
+            public const string Zip_TextEncoding_Description = "Zip_TextEncoding_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_ToCompress_Description'.
+            /// </summary>
+            public const string Zip_ToCompress_Description = "Zip_ToCompress_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Zip_ZipFilePath_Description'.
+            /// </summary>
+            public const string Zip_ZipFilePath_Description = "Zip_ZipFilePath_Description";
         }
     }
 }

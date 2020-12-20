@@ -27,7 +27,6 @@ namespace Autossential.Activities
         {
             var names = new Dictionary<string, int>();
 
-            // Inputs
             var inputDT = InputDataTable.Get(context);
             if (inputDT.Rows.Count == 0)
                 throw new InvalidOperationException("There is no rows in input data table to promote");

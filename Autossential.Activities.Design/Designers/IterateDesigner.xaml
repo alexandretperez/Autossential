@@ -4,7 +4,7 @@
     xmlns:sa="http://schemas.microsoft.com/netfx/2009/xaml/activities"
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Activities.Design.Controls" xmlns:sapv="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -21,12 +21,26 @@
     
     <Border Padding="4,0" MinWidth="240">
         <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
-            <sap:WorkflowItemPresenter
-                AutomationProperties.AutomationId="Activity"
-                Margin="0"
-                Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
-                AllowedItemType="sa:Activity"
-                HintText="Drop activities here" />
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="For"/>
+                    <sapv:ExpressionTextBox
+                        Grid.Column="0"
+                        ExpressionType="{Binding ModelItem.Properties[Iterations].PropertyType.GenericTypeArguments[0]}"
+                        OwnerActivity="{Binding ModelItem}"
+                        UseLocationExpression="False"
+                        Expression="{Binding ModelItem.Iterations, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                        Width="60"
+                        />
+                    <Label Content="times"/>
+                </StackPanel>
+                <sap:WorkflowItemPresenter
+                    AutomationProperties.AutomationId="Activity"
+                    Margin="0"
+                    Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
+                    AllowedItemType="sa:Activity"
+                    HintText="Drop activities here" />
+            </StackPanel>            
         </c:ActivityDecoratorControl>
     </Border>
     

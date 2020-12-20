@@ -20,7 +20,7 @@ namespace Autossential.Activities
         {
             var value = Value.Get(context);
             if (value < 1)
-                throw new InvalidOperationException(Resources.Decrement_Value_Error);
+                throw new InvalidOperationException(Resources.Decrement_ErrorMsg_MinValue);
 
             Variable.Set(context, Variable.Get(context) - value);
         }

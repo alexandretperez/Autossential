@@ -1,16 +1,20 @@
-﻿using Autossential.Activities.Localization;
+﻿using Autossential.Activities.Base;
+using Autossential.Activities.Localization;
 using Autossential.Activities.Properties;
 using Microsoft.VisualBasic.Activities;
+using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
-    public class Zip : CodeActivity
+    public class Zip : AsyncTaskCodeActivity
     {
         public InArgument ToCompress { get; set; }
 
@@ -35,6 +39,8 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
+            base.CacheMetadata(metadata);
+
             if (ZipFilePath == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(ZipFilePath)));
             if (ToCompress == null)
             {
@@ -50,36 +56,37 @@ namespace Autossential.Activities
             {
                 metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(ToCompress)));
             }
-
-            base.CacheMetadata(metadata);
         }
 
-        protected override void Execute(CodeActivityContext context)
+        protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var toCompress = ToCompress.Get(context);
             var zipFilePath = ZipFilePath.Get(context);
             var encoding = TextEncoding.Get(context);
-
-            if (toCompress is string)
-                toCompress = new string[] { toCompress.ToString() };
-
-            var paths = (IEnumerable<string>)toCompress;
-            var directories = paths.Where(Directory.Exists);
-            var files = paths.Except(directories)
-                .Concat(directories.SelectMany(path => Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories)))
-                .Select(path => new FileInfo(path))
-                .Where(fi => fi.FullName != Path.GetFullPath(zipFilePath));
-
-            var mode = File.Exists(zipFilePath) ? ZipArchiveMode.Update : ZipArchiveMode.Create;
-
             var counter = 0;
-            var allInRoot = files.Select(fi => fi.Directory.FullName).Distinct().Count() == 1;
-            using (var zip = ZipFile.Open(zipFilePath, mode, encoding))
-            {
-                counter = CreateZip(files, allInRoot, zip, mode);
-            }
 
-            FilesCount.Set(context, counter);
+            await Task.Run(() =>
+            {
+                if (toCompress is string)
+                    toCompress = new string[] { toCompress.ToString() };
+
+                var paths = (IEnumerable<string>)toCompress;
+                var directories = paths.Where(Directory.Exists);
+                var files = paths.Except(directories)
+                    .Concat(directories.SelectMany(path => Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories)))
+                    .Select(path => new FileInfo(path))
+                    .Where(fi => fi.FullName != Path.GetFullPath(zipFilePath));
+
+                var mode = File.Exists(zipFilePath) ? ZipArchiveMode.Update : ZipArchiveMode.Create;
+
+                var allInRoot = files.Select(fi => fi.Directory.FullName).Distinct().Count() == 1;
+                using (var zip = ZipFile.Open(zipFilePath, mode, encoding))
+                {
+                    counter = CreateZip(files, allInRoot, zip, mode);
+                }
+            }).ConfigureAwait(false);
+
+            return ctx => FilesCount.Set(ctx, counter);
         }
 
         private int CreateZip(IEnumerable<FileInfo> files, bool allInRoot, ZipArchive zip, ZipArchiveMode mode)

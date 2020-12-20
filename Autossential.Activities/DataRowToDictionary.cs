@@ -13,9 +13,10 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
+            base.CacheMetadata(metadata);
+
             if (InputDataRow == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(InputDataRow)));
             if (OutputDictionary == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(OutputDictionary)));
-            base.CacheMetadata(metadata);
         }
 
         protected override void Execute(CodeActivityContext context)

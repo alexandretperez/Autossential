@@ -30,11 +30,11 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
+            base.CacheMetadata(metadata);
+
             if (FilePath == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(FilePath)));
             if (Interval < MINIMUM_INTERVAL || Interval > MAXIMUM_INTERVAL)
-                metadata.AddValidationError(new ValidationError(Resources.WaitFile_Interval_ErrorFormat(MINIMUM_INTERVAL, MAXIMUM_INTERVAL)));
-
-            base.CacheMetadata(metadata);
+                metadata.AddValidationError(new ValidationError(Resources.WaitFile_ErrorMsg_IntervalRangeFormat(MINIMUM_INTERVAL, MAXIMUM_INTERVAL)));
         }
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)

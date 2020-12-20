@@ -1,6 +1,5 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Properties;
-using Autossential.Security;
 using System.Activities;
 
 namespace Autossential.Activities
@@ -13,26 +12,19 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
-            if (Text == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Text)));
-
             base.CacheMetadata(metadata);
+
+            if (Text == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Text)));
         }
 
         protected override void Execute(CodeActivityContext context)
         {
-            var text = Text.Get(context);
-            var password = Key.Get(context);
-            var encoding = TextEncoding.Get(context);
-            var iterations = Iterations.Get(context);
+            string text = Text.Get(context);
 
-            string result = text;
             if (!string.IsNullOrEmpty(text))
-            {
-                using (var crypto = new Crypto(Algorithm, encoding, iterations))
-                    result = crypto.Encrypt(text, password);
-            }
+                ExecuteCrypto(context, (crypto, key) => text = crypto.Encrypt(text, key));
 
-            Result.Set(context, result);
+            Result.Set(context, text);
         }
     }
 }

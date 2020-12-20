@@ -28,7 +28,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Content="ToCompress" Grid.Row="0"/>
+            <Label Content="ZipFilePath" Grid.Row="0"/>
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 ExpressionType="{Binding ModelItem.Properties[ZipFilePath].PropertyType.GenericTypeArguments[0]}"
@@ -41,7 +41,7 @@
                                         PropertyName="ZipFilePath"
                                         ModelItem="{Binding ModelItem}" />
 
-            <Label Content="ZipFilePath" Grid.Row="2" />
+            <Label Content="ExtractTo" Grid.Row="2" />
             <sapv:ExpressionTextBox
                 Grid.Row="3"
                 ExpressionType="{Binding ModelItem.Properties[ExtractTo].PropertyType.GenericTypeArguments[0]}"

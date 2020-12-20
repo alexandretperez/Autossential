@@ -19,14 +19,16 @@ namespace Autossential.Activities
         [LocalCateg(nameof(Resources.Options_Category))]
         public DataRowValuesMode Mode { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        [LocalCateg(nameof(Resources.RemoveEmptyRows_CustomOptions_Category))]
         public InArgument Columns { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        [LocalCateg(nameof(Resources.RemoveEmptyRows_CustomOptions_Category))]
         public ConditionOperator Operator { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
+            base.CacheMetadata(metadata);
+
             if (InputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(InputDataTable)));
             if (OutputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(OutputDataTable)));
             if (Columns != null)
@@ -43,8 +45,6 @@ namespace Autossential.Activities
                     metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
                 }
             }
-
-            base.CacheMetadata(metadata);
         }
 
         protected override void Execute(CodeActivityContext context)

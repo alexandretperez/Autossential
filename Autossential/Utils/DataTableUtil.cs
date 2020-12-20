@@ -6,7 +6,7 @@ namespace Autossential.Utils
 {
     public static class DataTableUtil
     {
-        public static IEnumerable<int> IdentifyDataColumns(DataTable dataTable, object columns)
+        public static IEnumerable<int> IdentifyDataColumns(DataTable dataTable, object columns, IEnumerable<int> defaultValue = null)
         {
             if (columns is IEnumerable<int> indexes)
             {
@@ -17,6 +17,11 @@ namespace Autossential.Utils
             {
                 foreach (var name in names)
                     yield return dataTable.Columns[name].Ordinal;
+            }
+            else if (defaultValue != null)
+            {
+                foreach (var index in defaultValue)
+                    yield return index;
             }
         }
 
