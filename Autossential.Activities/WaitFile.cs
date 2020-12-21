@@ -19,7 +19,7 @@ namespace Autossential.Activities
         public InArgument<int> Timeout { get; set; } = 30000;
 
         [LocalCateg(nameof(Resources.Options_Category))]
-        public bool WaitForExists { get; set; }
+        public bool WaitForExist { get; set; }
 
         [LocalCateg(nameof(Resources.Options_Category))]
         public int Interval { get; set; } = 500;
@@ -67,7 +67,7 @@ namespace Autossential.Activities
             return Task.Run(() =>
             {
                 var done = false;
-                if (!WaitForExists && !File.Exists(path))
+                if (!WaitForExist && !File.Exists(path))
                     throw new IOException(Resources.WaitFile_ErrorMsg_FilePathDoesNotExists);
 
                 do
