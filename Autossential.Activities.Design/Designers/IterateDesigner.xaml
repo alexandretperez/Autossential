@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource IterateIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
     
-    <Border Padding="4,0" MinWidth="240">
+    <Border Padding="4,0">
         <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">

@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource ContainerIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <Border Padding="4,0" MinWidth="240">
+    <Border Padding="4,0">
         <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
             <sap:WorkflowItemPresenter
                 AutomationProperties.AutomationId="Activity"
@@ -30,4 +30,5 @@
                 />
         </c:ActivityDecoratorControl>
     </Border>
+
 </sap:ActivityDesigner>
