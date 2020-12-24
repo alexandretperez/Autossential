@@ -56,6 +56,10 @@
     <None Remove="Designers\ZipDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
+    <Page Include="PropertyEditors\PropertyEditorResources.xaml">
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
     <None Include="packageIcon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -158,6 +162,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
     <Reference Include="System.Activities.Presentation" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activities" />

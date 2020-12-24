@@ -1,14 +1,15 @@
 ﻿using Autossential.Activities.Localization;
+using Autossential.Activities.Properties;
 using System;
 using System.Activities;
-using System.Activities.Expressions;
-using System.Activities.Statements;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.ExceptionServices;
 
 namespace Autossential.Activities
 {
     [DisplayName("Check Point")]
-    public sealed class CheckPoint : Activity
+    public sealed class CheckPoint : CodeActivity
     {
         [LocalCateg("")]
         public InArgument<bool> Expression { get; set; }
@@ -16,17 +17,34 @@ namespace Autossential.Activities
         [LocalCateg("")]
         public InArgument<Exception> Exception { get; set; }
 
-        public CheckPoint()
+        [LocalCateg("")]
+        [Browsable(true)]
+        public Dictionary<string, InArgument> Data { get; } = new Dictionary<string, InArgument>();
+
+        public bool Teste { get; set; }
+
+        protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
-            Implementation = (() => new If
-            {
-                Condition = new ArgumentValue<bool>(nameof(Expression)),
-                Else = new Throw
-                {
-                    DisplayName = DisplayName,
-                    Exception = new LambdaValue<Exception>(ctx => Exception.Get(ctx))
-                }
-            });
+            base.CacheMetadata(metadata);
+
+            if (Expression == null)
+                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Expression)));
+
+            if (Exception == null)
+                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Exception)));
+        }
+
+        protected override void Execute(CodeActivityContext context)
+        {
+            if (Expression.Get(context))
+                return;
+
+            var ex = Exception.Get(context);
+
+            foreach (var item in Data)
+                ex.Data.Add(item.Key, item.Value.Get(context));
+
+            ExceptionDispatchInfo.Capture(ex).Throw();
         }
     }
 }

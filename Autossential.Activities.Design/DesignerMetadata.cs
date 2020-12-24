@@ -1,9 +1,11 @@
 ﻿using Autossential.Activities.Design.Designers;
+using Autossential.Activities.Design.PropertyEditors;
 using Autossential.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Activities.Presentation.Metadata;
+using System.Activities.Presentation.PropertyEditing;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -59,12 +61,17 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, security, typeof(DecryptDataTable), typeof(DecryptDataTableDesigner));
 
             foreach (var activityType in GetActivities())
-            {
                 ApplyPropertyAttributes(builder, activityType);
-            }
+
+            AddEditorAttributes(builder);
 
             builder.ValidateTable();
             MetadataStore.AddAttributeTable(builder.CreateTable());
+        }
+
+        private void AddEditorAttributes(AttributeTableBuilder builder)
+        {
+            builder.AddCustomAttributes(typeof(CheckPoint), nameof(CheckPoint.Data), new EditorAttribute(typeof(ArgumentDictionaryPropertyEditor), typeof(DialogPropertyValueEditor)));
         }
 
         private static IEnumerable<Type> GetActivities()

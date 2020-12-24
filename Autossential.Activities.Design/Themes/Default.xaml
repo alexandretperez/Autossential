@@ -58,25 +58,3 @@
         </Style.Resources>
     </Style>
 </ResourceDictionary>
-
-<!--
-
-            <Style BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="Button">
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="BorderBrush" Value="#D0D7E2" />
-                <Setter Property="Height" Value="23" />
-            </Style>
-        </Style.Resources>
-    </Style>
-
-    <Style TargetType="{x:Type ComboBox}" x:Key="NonEditableComboboxStyle" BasedOn="{StaticResource {x:Type ComboBox}}">
-        <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
-        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="BorderBrush" Value="#D0D7E2" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Height" Value="23" />
-    </Style>
-</ResourceDictionary>-->
