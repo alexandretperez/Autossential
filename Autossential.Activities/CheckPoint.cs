@@ -21,8 +21,6 @@ namespace Autossential.Activities
         [Browsable(true)]
         public Dictionary<string, InArgument> Data { get; } = new Dictionary<string, InArgument>();
 
-        public bool Teste { get; set; }
-
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
