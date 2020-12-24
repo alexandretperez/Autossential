@@ -5,7 +5,7 @@ using System.Activities;
 
 namespace Autossential.Activities
 {
-    public class Increment : CodeActivity
+    public sealed class Increment : CodeActivity
     {
         public InArgument<int> Value { get; set; }
 

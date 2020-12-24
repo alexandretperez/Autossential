@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Autossential.Activities
 {
     [DisplayName("Encrypt DataTable")]
-    public class EncryptDataTable : CryptographyBaseActivity
+    public sealed class EncryptDataTable : CryptographyBaseActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataTable> OutputDataTable { get; set; }

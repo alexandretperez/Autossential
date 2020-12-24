@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
-    public class Zip : AsyncTaskCodeActivity
+    public sealed class Zip : ContinuableAsyncTaskCodeActivity
     {
         public InArgument ToCompress { get; set; }
 
@@ -82,14 +82,14 @@ namespace Autossential.Activities
                 var allInRoot = files.Select(fi => fi.Directory.FullName).Distinct().Count() == 1;
                 using (var zip = ZipFile.Open(zipFilePath, mode, encoding))
                 {
-                    counter = CreateZip(files, allInRoot, zip, mode);
+                    counter = CreateZip(files, allInRoot, zip, mode, token);
                 }
-            }).ConfigureAwait(false);
+            }, token).ConfigureAwait(false);
 
             return ctx => FilesCount.Set(ctx, counter);
         }
 
-        private int CreateZip(IEnumerable<FileInfo> files, bool allInRoot, ZipArchive zip, ZipArchiveMode mode)
+        private int CreateZip(IEnumerable<FileInfo> files, bool allInRoot, ZipArchive zip, ZipArchiveMode mode, CancellationToken token)
         {
             var dic = new Dictionary<string, int>();
             string Rename(string keyName, string entryName)
@@ -112,6 +112,9 @@ namespace Autossential.Activities
             {
                 foreach (var file in files)
                 {
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+
                     zip.CreateEntryFromFile(file.FullName, renaming ? Rename(file.Name, file.Name) : file.Name, CompressionLevel);
                     counter++;
                 }
@@ -120,6 +123,9 @@ namespace Autossential.Activities
             {
                 foreach (var file in files)
                 {
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+
                     var name = NormalizeName(file);
                     zip.CreateEntryFromFile(file.FullName, renaming ? Rename(name, name) : name, CompressionLevel);
                     counter++;

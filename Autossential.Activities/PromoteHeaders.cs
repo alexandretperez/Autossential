@@ -9,7 +9,7 @@ using System.Data;
 namespace Autossential.Activities
 {
     [DisplayName("Promote Headers")]
-    public class PromoteHeaders : CodeActivity
+    public sealed class PromoteHeaders : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataTable> OutputDataTable { get; set; }

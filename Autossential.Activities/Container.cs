@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace Autossential.Activities
 {
-    public class Container : NativeActivity
+    public sealed class Container : NativeActivity
     {
         [Browsable(false)]
         public ActivityAction Body { get; set; }

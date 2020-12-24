@@ -10,7 +10,7 @@ using System.Linq;
 namespace Autossential.Activities
 {
     [DisplayName("Enumerate Files")]
-    public class EnumerateFiles : CodeActivity
+    public sealed class EnumerateFiles : CodeActivity
     {
         public InArgument Path { get; set; }
         public InArgument SearchPattern { get; set; }

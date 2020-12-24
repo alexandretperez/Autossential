@@ -8,7 +8,7 @@ using System.ComponentModel;
 namespace Autossential.Activities
 {
     [DisplayName("Check Point")]
-    public class CheckPoint : Activity
+    public sealed class CheckPoint : Activity
     {
         [LocalCateg("")]
         public InArgument<bool> Expression { get; set; }

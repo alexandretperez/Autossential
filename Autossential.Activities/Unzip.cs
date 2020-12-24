@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
-    public class Unzip : AsyncTaskCodeActivity
+    public sealed class Unzip : ContinuableAsyncTaskCodeActivity
     {
         public InArgument<string> ZipFilePath { get; set; }
 
@@ -41,6 +41,9 @@ namespace Autossential.Activities
 
                     foreach (var entry in zip.Entries)
                     {
+                        if (token.IsCancellationRequested)
+                            token.ThrowIfCancellationRequested();
+
                         var fullPath = Path.GetFullPath(Path.Combine(dirPath, entry.FullName));
 
                         if (!fullPath.StartsWith(dirPath, StringComparison.OrdinalIgnoreCase))
@@ -60,7 +63,7 @@ namespace Autossential.Activities
                         }
                     }
                 }
-            }).ConfigureAwait(false);
+            }, token).ConfigureAwait(false);
 
             return _ => { };
         }

@@ -6,7 +6,7 @@ using System.ComponentModel;
 namespace Autossential.Activities
 {
     [DisplayName("Encrypt Text")]
-    public class EncryptText : CryptographyBaseActivity
+    public sealed class EncryptText : CryptographyBaseActivity
     {
         public InArgument<string> Text { get; set; }
 

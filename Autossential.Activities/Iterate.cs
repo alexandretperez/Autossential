@@ -6,7 +6,7 @@ using System.Activities.Expressions;
 
 namespace Autossential.Activities
 {
-    public class Iterate : ScopeActivity
+    public sealed class Iterate : ScopeActivity
     {
         public InArgument<int> Iterations { get; set; }
 

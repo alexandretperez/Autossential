@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Autossential.Activities
 {
-    public class Aggregate : CodeActivity
+    public sealed class Aggregate : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataRow> Result { get; set; }

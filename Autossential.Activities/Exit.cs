@@ -4,7 +4,7 @@ using System.Activities.Validation;
 
 namespace Autossential.Activities
 {
-    public class Exit : NativeActivity
+    public sealed class Exit : NativeActivity
     {
         protected override bool CanInduceIdle => true;
 

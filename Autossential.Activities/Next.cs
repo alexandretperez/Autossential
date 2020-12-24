@@ -4,7 +4,7 @@ using System.Activities.Validation;
 
 namespace Autossential.Activities
 {
-    public class Next : NativeActivity
+    public sealed class Next : NativeActivity
     {
         protected override bool CanInduceIdle => true;
 

@@ -12,7 +12,7 @@ using System.Linq;
 namespace Autossential.Activities
 {
     [DisplayName("Remove Empty Rows")]
-    public class RemoveEmptyRows : CodeActivity
+    public sealed class RemoveEmptyRows : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
 

@@ -8,7 +8,7 @@ using System.Linq;
 namespace Autossential.Activities
 {
     [DisplayName("Dictionary To DataTable")]
-    public class DictionaryToDataTable : CodeActivity
+    public sealed class DictionaryToDataTable : CodeActivity
     {
         public InArgument<Dictionary<string, object>> InputDictionary { get; set; }
 

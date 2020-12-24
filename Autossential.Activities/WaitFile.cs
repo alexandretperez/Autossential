@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Autossential.Activities
 {
     [DisplayName("Wait File")]
-    public class WaitFile : ContinuableAsyncTaskCodeActivity
+    public sealed class WaitFile : ContinuableAsyncTaskCodeActivity
     {
         [LocalCateg("")]
         public InArgument<int> Timeout { get; set; } = 30000;

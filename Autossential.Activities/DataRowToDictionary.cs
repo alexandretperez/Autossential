@@ -7,7 +7,7 @@ using System.Data;
 namespace Autossential.Activities
 {
     [DisplayName("DataRow To Dictionary")]
-    public class DataRowToDictionary : CodeActivity
+    public sealed class DataRowToDictionary : CodeActivity
     {
         public InArgument<DataRow> InputDataRow { get; set; }
 
