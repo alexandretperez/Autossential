@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <Version>2.0.0-alpha</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -13,9 +13,11 @@
     <PackageProjectUrl>https://github.com/alexandretperez/Autossential</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandretperez/Autossential</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
-    <PackageTags>Custom Activity Windows Workflow Foundation</PackageTags>
+    <PackageTags>Custom Activity Windows Workflow Foundation UiPath</PackageTags>
     <PackageId>Autossential.Activities</PackageId>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>packageIcon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
@@ -54,6 +56,10 @@
     <None Remove="Designers\ZipDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
+    <None Include="packageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

@@ -31,25 +31,23 @@ xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activiti
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Content="Dictionary" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="Dictionary" Grid.Row="0" Grid.Column="0" />
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 Grid.Column="0"
                 ExpressionType="{Binding ModelItem.Properties[InputDictionary].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                />
+                Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
 
-            <Label Content="DataTable" ContentStringFormat="{}{0} (Output)" Grid.Row="0" Grid.Column="2"/>
+            <Label Content="DataTable" ContentStringFormat="{}{0} (Output)" Grid.Row="0" Grid.Column="2" />
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 Grid.Column="2"
                 ExpressionType="{Binding ModelItem.Properties[OutputDataTable].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
-                Expression="{Binding ModelItem.OutputDataTable, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
-                />
+                Expression="{Binding ModelItem.OutputDataTable, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" />
         </Grid>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

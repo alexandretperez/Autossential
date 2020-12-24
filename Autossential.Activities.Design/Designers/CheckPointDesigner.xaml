@@ -21,20 +21,18 @@
 
     <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
         <StackPanel>
-            <Label Content="Expression"/>
+            <Label Content="Expression" />
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Expression].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.Expression, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                />
-            <Label Content="Exception"/>
+                Expression="{Binding ModelItem.Expression, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+            <Label Content="Exception" />
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Exception].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.Exception, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                />
+                Expression="{Binding ModelItem.Exception, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
         </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

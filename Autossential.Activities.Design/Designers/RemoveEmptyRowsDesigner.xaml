@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Content="DataTable" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="DataTable" Grid.Row="0" Grid.Column="0" />
             <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="0"
                                     ExpressionType="{Binding ModelItem.Properties[InputDataTable].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"
@@ -39,7 +39,7 @@
                                     Expression="{Binding Path=ModelItem.InputDataTable, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </sapv:ExpressionTextBox>
 
-            <Label Content="DataTable" ContentStringFormat="{}{0} (Output)" Grid.Row="0" Grid.Column="2"/>
+            <Label Content="DataTable" ContentStringFormat="{}{0} (Output)" Grid.Row="0" Grid.Column="2" />
             <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="2"
                                     ExpressionType="{Binding ModelItem.Properties[OutputDataTable].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"

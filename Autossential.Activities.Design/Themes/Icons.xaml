@@ -68,7 +68,6 @@
         </GeometryDrawing>
     </DrawingGroup>
 
-
     <DrawingGroup x:Key="IncrementIcon">
         <DrawingGroup.ClipGeometry>
             <RectangleGeometry Rect="0,0,22,20" />
@@ -82,7 +81,6 @@
         </DrawingGroup>
     </DrawingGroup>
 
-
     <DrawingGroup x:Key="DecrementIcon">
         <DrawingGroup.ClipGeometry>
             <RectangleGeometry Rect="0,0,21,20" />
@@ -95,7 +93,7 @@
             </GeometryDrawing>
         </DrawingGroup>
     </DrawingGroup>
-    
+
     <DrawingGroup x:Key="RemoveEmptyRowsIcon">
         <DrawingGroup.ClipGeometry>
             <RectangleGeometry Rect="0,0,24,24" />
@@ -205,7 +203,7 @@
             </GeometryDrawing.Geometry>
         </GeometryDrawing>
     </DrawingGroup>
-    
+
     <DrawingGroup x:Key="DecryptDataTableIcon">
         <DrawingGroup.ClipGeometry>
             <RectangleGeometry Rect="0,0,24,24" />
@@ -237,6 +235,5 @@
                 <PathGeometry FillRule="Nonzero" Figures="M4,5V19L11,12M18,5V19H20V5M11,5V19L18,12" />
             </GeometryDrawing.Geometry>
         </GeometryDrawing>
-    </DrawingGroup>    
-    
+    </DrawingGroup>
 </ResourceDictionary>

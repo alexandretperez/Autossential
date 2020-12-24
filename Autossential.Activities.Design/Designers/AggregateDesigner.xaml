@@ -27,8 +27,7 @@
             ExpressionType="{Binding ModelItem.Properties[InputDataTable].PropertyType.GenericTypeArguments[0]}"
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="False"
-            Expression="{Binding ModelItem.InputDataTable, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-            />
+            Expression="{Binding ModelItem.InputDataTable, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -39,16 +38,15 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Content="Function" Grid.Row="0" Grid.Column="0"/>
+                <Label Content="Function" Grid.Row="0" Grid.Column="0" />
                 <ComboBox Grid.Row="1" Grid.Column="0" x:Name="cbFunction" SelectedValue="{Binding Path=ModelItem.Function, Mode=TwoWay}" />
-                <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2"/>
+                <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2" />
                 <sapv:ExpressionTextBox
                 Grid.Row="1" Grid.Column="2"
                 ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
-                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
-            />
+                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" />
             </Grid>
         </StackPanel>
     </c:ActivityDecoratorControl>

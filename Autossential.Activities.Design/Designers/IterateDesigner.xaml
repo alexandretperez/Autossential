@@ -18,21 +18,20 @@
     <sap:ActivityDesigner.Icon>
         <DrawingBrush Drawing="{StaticResource IterateIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
-    
+
     <Border Padding="4,0">
         <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="For"/>
+                    <Label Content="For" />
                     <sapv:ExpressionTextBox
                         Grid.Column="0"
                         ExpressionType="{Binding ModelItem.Properties[Iterations].PropertyType.GenericTypeArguments[0]}"
                         OwnerActivity="{Binding ModelItem}"
                         UseLocationExpression="False"
                         Expression="{Binding ModelItem.Iterations, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                        Width="60"
-                        />
-                    <Label Content="times"/>
+                        Width="60" />
+                    <Label Content="times" />
                 </StackPanel>
                 <sap:WorkflowItemPresenter
                     AutomationProperties.AutomationId="Activity"
@@ -40,8 +39,7 @@
                     Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
                     AllowedItemType="sa:Activity"
                     HintText="Drop activities here" />
-            </StackPanel>            
+            </StackPanel>
         </c:ActivityDecoratorControl>
     </Border>
-    
 </sap:ActivityDesigner>

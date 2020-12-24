@@ -6,10 +6,10 @@
     xmlns:c="clr-namespace:Autossential.Activities.Design.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Icons.xaml"/>
+        <ResourceDictionary Source="Icons.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="c:ActivityDecoratorControl" x:Key="ActivityDecoratorStyle" >
+    <Style TargetType="c:ActivityDecoratorControl" x:Key="ActivityDecoratorStyle">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="c:ActivityDecoratorControl">
@@ -39,7 +39,7 @@
                                     </Style.Triggers>
                                 </Style>
                             </Grid.Style>
-                            <ContentPresenter/>
+                            <ContentPresenter />
                         </Grid>
                     </Grid>
                 </ControlTemplate>
@@ -48,18 +48,15 @@
 
         <Style.Resources>
             <Style TargetType="sapv:ExpressionTextBox">
-                <Setter Property="Height" Value="23"/>
-                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                <Setter Property="MaxLines" Value="1"/>
+                <Setter Property="Height" Value="23" />
+                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                <Setter Property="MaxLines" Value="1" />
             </Style>
             <Style TargetType="ComboBox">
-                <Setter Property="Height" Value="23"/>
+                <Setter Property="Height" Value="23" />
             </Style>
         </Style.Resources>
-        
     </Style>
-
-
 </ResourceDictionary>
 
 <!--
@@ -73,15 +70,13 @@
     </Style>
 
     <Style TargetType="{x:Type ComboBox}" x:Key="NonEditableComboboxStyle" BasedOn="{StaticResource {x:Type ComboBox}}">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
-        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="BorderBrush" Value="#D0D7E2"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="#D0D7E2" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Height" Value="23" />
     </Style>
-
-
 </ResourceDictionary>-->

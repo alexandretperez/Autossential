@@ -6,7 +6,6 @@ using System.Activities;
 using System.Activities.Presentation.Metadata;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection;
 
@@ -118,7 +117,7 @@ namespace Autossential.Activities.Design
                     }
                 }
 
-                if (!attrs.Any(attr=>attr is LocalDescriptionAttribute))
+                if (!attrs.Any(attr => attr is LocalDescriptionAttribute))
                 {
                     var key = $"{activityType.Name}_{prop.Name}_Description";
                     if (Resources.ResourceManager.GetString(key) != null)
@@ -148,7 +147,7 @@ namespace Autossential.Activities.Design
         private void AddCustomAttributes(AttributeTableBuilder builder, CategoryAttribute category, Type activityType, Type designerType)
         {
             builder.AddCustomAttributes(activityType, category);
-            builder.AddCustomAttributes(activityType, new DesignerAttribute(designerType));            
+            builder.AddCustomAttributes(activityType, new DesignerAttribute(designerType));
         }
     }
 }

@@ -16,5 +16,4 @@
     <sap:ActivityDesigner.Icon>
         <DrawingBrush Drawing="{StaticResource NextIcon}"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
-    
 </sap:ActivityDesigner>

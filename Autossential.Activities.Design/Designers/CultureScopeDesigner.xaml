@@ -19,14 +19,13 @@
         <DrawingBrush Drawing="{StaticResource CultureScopeIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    
     <Border Padding="4,0">
         <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
             <StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <sapv:ExpressionTextBox
                         Grid.Column="0"
@@ -37,18 +36,16 @@
                         Expression="{Binding ModelItem.CultureName, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Right"
                         Width="70"
-                        EditorLostLogicalFocus="ExpressionTextBox_EditorLostLogicalFocus"
-                        />
-                    <Label Content="..." Grid.Column="1" Name="CultureLabel" Foreground="#999999" Loaded="CultureLabel_Loaded"/>
+                        EditorLostLogicalFocus="ExpressionTextBox_EditorLostLogicalFocus" />
+                    <Label Content="..." Grid.Column="1" Name="CultureLabel" Foreground="#999999" Loaded="CultureLabel_Loaded" />
                 </Grid>
-                
+
                 <sap:WorkflowItemPresenter
                     AutomationProperties.AutomationId="Activity"
                     Margin="0"
                     Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
                     AllowedItemType="sa:Activity"
-                    HintText="Drop activities here"
-                    />
+                    HintText="Drop activities here" />
             </StackPanel>
         </c:ActivityDecoratorControl>
     </Border>
