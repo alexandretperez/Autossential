@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Aggregate_Columns_Description" xml:space="preserve">
-    <value>The column indexes or column names to apply the aggregation</value>
+    <value>The column indexes or column names to apply the aggregation. If not specified, the aggregation will be applied in all possible columns</value>
     <comment>property description</comment>
   </data>
   <data name="Aggregate_Description" xml:space="preserve">
-    <value>Provides aggregate functions for data table</value>
+    <value>Aggregates the data of a DataTable by the specified aggregate function</value>
     <comment>activity description</comment>
   </data>
   <data name="Aggregate_Detached_Description" xml:space="preserve">
@@ -138,7 +138,7 @@
     <comment>property description</comment>
   </data>
   <data name="Aggregate_Result_Description" xml:space="preserve">
-    <value>The aggregate data row</value>
+    <value>The aggregate DataRow</value>
     <comment>property description</comment>
   </data>
   <data name="CheckPoint_Description" xml:space="preserve">
@@ -157,16 +157,24 @@
     <value>Common</value>
     <comment>category</comment>
   </data>
+  <data name="Common_ContinueOnError" xml:space="preserve">
+    <value>If set, continue executing the remaining activities even if the current activity has failed</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Common_Timeout" xml:space="preserve">
+    <value>Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s)</value>
+    <comment>property description</comment>
+  </data>
   <data name="Container_Description" xml:space="preserve">
     <value>Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand</value>
     <comment>activity description</comment>
   </data>
   <data name="CultureScope_CultureName_Description" xml:space="preserve">
-    <value>The desired culture, eg.: en-US, pt-BR, jp-JP, etc.</value>
+    <value>The desired culture, eg.: en-US, pt-BR, jp-JP, etc</value>
     <comment>property description</comment>
   </data>
   <data name="CultureScope_Description" xml:space="preserve">
-    <value>Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results.</value>
+    <value>Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results</value>
     <comment>activity description</comment>
   </data>
   <data name="DataRowToDictionary_Description" xml:space="preserve">
@@ -174,11 +182,11 @@
     <comment>activity description</comment>
   </data>
   <data name="DataRowToDictionary_InputDataRow_Description" xml:space="preserve">
-    <value>The input data row</value>
+    <value>The input DataRow</value>
     <comment>property description</comment>
   </data>
   <data name="DataRowToDictionary_OutputDictionary_Description" xml:space="preserve">
-    <value>The output dictionary</value>
+    <value>The output Dictionary</value>
     <comment>property description</comment>
   </data>
   <data name="Decrement_Description" xml:space="preserve">
@@ -206,7 +214,7 @@
     <comment>property description</comment>
   </data>
   <data name="DecryptDataTable_Description" xml:space="preserve">
-    <value>Decrypts the data of a DataTable</value>
+    <value>Decrypts the data of a DataTable using the specified algorithm and key</value>
     <comment>activity description</comment>
   </data>
   <data name="DecryptDataTable_InputDataTable_Description" xml:space="preserve">
@@ -270,11 +278,11 @@
     <comment>activity description</comment>
   </data>
   <data name="DictionaryToDataTable_InputDictionary_Description" xml:space="preserve">
-    <value>The input dictionary</value>
+    <value>The input Dictionary</value>
     <comment>property description</comment>
   </data>
   <data name="DictionaryToDataTable_OutputDataTable_Description" xml:space="preserve">
-    <value>The output data table</value>
+    <value>The output DataTable</value>
     <comment>property description</comment>
   </data>
   <data name="EncryptDataTable_Algorithm_Description" xml:space="preserve">
@@ -290,7 +298,7 @@
     <comment>property description</comment>
   </data>
   <data name="EncryptDataTable_Description" xml:space="preserve">
-    <value>Encrypts the data of a DataTable</value>
+    <value>Encrypts the data of a DataTable using the specified algorithm and key</value>
     <comment>activity description</comment>
   </data>
   <data name="EncryptDataTable_InputDataTable_Description" xml:space="preserve">
@@ -354,31 +362,31 @@
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_Description" xml:space="preserve">
-    <value>Returns an enumerable collection of file names that match the provided search patterns and directories. Optionally also searches into subdirectories.</value>
+    <value>Returns an enumerable collection of full file names that match a search pattern (or collection of patterns) and enumeration options in a specified path (or collection of paths)</value>
     <comment>activity description</comment>
   </data>
   <data name="EnumerateFiles_Exclusions_Description" xml:space="preserve">
-    <value>Excludes from the enumeration the files with any of the specified attributes.</value>
+    <value>Excludes from the enumeration the files with any of the specified attributes</value>
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_Path_Description" xml:space="preserve">
-    <value>The relative or absolute path (or collection of paths) to the directory (or directories) to search.</value>
+    <value>The relative or absolute path (or collection of paths) to the directory (or directories) to search</value>
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_Result_Description" xml:space="preserve">
-    <value>An enumerable collection of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern and option.</value>
+    <value>An enumerable collection of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern and option</value>
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_SearchOption_Description" xml:space="preserve">
-    <value>One of the enumeration values that specifies whether the search operation should include only the current directory or should include all subdirectories.</value>
+    <value>Specifies whether the search operation should include only the current directory or should include all subdirectories</value>
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_SearchPattern_Description" xml:space="preserve">
-    <value>The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.</value>
+    <value>The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings</value>
     <comment>property description</comment>
   </data>
   <data name="Exit_Description" xml:space="preserve">
-    <value>Exits from the Container Activity interrupting any child executions after it.</value>
+    <value>Exits from the Container or Iterate Activities interrupting any child executions after it</value>
     <comment>activity description</comment>
   </data>
   <data name="Increment_Description" xml:space="preserve">
@@ -406,7 +414,7 @@
     <comment>category</comment>
   </data>
   <data name="Iterate_Description" xml:space="preserve">
-    <value>Iterates the activity execution for the specified number of times.</value>
+    <value>Iterates the activity execution for the specified number of times</value>
     <comment>activity description</comment>
   </data>
   <data name="Iterate_ErrorMsg_IterationsMinValue" xml:space="preserve">
@@ -414,7 +422,7 @@
     <comment>error message</comment>
   </data>
   <data name="Iterate_Index_Description" xml:space="preserve">
-    <value>The zero-based iteration index.</value>
+    <value>The zero-based iteration index</value>
     <comment>property description</comment>
   </data>
   <data name="Iterate_Iterations_Description" xml:space="preserve">
@@ -422,7 +430,7 @@
     <comment>property description</comment>
   </data>
   <data name="Next_Description" xml:space="preserve">
-    <value>Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration.</value>
+    <value>Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration</value>
     <comment>activity description</comment>
   </data>
   <data name="Options_Category" xml:space="preserve">
@@ -434,19 +442,19 @@
     <comment>category</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
-    <value>When true, it avoids the "column name already belongs to DataTable" error by adding a numeric suffix to it.</value>
+    <value>When true, it avoids the "column name already belongs to DataTable" error by adding a numeric suffix to it</value>
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_Description" xml:space="preserve">
-    <value>Promotes the first row of values to new column headers.</value>
+    <value>Promotes the first row of values to new column headers</value>
     <comment>activity description</comment>
   </data>
   <data name="PromoteHeaders_InputDataTable_Description" xml:space="preserve">
-    <value>The input datatable</value>
+    <value>The input DataTable</value>
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_OutputDataTable_Description" xml:space="preserve">
-    <value>The output datatable</value>
+    <value>The output DataTable</value>
     <comment>property description</comment>
   </data>
   <data name="Reference_Category" xml:space="preserve">
@@ -462,15 +470,15 @@
     <comment>category</comment>
   </data>
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
-    <value>Removes the empty rows from a data table</value>
+    <value>Removes the empty rows from a DataTable</value>
     <comment>activity description</comment>
   </data>
   <data name="RemoveEmptyRows_InputDataTable_Description" xml:space="preserve">
-    <value>The data table</value>
+    <value>The input DataTable</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_Mode_Description" xml:space="preserve">
-    <value>Determines when a row should be removed. (All) means that all columns of must be empty to remove the row. (Any) for any column empty and (Custom) to the user defined rules</value>
+    <value>Determines when a row should be removed. (All) means that all columns must be empty to remove the row. (Any) for any column empty and (Custom) for the user defined rules</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_Operator_Description" xml:space="preserve">
@@ -478,11 +486,11 @@
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_OutputDataTable_Description" xml:space="preserve">
-    <value>The result data table</value>
+    <value>The output DataTable</value>
     <comment>property description</comment>
   </data>
   <data name="Unzip_Description" xml:space="preserve">
-    <value>Decompress files from a zip archive.</value>
+    <value>Decompress files from a zip archive</value>
     <comment>activity description</comment>
   </data>
   <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
@@ -494,15 +502,15 @@
     <comment>error message</comment>
   </data>
   <data name="Unzip_ExtractTo_Description" xml:space="preserve">
-    <value>Path to the folder where files will be extracted.</value>
+    <value>The path to the folder where files will be extracted</value>
     <comment>property description</comment>
   </data>
   <data name="Unzip_Overwrite_Description" xml:space="preserve">
-    <value>When true, overwrites an existing file that has the same name as the destination file.</value>
+    <value>When true, overwrites an existing file that has the same name as the destination file</value>
     <comment>property description</comment>
   </data>
   <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
-    <value>The compressed file.</value>
+    <value>The compressed file</value>
     <comment>property description</comment>
   </data>
   <data name="Validation_ScopeError" xml:space="preserve">
@@ -518,7 +526,7 @@
     <comment>validation</comment>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
-    <value>Waits till the file be available.</value>
+    <value>Waits until the file be available</value>
     <comment>activity description</comment>
   </data>
   <data name="WaitFile_ErrorMsg_FilePathDoesNotExists" xml:space="preserve">
@@ -530,19 +538,23 @@
     <comment>error message</comment>
   </data>
   <data name="WaitFile_FileInfo_Description" xml:space="preserve">
-    <value>(Optional) Returns the information about the file.</value>
+    <value>(Optional) Returns the information about the file</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
-    <value>The storage path of the file.</value>
+    <value>The storage path of the file</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Interval_Description" xml:space="preserve">
-    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-30000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
+    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-30000 milliseconds is reseted to its nearest limit. The default value is 500</value>
+    <comment>property description</comment>
+  </data>
+  <data name="WaitFile_Timeout_Description" xml:space="preserve">
+    <value>The maximum timeout to wait in milliseconds</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
-    <value>Waits until the file exists.</value>
+    <value>Waits until the file exists</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_AutoRenaming_Description" xml:space="preserve">
@@ -554,23 +566,23 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_Description" xml:space="preserve">
-    <value>Compress files into a zip archive.</value>
+    <value>Compress files into a zip archive</value>
     <comment>activity description</comment>
   </data>
   <data name="Zip_FilesCount_Description" xml:space="preserve">
-    <value>Returns the amount of files added to zip archive.</value>
+    <value>Returns the amount of files added to zip archive</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_TextEncoding_Description" xml:space="preserve">
-    <value>The encoding to use when writing entry names in this archive. Specify a value for this parameter only when an encoding is required for interoperability with zip archive tools and libraries that do not support UTF-8 encoding for entry names.</value>
+    <value>The encoding to use when writing entry names in this archive. Specify a value for this parameter only when an encoding is required for interoperability with zip archive tools and libraries that do not support UTF-8 encoding for entry names</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_ToCompress_Description" xml:space="preserve">
-    <value>Path of the file(s) or folder(s) that will be compressed. Can be a string or a collection of strings.</value>
+    <value>The path of the file(s) or folder(s) that will be compressed. Can be a string or a collection of strings</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_ZipFilePath_Description" xml:space="preserve">
-    <value>Path of the zip archive.</value>
+    <value>The path of the zip archive</value>
     <comment>property description</comment>
   </data>
 </root>

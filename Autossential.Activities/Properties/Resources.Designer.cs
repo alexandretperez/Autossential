@@ -87,7 +87,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The column indexes or column names to apply the aggregation'.
+        /// Looks up a localized string similar to 'The column indexes or column names to apply the aggregation. If not specified, the aggregation will be applied in all possible columns'.
         /// </summary>
         public static string Aggregate_Columns_Description {
             get {
@@ -96,7 +96,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Provides aggregate functions for data table'.
+        /// Looks up a localized string similar to 'Aggregates the data of a DataTable by the specified aggregate function'.
         /// </summary>
         public static string Aggregate_Description {
             get {
@@ -132,7 +132,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The aggregate data row'.
+        /// Looks up a localized string similar to 'The aggregate DataRow'.
         /// </summary>
         public static string Aggregate_Result_Description {
             get {
@@ -177,6 +177,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'If set, continue executing the remaining activities even if the current activity has failed'.
+        /// </summary>
+        public static string Common_ContinueOnError {
+            get {
+                return ResourceManager.GetString(ResourceNames.Common_ContinueOnError, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s)'.
+        /// </summary>
+        public static string Common_Timeout {
+            get {
+                return ResourceManager.GetString(ResourceNames.Common_Timeout, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand'.
         /// </summary>
         public static string Container_Description {
@@ -186,7 +204,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The desired culture, eg.: en-US, pt-BR, jp-JP, etc.'.
+        /// Looks up a localized string similar to 'The desired culture, eg.: en-US, pt-BR, jp-JP, etc'.
         /// </summary>
         public static string CultureScope_CultureName_Description {
             get {
@@ -195,7 +213,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results.'.
+        /// Looks up a localized string similar to 'Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results'.
         /// </summary>
         public static string CultureScope_Description {
             get {
@@ -213,7 +231,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The input data row'.
+        /// Looks up a localized string similar to 'The input DataRow'.
         /// </summary>
         public static string DataRowToDictionary_InputDataRow_Description {
             get {
@@ -222,7 +240,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The output dictionary'.
+        /// Looks up a localized string similar to 'The output Dictionary'.
         /// </summary>
         public static string DataRowToDictionary_OutputDictionary_Description {
             get {
@@ -285,7 +303,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Decrypts the data of a DataTable'.
+        /// Looks up a localized string similar to 'Decrypts the data of a DataTable using the specified algorithm and key'.
         /// </summary>
         public static string DecryptDataTable_Description {
             get {
@@ -429,7 +447,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The input dictionary'.
+        /// Looks up a localized string similar to 'The input Dictionary'.
         /// </summary>
         public static string DictionaryToDataTable_InputDictionary_Description {
             get {
@@ -438,7 +456,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The output data table'.
+        /// Looks up a localized string similar to 'The output DataTable'.
         /// </summary>
         public static string DictionaryToDataTable_OutputDataTable_Description {
             get {
@@ -474,7 +492,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Encrypts the data of a DataTable'.
+        /// Looks up a localized string similar to 'Encrypts the data of a DataTable using the specified algorithm and key'.
         /// </summary>
         public static string EncryptDataTable_Description {
             get {
@@ -618,7 +636,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Returns an enumerable collection of file names that match the provided search patterns and directories. Optionally also searches into subdirectories.'.
+        /// Looks up a localized string similar to 'Returns an enumerable collection of full file names that match a search pattern (or collection of patterns) and enumeration options in a specified path (or collection of paths)'.
         /// </summary>
         public static string EnumerateFiles_Description {
             get {
@@ -627,7 +645,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Excludes from the enumeration the files with any of the specified attributes.'.
+        /// Looks up a localized string similar to 'Excludes from the enumeration the files with any of the specified attributes'.
         /// </summary>
         public static string EnumerateFiles_Exclusions_Description {
             get {
@@ -636,7 +654,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The relative or absolute path (or collection of paths) to the directory (or directories) to search.'.
+        /// Looks up a localized string similar to 'The relative or absolute path (or collection of paths) to the directory (or directories) to search'.
         /// </summary>
         public static string EnumerateFiles_Path_Description {
             get {
@@ -645,7 +663,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'An enumerable collection of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern and option.'.
+        /// Looks up a localized string similar to 'An enumerable collection of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern and option'.
         /// </summary>
         public static string EnumerateFiles_Result_Description {
             get {
@@ -654,7 +672,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'One of the enumeration values that specifies whether the search operation should include only the current directory or should include all subdirectories.'.
+        /// Looks up a localized string similar to 'Specifies whether the search operation should include only the current directory or should include all subdirectories'.
         /// </summary>
         public static string EnumerateFiles_SearchOption_Description {
             get {
@@ -663,7 +681,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions.'.
+        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions. It also supports a collection of strings'.
         /// </summary>
         public static string EnumerateFiles_SearchPattern_Description {
             get {
@@ -672,7 +690,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Exits from the Container Activity interrupting any child executions after it.'.
+        /// Looks up a localized string similar to 'Exits from the Container or Iterate Activities interrupting any child executions after it'.
         /// </summary>
         public static string Exit_Description {
             get {
@@ -735,7 +753,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Iterates the activity execution for the specified number of times.'.
+        /// Looks up a localized string similar to 'Iterates the activity execution for the specified number of times'.
         /// </summary>
         public static string Iterate_Description {
             get {
@@ -753,7 +771,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The zero-based iteration index.'.
+        /// Looks up a localized string similar to 'The zero-based iteration index'.
         /// </summary>
         public static string Iterate_Index_Description {
             get {
@@ -771,7 +789,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration.'.
+        /// Looks up a localized string similar to 'Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration'.
         /// </summary>
         public static string Next_Description {
             get {
@@ -798,7 +816,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'When true, it avoids the &quot;column name already belongs to DataTable&quot; error by adding a numeric suffix to it.'.
+        /// Looks up a localized string similar to 'When true, it avoids the &quot;column name already belongs to DataTable&quot; error by adding a numeric suffix to it'.
         /// </summary>
         public static string PromoteHeaders_AutoRename_Description {
             get {
@@ -807,7 +825,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Promotes the first row of values to new column headers.'.
+        /// Looks up a localized string similar to 'Promotes the first row of values to new column headers'.
         /// </summary>
         public static string PromoteHeaders_Description {
             get {
@@ -816,7 +834,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The input datatable'.
+        /// Looks up a localized string similar to 'The input DataTable'.
         /// </summary>
         public static string PromoteHeaders_InputDataTable_Description {
             get {
@@ -825,7 +843,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The output datatable'.
+        /// Looks up a localized string similar to 'The output DataTable'.
         /// </summary>
         public static string PromoteHeaders_OutputDataTable_Description {
             get {
@@ -861,7 +879,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Removes the empty rows from a data table'.
+        /// Looks up a localized string similar to 'Removes the empty rows from a DataTable'.
         /// </summary>
         public static string RemoveEmptyRows_Description {
             get {
@@ -870,7 +888,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The data table'.
+        /// Looks up a localized string similar to 'The input DataTable'.
         /// </summary>
         public static string RemoveEmptyRows_InputDataTable_Description {
             get {
@@ -879,7 +897,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Determines when a row should be removed. (All) means that all columns of must be empty to remove the row. (Any) for any column empty and (Custom) to the user defined rules'.
+        /// Looks up a localized string similar to 'Determines when a row should be removed. (All) means that all columns must be empty to remove the row. (Any) for any column empty and (Custom) for the user defined rules'.
         /// </summary>
         public static string RemoveEmptyRows_Mode_Description {
             get {
@@ -897,7 +915,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The result data table'.
+        /// Looks up a localized string similar to 'The output DataTable'.
         /// </summary>
         public static string RemoveEmptyRows_OutputDataTable_Description {
             get {
@@ -906,7 +924,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Decompress files from a zip archive.'.
+        /// Looks up a localized string similar to 'Decompress files from a zip archive'.
         /// </summary>
         public static string Unzip_Description {
             get {
@@ -933,7 +951,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Path to the folder where files will be extracted.'.
+        /// Looks up a localized string similar to 'The path to the folder where files will be extracted'.
         /// </summary>
         public static string Unzip_ExtractTo_Description {
             get {
@@ -942,7 +960,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'When true, overwrites an existing file that has the same name as the destination file.'.
+        /// Looks up a localized string similar to 'When true, overwrites an existing file that has the same name as the destination file'.
         /// </summary>
         public static string Unzip_Overwrite_Description {
             get {
@@ -951,7 +969,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The compressed file.'.
+        /// Looks up a localized string similar to 'The compressed file'.
         /// </summary>
         public static string Unzip_ZipFilePath_Description {
             get {
@@ -987,7 +1005,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Waits till the file be available.'.
+        /// Looks up a localized string similar to 'Waits until the file be available'.
         /// </summary>
         public static string WaitFile_Description {
             get {
@@ -1014,7 +1032,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to '(Optional) Returns the information about the file.'.
+        /// Looks up a localized string similar to '(Optional) Returns the information about the file'.
         /// </summary>
         public static string WaitFile_FileInfo_Description {
             get {
@@ -1023,7 +1041,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The storage path of the file.'.
+        /// Looks up a localized string similar to 'The storage path of the file'.
         /// </summary>
         public static string WaitFile_FilePath_Description {
             get {
@@ -1032,7 +1050,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-30000 milliseconds is reseted to its nearest limit. The default value is 500.'.
+        /// Looks up a localized string similar to 'Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-30000 milliseconds is reseted to its nearest limit. The default value is 500'.
         /// </summary>
         public static string WaitFile_Interval_Description {
             get {
@@ -1041,7 +1059,16 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Waits until the file exists.'.
+        /// Looks up a localized string similar to 'The maximum timeout to wait in milliseconds'.
+        /// </summary>
+        public static string WaitFile_Timeout_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.WaitFile_Timeout_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Waits until the file exists'.
         /// </summary>
         public static string WaitFile_WaitForExist_Description {
             get {
@@ -1068,7 +1095,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Compress files into a zip archive.'.
+        /// Looks up a localized string similar to 'Compress files into a zip archive'.
         /// </summary>
         public static string Zip_Description {
             get {
@@ -1077,7 +1104,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Returns the amount of files added to zip archive.'.
+        /// Looks up a localized string similar to 'Returns the amount of files added to zip archive'.
         /// </summary>
         public static string Zip_FilesCount_Description {
             get {
@@ -1086,7 +1113,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The encoding to use when writing entry names in this archive. Specify a value for this parameter only when an encoding is required for interoperability with zip archive tools and libraries that do not support UTF-8 encoding for entry names.'.
+        /// Looks up a localized string similar to 'The encoding to use when writing entry names in this archive. Specify a value for this parameter only when an encoding is required for interoperability with zip archive tools and libraries that do not support UTF-8 encoding for entry names'.
         /// </summary>
         public static string Zip_TextEncoding_Description {
             get {
@@ -1095,7 +1122,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Path of the file(s) or folder(s) that will be compressed. Can be a string or a collection of strings.'.
+        /// Looks up a localized string similar to 'The path of the file(s) or folder(s) that will be compressed. Can be a string or a collection of strings'.
         /// </summary>
         public static string Zip_ToCompress_Description {
             get {
@@ -1104,7 +1131,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Path of the zip archive.'.
+        /// Looks up a localized string similar to 'The path of the zip archive'.
         /// </summary>
         public static string Zip_ZipFilePath_Description {
             get {
@@ -1204,6 +1231,16 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Common_Category'.
             /// </summary>
             public const string Common_Category = "Common_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'Common_ContinueOnError'.
+            /// </summary>
+            public const string Common_ContinueOnError = "Common_ContinueOnError";
+            
+            /// <summary>
+            /// Stores the resource name 'Common_Timeout'.
+            /// </summary>
+            public const string Common_Timeout = "Common_Timeout";
             
             /// <summary>
             /// Stores the resource name 'Container_Description'.
@@ -1684,6 +1721,11 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'WaitFile_Interval_Description'.
             /// </summary>
             public const string WaitFile_Interval_Description = "WaitFile_Interval_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'WaitFile_Timeout_Description'.
+            /// </summary>
+            public const string WaitFile_Timeout_Description = "WaitFile_Timeout_Description";
             
             /// <summary>
             /// Stores the resource name 'WaitFile_WaitForExist_Description'.

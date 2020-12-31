@@ -16,6 +16,7 @@ namespace Autossential.Activities
     public sealed class WaitFile : ContinuableAsyncTaskCodeActivity
     {
         [LocalCateg("")]
+        [LocalDescription(nameof(Resources.Common_Timeout))]
         public InArgument<int> Timeout { get; set; } = 30000;
 
         [LocalCateg(nameof(Resources.Options_Category))]

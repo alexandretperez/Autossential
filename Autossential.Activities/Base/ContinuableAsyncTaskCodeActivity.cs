@@ -10,6 +10,7 @@ namespace Autossential.Activities.Base
     public abstract class ContinuableAsyncTaskCodeActivity : AsyncTaskCodeActivity
     {
         [LocalCateg(nameof(Resources.Common_Category))]
+        [LocalDescription(nameof(Resources.Common_ContinueOnError))]
         public InArgument<bool> ContinueOnError { get; set; }
 
         protected override IAsyncResult BeginExecute(AsyncCodeActivityContext context, AsyncCallback callback, object state)
