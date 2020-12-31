@@ -141,6 +141,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'A collection of key/value pairs that provide additional user-defined information about the exception'.
+        /// </summary>
+        public static string CheckPoint_Data_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CheckPoint_Data_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Checks if a given expression is true, if not, thrown the specified exception'.
         /// </summary>
         public static string CheckPoint_Description {
@@ -1211,6 +1220,11 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Aggregate_Result_Description'.
             /// </summary>
             public const string Aggregate_Result_Description = "Aggregate_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CheckPoint_Data_Description'.
+            /// </summary>
+            public const string CheckPoint_Data_Description = "CheckPoint_Data_Description";
             
             /// <summary>
             /// Stores the resource name 'CheckPoint_Description'.
