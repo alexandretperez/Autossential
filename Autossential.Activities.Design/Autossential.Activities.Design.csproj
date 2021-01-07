@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Description>A set of custom activities designed to work with the RPA tool UiPath or any other based on Windows Workflow Foundation.</Description>
+    <Description>A set of very useful activities separated by categories.</Description>
     <Authors>Alexandre Toledo Perez</Authors>
     <Company>Alexandre Toledo Perez</Company>
     <Copyright>© 2020 Alexandre Toledo Perez</Copyright>

@@ -143,6 +143,7 @@
   </data>
   <data name="CheckPoint_Data_Description" xml:space="preserve">
     <value>A collection of key/value pairs that provide additional user-defined information about the exception</value>
+    <comment>property description</comment>
   </data>
   <data name="CheckPoint_Description" xml:space="preserve">
     <value>Checks if a given expression is true, if not, thrown the specified exception</value>
