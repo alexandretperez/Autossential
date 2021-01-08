@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource DataRowToDictionaryIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MaxWidth="300">
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

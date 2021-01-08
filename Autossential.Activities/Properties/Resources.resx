@@ -433,6 +433,10 @@
     <value>The number of iterations that must be run</value>
     <comment>property description</comment>
   </data>
+  <data name="Iterate_Reverse_Description" xml:space="preserve">
+    <value>Reverses the order of the output index</value>
+    <comment>property description</comment>
+  </data>
   <data name="Next_Description" xml:space="preserve">
     <value>Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration</value>
     <comment>activity description</comment>
@@ -492,6 +496,22 @@
   <data name="RemoveEmptyRows_OutputDataTable_Description" xml:space="preserve">
     <value>The output DataTable</value>
     <comment>property description</comment>
+  </data>
+  <data name="Stopwatch_Description" xml:space="preserve">
+    <value>Provides a set of methods and properties that you can use to accurately measure elapsed time</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Stopwatch_Method_Description" xml:space="preserve">
+    <value>Determines which method must be invoked by activity</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Stopwatch_StopwatchObj_Description" xml:space="preserve">
+    <value>A variable that represents the instance the System.Diagnostics.Stopwatch class</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Stopwatch_StopwatchObj_DisplayName" xml:space="preserve">
+    <value>Stopwatch</value>
+    <comment>property name</comment>
   </data>
   <data name="Unzip_Description" xml:space="preserve">
     <value>Decompress files from a zip archive</value>

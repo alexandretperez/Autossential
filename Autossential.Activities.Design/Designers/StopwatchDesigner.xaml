@@ -1,0 +1,36 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.StopwatchDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:c="clr-namespace:Autossential.Activities.Design.Controls">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource StopwatchIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="220">
+
+        <StackPanel>
+            <Label Content="Stopwatch (In/Out)"/>
+            <sapv:ExpressionTextBox
+                ExpressionType="{Binding ModelItem.Properties[StopwatchObj].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="True"
+                Expression="{Binding ModelItem.StopwatchObj, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}}"
+                />
+            <ComboBox Name="cbMethods" SelectedValue="{Binding Path=ModelItem.Method, Mode=TwoWay}" Margin="0,10,0,0"/>
+        </StackPanel>
+
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

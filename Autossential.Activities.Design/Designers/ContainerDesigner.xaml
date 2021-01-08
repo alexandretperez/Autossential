@@ -20,7 +20,7 @@
     </sap:ActivityDesigner.Icon>
 
     <Border Padding="4,0">
-        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MinWidth="300">
             <sap:WorkflowItemPresenter
                 AutomationProperties.AutomationId="Activity"
                 Margin="0"

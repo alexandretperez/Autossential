@@ -30,7 +30,6 @@
                             <Grid.Style>
                                 <Style>
                                     <Setter Property="Grid.Visibility" Value="Visible" />
-                                    <Setter Property="Grid.MinWidth" Value="300" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="False">
                                             <Setter Property="Grid.Visibility" Value="Collapsed" />

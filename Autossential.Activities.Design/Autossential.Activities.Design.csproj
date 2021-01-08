@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -51,11 +51,15 @@
     <None Remove="Designers\NextDesigner.xaml" />
     <None Remove="Designers\PromoteHeadersDesigner.xaml" />
     <None Remove="Designers\RemoveEmptyRowsDesigner.xaml" />
+    <None Remove="Designers\StopwatchDesigner.xaml" />
     <None Remove="Designers\UnzipDesigner.xaml" />
     <None Remove="Designers\WaitFileDesigner.xaml" />
     <None Remove="Designers\ZipDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
+    <Page Include="Designers\StopwatchDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
     <Page Include="PropertyEditors\PropertyEditorResources.xaml">
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

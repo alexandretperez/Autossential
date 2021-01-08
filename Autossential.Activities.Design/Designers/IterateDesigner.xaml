@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="../Themes/Default.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </sap:ActivityDesigner.Resources>
 
@@ -20,19 +21,26 @@
     </sap:ActivityDesigner.Icon>
 
     <Border Padding="4,0">
-        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MinWidth="300">
             <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="For" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="For" Grid.Column="0" />
                     <sapv:ExpressionTextBox
-                        Grid.Column="0"
+                        Grid.Column="1"
                         ExpressionType="{Binding ModelItem.Properties[Iterations].PropertyType.GenericTypeArguments[0]}"
                         OwnerActivity="{Binding ModelItem}"
                         UseLocationExpression="False"
                         Expression="{Binding ModelItem.Iterations, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                        Width="60" />
-                    <Label Content="times" />
-                </StackPanel>
+                        HintText="# number of"/>
+                    <Label Content="times" Grid.Column="2" />
+                    <Label Content="Reverse Index" Grid.Column="3" Foreground="Gray" Visibility="{Binding ModelItem.Reverse, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Right" />
+                </Grid>
                 <sap:WorkflowItemPresenter
                     AutomationProperties.AutomationId="Activity"
                     Margin="0"

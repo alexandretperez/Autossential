@@ -798,6 +798,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Reverses the order of the output index'.
+        /// </summary>
+        public static string Iterate_Reverse_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Iterate_Reverse_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration'.
         /// </summary>
         public static string Next_Description {
@@ -929,6 +938,42 @@ namespace Autossential.Activities.Properties {
         public static string RemoveEmptyRows_OutputDataTable_Description {
             get {
                 return ResourceManager.GetString(ResourceNames.RemoveEmptyRows_OutputDataTable_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Provides a set of methods and properties that you can use to accurately measure elapsed time'.
+        /// </summary>
+        public static string Stopwatch_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Stopwatch_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Determines which method must be invoked by activity'.
+        /// </summary>
+        public static string Stopwatch_Method_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Stopwatch_Method_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'A variable that represents the instance the System.Diagnostics.Stopwatch class'.
+        /// </summary>
+        public static string Stopwatch_StopwatchObj_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.Stopwatch_StopwatchObj_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Stopwatch'.
+        /// </summary>
+        public static string Stopwatch_StopwatchObj_DisplayName {
+            get {
+                return ResourceManager.GetString(ResourceNames.Stopwatch_StopwatchObj_DisplayName, _resourceCulture);
             }
         }
         
@@ -1587,6 +1632,11 @@ namespace Autossential.Activities.Properties {
             public const string Iterate_Iterations_Description = "Iterate_Iterations_Description";
             
             /// <summary>
+            /// Stores the resource name 'Iterate_Reverse_Description'.
+            /// </summary>
+            public const string Iterate_Reverse_Description = "Iterate_Reverse_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Next_Description'.
             /// </summary>
             public const string Next_Description = "Next_Description";
@@ -1660,6 +1710,26 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'RemoveEmptyRows_OutputDataTable_Description'.
             /// </summary>
             public const string RemoveEmptyRows_OutputDataTable_Description = "RemoveEmptyRows_OutputDataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_Description'.
+            /// </summary>
+            public const string Stopwatch_Description = "Stopwatch_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_Method_Description'.
+            /// </summary>
+            public const string Stopwatch_Method_Description = "Stopwatch_Method_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_StopwatchObj_Description'.
+            /// </summary>
+            public const string Stopwatch_StopwatchObj_Description = "Stopwatch_StopwatchObj_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_StopwatchObj_DisplayName'.
+            /// </summary>
+            public const string Stopwatch_StopwatchObj_DisplayName = "Stopwatch_StopwatchObj_DisplayName";
             
             /// <summary>
             /// Stores the resource name 'Unzip_Description'.

@@ -1,4 +1,5 @@
 ﻿using Autossential.Activities.Base;
+using Autossential.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
@@ -11,6 +12,9 @@ namespace Autossential.Activities
         public InArgument<int> Iterations { get; set; }
 
         public OutArgument<int> Index { get; set; }
+
+        [LocalCateg(nameof(Resources.Output_Category))]
+        public bool Reverse { get; set; }
 
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
@@ -43,7 +47,7 @@ namespace Autossential.Activities
 
         private void ExecuteNext(NativeActivityContext context)
         {
-            Index.Set(context, _index);
+            Index.Set(context, Reverse ? _iterations - 1 - _index: _index);
             context.ScheduleAction(Body, OnIterateCompleted);
         }
 

@@ -22,6 +22,7 @@ namespace Autossential.Activities.Design
         public const string PROGRAMMING_CATEGORY = MAIN_CATEGORY + ".Programming";
         public const string WORKFLOW_CATEGORY = MAIN_CATEGORY + ".Workflow";
         public const string SECURITY_CATEGORY = MAIN_CATEGORY + ".Security";
+        public const string DIAGNOSTICS_CATEGORY = MAIN_CATEGORY + ".Diagnostics";
 
         public void Register()
         {
@@ -60,6 +61,10 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, security, typeof(EncryptDataTable), typeof(EncryptDataTableDesigner));
             AddCustomAttributes(builder, security, typeof(DecryptDataTable), typeof(DecryptDataTableDesigner));
 
+
+            var diagnostics = new CategoryAttribute(DIAGNOSTICS_CATEGORY);
+            AddCustomAttributes(builder, diagnostics, typeof(Stopwatch), typeof(StopwatchDesigner));
+
             foreach (var activityType in GetActivities())
                 ApplyPropertyAttributes(builder, activityType);
 
@@ -97,6 +102,7 @@ namespace Autossential.Activities.Design
             yield return typeof(DecryptDataTable);
             yield return typeof(Zip);
             yield return typeof(Unzip);
+            yield return typeof(Stopwatch);
         }
 
         private void ApplyPropertyAttributes(AttributeTableBuilder builder, Type activityType)
@@ -114,7 +120,12 @@ namespace Autossential.Activities.Design
 
                 if (!attrs.Any(attr => attr is LocalDisplayNameAttribute))
                 {
-                    if (prop.Name.StartsWith("Input") && prop.Name.Length > 5)
+                    var key = $"{activityType.Name}_{prop.Name}_DisplayName";
+                    if (Resources.ResourceManager.GetString(key) != null)
+                    {
+                        builder.AddCustomAttributes(activityType, prop, new LocalDisplayNameAttribute(key));
+                    }
+                    else if (prop.Name.StartsWith("Input") && prop.Name.Length > 5)
                     {
                         builder.AddCustomAttributes(activityType, prop, new LocalDisplayNameAttribute(prop.Name.Substring(5)));
                     }
