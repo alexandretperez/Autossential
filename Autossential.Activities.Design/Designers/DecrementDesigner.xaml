@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource DecrementIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MaxWidth="300">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

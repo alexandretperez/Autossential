@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource DecryptTextIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MaxWidth="300">
         <Grid Width="300">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
