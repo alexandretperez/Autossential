@@ -506,7 +506,7 @@
     <comment>property description</comment>
   </data>
   <data name="Stopwatch_StopwatchObj_Description" xml:space="preserve">
-    <value>A variable that represents the instance the System.Diagnostics.Stopwatch class</value>
+    <value>A variable that represents the instance of System.Diagnostics.Stopwatch class</value>
     <comment>property description</comment>
   </data>
   <data name="Stopwatch_StopwatchObj_DisplayName" xml:space="preserve">

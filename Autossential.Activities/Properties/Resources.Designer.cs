@@ -960,7 +960,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'A variable that represents the instance the System.Diagnostics.Stopwatch class'.
+        /// Looks up a localized string similar to 'A variable that represents the instance of System.Diagnostics.Stopwatch class'.
         /// </summary>
         public static string Stopwatch_StopwatchObj_Description {
             get {
