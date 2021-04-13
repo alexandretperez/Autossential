@@ -47,7 +47,7 @@ namespace Autossential.Activities
 
         private void ExecuteNext(NativeActivityContext context)
         {
-            Index.Set(context, Reverse ? _iterations - 1 - _index: _index);
+            Index.Set(context, Reverse ? _iterations - 1 - _index : _index);
             context.ScheduleAction(Body, OnIterateCompleted);
         }
 

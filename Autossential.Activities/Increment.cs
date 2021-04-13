@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Properties;
-using Microsoft.VisualBasic.Activities;
 using System;
 using System.Activities;
 
@@ -13,7 +12,7 @@ namespace Autossential.Activities
 
         public Increment()
         {
-            Value = new VisualBasicValue<int>("1");
+            Value = new InArgument<int>(1);
         }
 
         protected override void Execute(CodeActivityContext context)

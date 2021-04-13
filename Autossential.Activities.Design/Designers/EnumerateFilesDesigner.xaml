@@ -32,7 +32,7 @@ xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activiti
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.Path, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                Grid.Row="0" />
+                Grid.Row="0" Margin="0,0,23,0" />
             <c:FolderPickerControl Grid.Row="0" HorizontalAlignment="Right" PropertyName="Path" ModelItem="{Binding ModelItem}" />
             <Label Content="SearchPattern" Grid.Row="1" />
             <sapv:ExpressionTextBox

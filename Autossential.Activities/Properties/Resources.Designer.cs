@@ -852,6 +852,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Replaces an empty column name by the value of this property'.
+        /// </summary>
+        public static string PromoteHeaders_EmptyColumnName_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.PromoteHeaders_EmptyColumnName_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The input DataTable'.
         /// </summary>
         public static string PromoteHeaders_InputDataTable_Description {
@@ -1660,6 +1669,11 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'PromoteHeaders_Description'.
             /// </summary>
             public const string PromoteHeaders_Description = "PromoteHeaders_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_EmptyColumnName_Description'.
+            /// </summary>
+            public const string PromoteHeaders_EmptyColumnName_Description = "PromoteHeaders_EmptyColumnName_Description";
             
             /// <summary>
             /// Stores the resource name 'PromoteHeaders_InputDataTable_Description'.

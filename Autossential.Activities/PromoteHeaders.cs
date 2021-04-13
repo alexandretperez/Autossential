@@ -2,6 +2,7 @@
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,19 +16,35 @@ namespace Autossential.Activities
         public OutArgument<DataTable> OutputDataTable { get; set; }
 
         [LocalCateg(nameof(Resources.Options_Category))]
-        public bool AutoRename { get; set; }
+        public bool AutoRename { get; set; } = true;
+
+        [LocalCateg(nameof(Resources.Options_Category))]
+        public InArgument<string> EmptyColumnName { get; set; } = new InArgument<string>("Empty");
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             if (InputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(InputDataTable)));
             if (OutputDataTable == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(OutputDataTable)));
-
+            if (EmptyColumnName == null)
+            {
+                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(EmptyColumnName)));
+            }
+            else
+            {
+                if (EmptyColumnName.Expression is Literal<string> prop && string.IsNullOrEmpty(prop.Value))
+                {
+                    metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(EmptyColumnName)));
+                }
+            }
+            
+            
             base.CacheMetadata(metadata);
         }
 
         protected override void Execute(CodeActivityContext context)
         {
             var names = new Dictionary<string, int>();
+            var emptyName = EmptyColumnName.Get(context);
 
             var inputDT = InputDataTable.Get(context);
             if (inputDT.Rows.Count == 0)
@@ -37,11 +54,16 @@ namespace Autossential.Activities
 
             var row = outputDT.Rows[0];
 
+            string getName(string firstRowValue)
+            {
+                return string.IsNullOrEmpty(firstRowValue) ? emptyName : firstRowValue;
+            }
+
             if (AutoRename)
             {
                 foreach (DataColumn col in outputDT.Columns)
                 {
-                    var name = row[col.ColumnName].ToString();
+                    var name = getName(row[col.ColumnName].ToString());
                     if (names.ContainsKey(name))
                     {
                         names[name]++;
@@ -58,7 +80,7 @@ namespace Autossential.Activities
             else
             {
                 foreach (DataColumn col in outputDT.Columns)
-                    col.ColumnName = row[col.ColumnName].ToString();
+                    col.ColumnName = getName(row[col.ColumnName].ToString());
             }
 
             outputDT.Rows.Remove(row);

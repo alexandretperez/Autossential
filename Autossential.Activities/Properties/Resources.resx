@@ -457,6 +457,10 @@
     <value>Promotes the first row of values to new column headers</value>
     <comment>activity description</comment>
   </data>
+  <data name="PromoteHeaders_EmptyColumnName_Description" xml:space="preserve">
+    <value>Replaces an empty column name by the value of this property</value>
+    <comment>property description</comment>
+  </data>
   <data name="PromoteHeaders_InputDataTable_Description" xml:space="preserve">
     <value>The input DataTable</value>
     <comment>property description</comment>
