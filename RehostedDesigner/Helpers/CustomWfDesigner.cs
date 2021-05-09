@@ -5,7 +5,6 @@ using System;
 using System.Activities.Core.Presentation;
 using System.Activities.Presentation;
 using System.Activities.Presentation.View;
-using System.Activities.Statements;
 
 namespace RehostedWorkflowDesigner.Helpers
 {
@@ -77,7 +76,7 @@ namespace RehostedWorkflowDesigner.Helpers
         public static void NewInstanceCSharp(string sourceFile = _defaultWorkflowCSharp)
         {
             _expressionEditorService = new RoslynExpressionEditorService();
-            ExpressionTextBox.RegisterExpressionActivityEditor(new CSharpValue<string>().Language, typeof(RoslynExpressionEditor), CSharpExpressionHelper.CreateExpressionFromString);            
+            ExpressionTextBox.RegisterExpressionActivityEditor(new CSharpValue<string>().Language, typeof(RoslynExpressionEditor), CSharpExpressionHelper.CreateExpressionFromString);
 
             _wfDesigner = new WorkflowDesigner();
             _wfDesigner.Context.Services.GetService<DesignerConfigurationService>().TargetFrameworkName = new System.Runtime.Versioning.FrameworkName(".NETFramework", new Version(4, 5));
@@ -88,7 +87,7 @@ namespace RehostedWorkflowDesigner.Helpers
             new DesignerMetadata().Register();
 
             //load Workflow Xaml
-            _wfDesigner.Load(sourceFile);           
+            _wfDesigner.Load(sourceFile);
         }
     }
 }

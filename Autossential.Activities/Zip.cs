@@ -1,7 +1,6 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Localization;
 using Autossential.Activities.Properties;
-using Microsoft.VisualBasic.Activities;
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -34,7 +33,7 @@ namespace Autossential.Activities
 
         public Zip()
         {
-            TextEncoding = new VisualBasicValue<Encoding>($"{typeof(Encoding).FullName}.{nameof(Encoding.UTF8)}");
+            TextEncoding = ExpressionServiceLanguage.Current.CreateExpression<Encoding>($"{typeof(Encoding).FullName}.{nameof(Encoding.UTF8)}");
         }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

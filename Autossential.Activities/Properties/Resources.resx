@@ -585,6 +585,14 @@
     <value>Waits until the file exists</value>
     <comment>property description</comment>
   </data>
+  <data name="ZipEntriesCount_EntriesCount_Description" xml:space="preserve">
+    <value>The number of entries contained in the zip archive</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ZipEntriesCount_ZipFilePath_Description" xml:space="preserve">
+    <value>The path of the zip archive</value>
+    <comment>property description</comment>
+  </data>
   <data name="Zip_AutoRenaming_Description" xml:space="preserve">
     <value>When true, renames the entry if the entry's name already exists in zip archive. It uses the pattern &lt;entry&gt;.&lt;counter&gt;.&lt;extension&gt;</value>
     <comment>property description</comment>

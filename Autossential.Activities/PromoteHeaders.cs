@@ -36,8 +36,8 @@ namespace Autossential.Activities
                     metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(EmptyColumnName)));
                 }
             }
-            
-            
+
+
             base.CacheMetadata(metadata);
         }
 

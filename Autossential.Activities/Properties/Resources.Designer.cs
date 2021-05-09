@@ -1203,6 +1203,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'The number of entries contained in the zip archive'.
+        /// </summary>
+        public static string ZipEntriesCount_EntriesCount_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ZipEntriesCount_EntriesCount_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The path of the zip archive'.
+        /// </summary>
+        public static string ZipEntriesCount_ZipFilePath_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ZipEntriesCount_ZipFilePath_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Formats a localized string similar to 'Cannot be used outside of {0} activity'.
         /// </summary>
         /// <param name="arg0">An object (0) to format.</param>
@@ -1864,6 +1882,16 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Zip_ZipFilePath_Description'.
             /// </summary>
             public const string Zip_ZipFilePath_Description = "Zip_ZipFilePath_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_EntriesCount_Description'.
+            /// </summary>
+            public const string ZipEntriesCount_EntriesCount_Description = "ZipEntriesCount_EntriesCount_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_ZipFilePath_Description'.
+            /// </summary>
+            public const string ZipEntriesCount_ZipFilePath_Description = "ZipEntriesCount_ZipFilePath_Description";
         }
     }
 }

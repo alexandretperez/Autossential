@@ -2,7 +2,6 @@
 using Autossential.Activities.Properties;
 using Autossential.Enums;
 using Autossential.Security;
-using Microsoft.VisualBasic.Activities;
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -27,8 +26,8 @@ namespace Autossential.Activities.Base
 
         protected CryptographyBaseActivity()
         {
-            TextEncoding = new VisualBasicValue<Encoding>($"{typeof(Encoding).FullName}.{nameof(Encoding.UTF8)}");
-            Iterations = new VisualBasicValue<int>("1000");
+            TextEncoding = ExpressionServiceLanguage.Current.CreateExpression<Encoding>($"{typeof(Encoding).FullName}.{nameof(Encoding.UTF8)}");
+            Iterations = new InArgument<int>(1000);
         }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

@@ -3,18 +3,15 @@ using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Highlighting;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.VisualBasic;
 using RehostedWorkflowDesigner.Helpers;
 using System;
-using System.Activities.Presentation.Model;
 using System.Activities.Presentation.View;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace RehostedWorkflowDesigner.VbExpressionEditor
 {
@@ -52,8 +49,8 @@ Public Class NotAProgram
 Private Sub SomeMethod()
 "
 + "var blah = ";
-           
-         string endString = @" 
+
+                    string endString = @" 
 
         End Sub
     End Class

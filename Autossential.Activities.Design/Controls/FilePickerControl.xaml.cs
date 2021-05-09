@@ -1,5 +1,4 @@
 ﻿using Autossential.Utils;
-using Microsoft.VisualBasic.Activities;
 using Microsoft.Win32;
 using System;
 using System.Activities;
@@ -78,12 +77,11 @@ namespace Autossential.Activities.Design.Controls
                     return;
                 }
 
-                var paths = files.Select(path => $"\"{IOUtil.GetRelativePath(ofd.InitialDirectory, path)}\"");
+                var expr = string.Join(", ", files.Select(path => $"\"{IOUtil.GetRelativePath(ofd.InitialDirectory, path)}\""));
 
-                ModelItem.Properties[PropertyName].SetValue(new InArgument<IEnumerable<string>>(new VisualBasicValue<IEnumerable<string>>
-                {
-                    ExpressionText = $"{{{string.Join(", ", paths)}}}"
-                }));
+                var code = ExpressionServiceLanguage.Current.CreateExpression<IEnumerable<string>>($"{{{expr}}}", $"new [] {{{expr}}}");
+
+                ModelItem.Properties[PropertyName].SetValue(new InArgument<IEnumerable<string>>(code));
             }
         }
     }

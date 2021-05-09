@@ -42,6 +42,7 @@ namespace Autossential.Activities.Design
             var fileCompression = new CategoryAttribute(FILE_COMPRESSION_CATEGORY);
             AddCustomAttributes(builder, fileCompression, typeof(Zip), typeof(ZipDesigner));
             AddCustomAttributes(builder, fileCompression, typeof(Unzip), typeof(UnzipDesigner));
+            AddCustomAttributes(builder, fileCompression, typeof(ZipEntriesCount), typeof(ZipEntriesCountDesigner));
 
             var workflow = new CategoryAttribute(WORKFLOW_CATEGORY);
             AddCustomAttributes(builder, workflow, typeof(Exit), typeof(ExitDesigner));
@@ -102,6 +103,7 @@ namespace Autossential.Activities.Design
             yield return typeof(DecryptDataTable);
             yield return typeof(Zip);
             yield return typeof(Unzip);
+            yield return typeof(ZipEntriesCount);
             yield return typeof(Stopwatch);
         }
 

@@ -55,9 +55,13 @@
     <None Remove="Designers\UnzipDesigner.xaml" />
     <None Remove="Designers\WaitFileDesigner.xaml" />
     <None Remove="Designers\ZipDesigner.xaml" />
+    <None Remove="Designers\ZipEntriesCountDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
     <Page Include="Designers\StopwatchDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\ZipEntriesCountDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="PropertyEditors\PropertyEditorResources.xaml">
