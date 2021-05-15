@@ -91,6 +91,10 @@ namespace RehostedWorkflowDesigner.CSharpExpressionEditor
 
                     var stringTypeSymbol = (INamedTypeSymbol)literalInfo.Type;
                     IList<ISymbol> symbols = new List<ISymbol>() { };
+
+                    if (stringTypeSymbol == null)
+                        return;
+
                     foreach (var s in (from method in stringTypeSymbol.GetMembers() where method.DeclaredAccessibility == Accessibility.Public select method).Distinct())
                         symbols.Add(s);
 

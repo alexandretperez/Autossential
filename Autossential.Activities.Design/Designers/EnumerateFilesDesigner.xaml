@@ -39,7 +39,7 @@ xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activiti
                 ExpressionType="{Binding ModelItem.Properties[SearchPattern].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                HintText="(Optional) Default is *.*"
+                HintText='(Optional) Default value is "*.*"'
                 Expression="{Binding ModelItem.SearchPattern, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
                 Grid.Row="2" />
         </Grid>

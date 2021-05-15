@@ -1,5 +1,6 @@
 ﻿using Autossential.Activities.Localization;
 using Autossential.Activities.Properties;
+using Autossential.Extensions;
 using System.Activities;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +30,8 @@ namespace Autossential.Activities
 
         protected override void Execute(CodeActivityContext context)
         {
-            var path = Path.Get(context);
-            var criteria = SearchPattern?.Get(context) ?? "*.*";
-
-            var directories = ResolveValues(path);
-            var patterns = ResolveValues(criteria);
+            var directories = Path.GetAsArray<string>(context);
+            var patterns = SearchPattern?.GetAsArray<string>(context) ?? new[] { "*.*" };
 
             IEnumerable<string> result = new string[] { };
             foreach (var directory in directories)
@@ -51,24 +49,6 @@ namespace Autossential.Activities
             Result.Set(context, result);
         }
 
-        private HashSet<string> ResolveValues(object value)
-        {
-            var unique = new HashSet<string>();
-            if (value is string[] valueArray)
-            {
-                foreach (var val in valueArray)
-                {
-                    unique.Add(val);
-                }
-            }
-            else
-            {
-                unique.Add((string)value);
-            }
-
-            return unique;
-        }
-
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
@@ -77,7 +57,7 @@ namespace Autossential.Activities
             {
                 metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Path)));
             }
-            else if (IsStringOrCollectionOfString(Path))
+            else if (Path.IsStringOrCollectionOfString())
             {
                 var argument = new RuntimeArgument(nameof(Path), Path.ArgumentType, ArgumentDirection.In, true);
                 metadata.Bind(Path, argument);
@@ -90,7 +70,7 @@ namespace Autossential.Activities
 
             if (SearchPattern != null)
             {
-                if (IsStringOrCollectionOfString(SearchPattern))
+                if (SearchPattern.IsStringOrCollectionOfString())
                 {
                     var argument = new RuntimeArgument(nameof(SearchPattern), SearchPattern.ArgumentType, ArgumentDirection.In, true);
                     metadata.Bind(SearchPattern, argument);
@@ -101,11 +81,6 @@ namespace Autossential.Activities
                     metadata.AddValidationError("Invalid format");
                 }
             }
-        }
-
-        private bool IsStringOrCollectionOfString(InArgument arg)
-        {
-            return arg.ArgumentType == typeof(string) || typeof(IEnumerable<string>).IsAssignableFrom(arg.ArgumentType);
         }
     }
 }

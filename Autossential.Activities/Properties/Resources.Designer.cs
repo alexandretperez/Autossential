@@ -177,6 +177,51 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Determines if the left empty folders after files deletion must also be deleted. Default is true'.
+        /// </summary>
+        public static string CleanUpFolder_DeleteEmptyFolders_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CleanUpFolder_DeleteEmptyFolders_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The folder path to be cleaned up'.
+        /// </summary>
+        public static string CleanUpFolder_Folder_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CleanUpFolder_Folder_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Deletes only the files with last write time till this reference date. Default is DateTime.Now'.
+        /// </summary>
+        public static string CleanUpFolder_LastWriteTime_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CleanUpFolder_LastWriteTime_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'An object containing the number of files deleted, folders deleted and total deleted'.
+        /// </summary>
+        public static string CleanUpFolder_Result_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CleanUpFolder_Result_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions. It also supports a collection of strings. Default value is &quot;*.*&quot;'.
+        /// </summary>
+        public static string CleanUpFolder_SearchPattern_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.CleanUpFolder_SearchPattern_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Common'.
         /// </summary>
         public static string Common_Category {
@@ -690,7 +735,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions. It also supports a collection of strings'.
+        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions. It also supports a collection of strings. Default value is &quot;*.*&quot;'.
         /// </summary>
         public static string EnumerateFiles_SearchPattern_Description {
             get {
@@ -884,6 +929,24 @@ namespace Autossential.Activities.Properties {
         public static string Reference_Category {
             get {
                 return ResourceManager.GetString(ResourceNames.Reference_Category, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The column names or column indexes to be removed. Can be either a collection of string or int'.
+        /// </summary>
+        public static string RemoveDataColumns_Columns_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveDataColumns_Columns_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The DataTable object from which the columns is to be removed'.
+        /// </summary>
+        public static string RemoveDataColumns_DataTable_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveDataColumns_DataTable_Description, _resourceCulture);
             }
         }
         
@@ -1314,6 +1377,31 @@ namespace Autossential.Activities.Properties {
             public const string CheckPoint_Expression_Description = "CheckPoint_Expression_Description";
             
             /// <summary>
+            /// Stores the resource name 'CleanUpFolder_DeleteEmptyFolders_Description'.
+            /// </summary>
+            public const string CleanUpFolder_DeleteEmptyFolders_Description = "CleanUpFolder_DeleteEmptyFolders_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_Folder_Description'.
+            /// </summary>
+            public const string CleanUpFolder_Folder_Description = "CleanUpFolder_Folder_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_LastWriteTime_Description'.
+            /// </summary>
+            public const string CleanUpFolder_LastWriteTime_Description = "CleanUpFolder_LastWriteTime_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_Result_Description'.
+            /// </summary>
+            public const string CleanUpFolder_Result_Description = "CleanUpFolder_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_SearchPattern_Description'.
+            /// </summary>
+            public const string CleanUpFolder_SearchPattern_Description = "CleanUpFolder_SearchPattern_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Common_Category'.
             /// </summary>
             public const string Common_Category = "Common_Category";
@@ -1707,6 +1795,16 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'Reference_Category'.
             /// </summary>
             public const string Reference_Category = "Reference_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveDataColumns_Columns_Description'.
+            /// </summary>
+            public const string RemoveDataColumns_Columns_Description = "RemoveDataColumns_Columns_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveDataColumns_DataTable_Description'.
+            /// </summary>
+            public const string RemoveDataColumns_DataTable_Description = "RemoveDataColumns_DataTable_Description";
             
             /// <summary>
             /// Stores the resource name 'RemoveEmptyRows_Columns_Description'.

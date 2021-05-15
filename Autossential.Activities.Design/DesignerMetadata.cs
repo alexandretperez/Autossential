@@ -34,10 +34,12 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, dataTable, typeof(DataRowToDictionary), typeof(DataRowToDictionaryDesigner));
             AddCustomAttributes(builder, dataTable, typeof(DictionaryToDataTable), typeof(DictionaryToDataTableDesigner));
             AddCustomAttributes(builder, dataTable, typeof(RemoveEmptyRows), typeof(RemoveEmptyRowsDesigner));
+            AddCustomAttributes(builder, dataTable, typeof(RemoveDataColumns), typeof(RemoveDataColumnsDesigner));
 
             var file = new CategoryAttribute(FILE_CATEGORY);
             AddCustomAttributes(builder, file, typeof(WaitFile), typeof(WaitFileDesigner));
             AddCustomAttributes(builder, file, typeof(EnumerateFiles), typeof(EnumerateFilesDesigner));
+            AddCustomAttributes(builder, file, typeof(CleanUpFolder), typeof(CleanUpFolderDesigner));
 
             var fileCompression = new CategoryAttribute(FILE_COMPRESSION_CATEGORY);
             AddCustomAttributes(builder, fileCompression, typeof(Zip), typeof(ZipDesigner));
@@ -62,7 +64,6 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, security, typeof(EncryptDataTable), typeof(EncryptDataTableDesigner));
             AddCustomAttributes(builder, security, typeof(DecryptDataTable), typeof(DecryptDataTableDesigner));
 
-
             var diagnostics = new CategoryAttribute(DIAGNOSTICS_CATEGORY);
             AddCustomAttributes(builder, diagnostics, typeof(Stopwatch), typeof(StopwatchDesigner));
 
@@ -83,28 +84,30 @@ namespace Autossential.Activities.Design
         private static IEnumerable<Type> GetActivities()
         {
             yield return typeof(Aggregate);
-            yield return typeof(PromoteHeaders);
+            yield return typeof(CheckPoint);
+            yield return typeof(CleanUpFolder);
+            yield return typeof(Container);
+            yield return typeof(CultureScope);
             yield return typeof(DataRowToDictionary);
+            yield return typeof(Decrement);
+            yield return typeof(DecryptDataTable);
+            yield return typeof(DecryptText);
             yield return typeof(DictionaryToDataTable);
-            yield return typeof(RemoveEmptyRows);
-            yield return typeof(WaitFile);
+            yield return typeof(EncryptDataTable);
+            yield return typeof(EncryptText);
             yield return typeof(EnumerateFiles);
             yield return typeof(Exit);
-            yield return typeof(Next);
-            yield return typeof(Container);
-            yield return typeof(CheckPoint);
-            yield return typeof(Iterate);
             yield return typeof(Increment);
-            yield return typeof(Decrement);
-            yield return typeof(CultureScope);
-            yield return typeof(EncryptText);
-            yield return typeof(EncryptDataTable);
-            yield return typeof(DecryptText);
-            yield return typeof(DecryptDataTable);
-            yield return typeof(Zip);
-            yield return typeof(Unzip);
-            yield return typeof(ZipEntriesCount);
+            yield return typeof(Iterate);
+            yield return typeof(Next);
+            yield return typeof(PromoteHeaders);
+            yield return typeof(RemoveDataColumns);
+            yield return typeof(RemoveEmptyRows);
             yield return typeof(Stopwatch);
+            yield return typeof(Unzip);
+            yield return typeof(WaitFile);
+            yield return typeof(Zip);
+            yield return typeof(ZipEntriesCount);
         }
 
         private void ApplyPropertyAttributes(AttributeTableBuilder builder, Type activityType)

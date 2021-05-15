@@ -157,6 +157,26 @@
     <value>The expression to be evaluated</value>
     <comment>property description</comment>
   </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+    <value>Determines if the left empty folders after files deletion must also be deleted. Default is true</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+    <value>The folder path to be cleaned up</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+    <value>Deletes only the files with last write time till this reference date. Default is DateTime.Now</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_Result_Description" xml:space="preserve">
+    <value>An object containing the number of files deleted, folders deleted and total deleted</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_SearchPattern_Description" xml:space="preserve">
+    <value>The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*"</value>
+    <comment>property description</comment>
+  </data>
   <data name="Common_Category" xml:space="preserve">
     <value>Common</value>
     <comment>category</comment>
@@ -386,7 +406,7 @@
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_SearchPattern_Description" xml:space="preserve">
-    <value>The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings</value>
+    <value>The search string to match against the names of files in path. This parameter  can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*"</value>
     <comment>property description</comment>
   </data>
   <data name="Exit_Description" xml:space="preserve">
@@ -472,6 +492,14 @@
   <data name="Reference_Category" xml:space="preserve">
     <value>Reference</value>
     <comment>category</comment>
+  </data>
+  <data name="RemoveDataColumns_Columns_Description" xml:space="preserve">
+    <value>The column names or column indexes to be removed. Can be either a collection of string or int</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>The DataTable object from which the columns is to be removed</value>
+    <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_Columns_Description" xml:space="preserve">
     <value>The column indexes or column names to verify</value>

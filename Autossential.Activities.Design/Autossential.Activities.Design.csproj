@@ -2,11 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <Version>2.0.2</Version>
+    <Version>2.0.3-alpha</Version>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Description>A set of very useful activities separated by categories.</Description>
+    <Description>
+      Provides a collection of activities that helps to handle with different data types and resources. 
+      The package is categorized by DataTable, File, Programming, Workflow, Security and Diagnostics.
+    </Description>
     <Authors>Alexandre Toledo Perez</Authors>
     <Company>Alexandre Toledo Perez</Company>
     <Copyright>© 2020 Alexandre Toledo Perez</Copyright>
@@ -35,6 +38,7 @@
     <None Remove="Controls\FolderPickerControl.xaml" />
     <None Remove="Designers\AggregateDesigner.xaml" />
     <None Remove="Designers\CheckPointDesigner.xaml" />
+    <None Remove="Designers\CleanUpFolderDesigner.xaml" />
     <None Remove="Designers\ContainerDesigner.xaml" />
     <None Remove="Designers\CultureScopeDesigner.xaml" />
     <None Remove="Designers\DataRowToDictionaryDesigner.xaml" />
@@ -50,6 +54,7 @@
     <None Remove="Designers\IterateDesigner.xaml" />
     <None Remove="Designers\NextDesigner.xaml" />
     <None Remove="Designers\PromoteHeadersDesigner.xaml" />
+    <None Remove="Designers\RemoveDataColumnsDesigner.xaml" />
     <None Remove="Designers\RemoveEmptyRowsDesigner.xaml" />
     <None Remove="Designers\StopwatchDesigner.xaml" />
     <None Remove="Designers\UnzipDesigner.xaml" />
@@ -58,6 +63,12 @@
     <None Remove="Designers\ZipEntriesCountDesigner.xaml" />
     <None Remove="Themes\Default.xaml" />
     <None Remove="Themes\Icons.xaml" />
+    <Page Include="Designers\CleanUpFolderDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\RemoveDataColumnsDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
     <Page Include="Designers\StopwatchDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
