@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <Version>2.0.3-alpha</Version>
+    <Version>2.0.3</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
-    <PackageVersion>2.0.1.$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
+    <PackageVersion>2.0.3.$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
   </PropertyGroup>
 
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
@@ -55,6 +55,7 @@
     <None Remove="Designers\NextDesigner.xaml" />
     <None Remove="Designers\PromoteHeadersDesigner.xaml" />
     <None Remove="Designers\RemoveDataColumnsDesigner.xaml" />
+    <None Remove="Designers\RemoveDuplicateRowsDesigner.xaml" />
     <None Remove="Designers\RemoveEmptyRowsDesigner.xaml" />
     <None Remove="Designers\StopwatchDesigner.xaml" />
     <None Remove="Designers\UnzipDesigner.xaml" />
@@ -67,6 +68,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="Designers\RemoveDataColumnsDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <Page Include="Designers\RemoveDuplicateRowsDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="Designers\StopwatchDesigner.xaml">

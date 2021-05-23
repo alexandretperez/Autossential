@@ -35,6 +35,7 @@ namespace Autossential.Activities.Design
             AddCustomAttributes(builder, dataTable, typeof(DictionaryToDataTable), typeof(DictionaryToDataTableDesigner));
             AddCustomAttributes(builder, dataTable, typeof(RemoveEmptyRows), typeof(RemoveEmptyRowsDesigner));
             AddCustomAttributes(builder, dataTable, typeof(RemoveDataColumns), typeof(RemoveDataColumnsDesigner));
+            AddCustomAttributes(builder, dataTable, typeof(RemoveDuplicateRows), typeof(RemoveDuplicateRowsDesigner));
 
             var file = new CategoryAttribute(FILE_CATEGORY);
             AddCustomAttributes(builder, file, typeof(WaitFile), typeof(WaitFileDesigner));
@@ -102,6 +103,7 @@ namespace Autossential.Activities.Design
             yield return typeof(Next);
             yield return typeof(PromoteHeaders);
             yield return typeof(RemoveDataColumns);
+            yield return typeof(RemoveDuplicateRows);
             yield return typeof(RemoveEmptyRows);
             yield return typeof(Stopwatch);
             yield return typeof(Unzip);
@@ -162,7 +164,7 @@ namespace Autossential.Activities.Design
                     }
 
                     if (typeof(InOutArgument).IsAssignableFrom(prop.PropertyType))
-                        builder.AddCustomAttributes(activityType, prop, new LocalCategAttribute(Resources.Reference_Category));
+                        builder.AddCustomAttributes(activityType, prop, new LocalCategAttribute(Resources.InputOutput_Category));
                 }
             }
         }
