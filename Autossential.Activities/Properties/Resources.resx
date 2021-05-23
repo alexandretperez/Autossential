@@ -501,6 +501,10 @@
     <value>The DataTable object from which the columns is to be removed.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>Removes the specified columns from a DataTable</value>
+    <comment>activity description</comment>
+  </data>
   <data name="RemoveDuplicateRows_Columns_Description" xml:space="preserve">
     <value>The column names or column indexes to be analyzed on duplicate rows comparison. Can be either a collection of string or int.</value>
     <comment>property description</comment>

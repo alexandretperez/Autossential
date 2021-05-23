@@ -951,6 +951,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Removes the specified columns from a DataTable'.
+        /// </summary>
+        public static string RemoveDataColumns_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.RemoveDataColumns_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'The column names or column indexes to be analyzed on duplicate rows comparison. Can be either a collection of string or int.'.
         /// </summary>
         public static string RemoveDuplicateRows_Columns_Description {
@@ -1850,6 +1859,11 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'RemoveDataColumns_DataTable_Description'.
             /// </summary>
             public const string RemoveDataColumns_DataTable_Description = "RemoveDataColumns_DataTable_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'RemoveDataColumns_Description'.
+            /// </summary>
+            public const string RemoveDataColumns_Description = "RemoveDataColumns_Description";
             
             /// <summary>
             /// Stores the resource name 'RemoveDuplicateRows_Columns_Description'.
