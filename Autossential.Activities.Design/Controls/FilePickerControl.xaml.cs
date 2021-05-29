@@ -1,4 +1,5 @@
-﻿using Autossential.Utils;
+﻿using Autossential.Shared;
+using Autossential.Utils;
 using Microsoft.Win32;
 using System;
 using System.Activities;

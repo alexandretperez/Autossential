@@ -1,5 +1,5 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Activities.Localization;
+using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Threading;
 using System.Threading.Tasks;
+using Autossential.Shared.Activities.Base;
 
 namespace Autossential.Activities
 {

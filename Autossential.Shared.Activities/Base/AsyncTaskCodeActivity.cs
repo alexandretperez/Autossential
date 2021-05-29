@@ -4,7 +4,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Autossential.Activities.Base
+namespace Autossential.Shared.Activities.Base
 {
     public abstract class AsyncTaskCodeActivity : AsyncCodeActivity, IDisposable
     {

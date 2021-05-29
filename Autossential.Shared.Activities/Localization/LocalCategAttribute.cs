@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Autossential.Activities.Localization
+namespace Autossential.Shared.Activities.Localization
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class LocalCategAttribute : CategoryAttribute

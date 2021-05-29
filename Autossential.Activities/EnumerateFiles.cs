@@ -1,4 +1,4 @@
-﻿using Autossential.Activities.Localization;
+﻿using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using Autossential.Extensions;
 using System.Activities;

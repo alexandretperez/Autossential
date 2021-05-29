@@ -1,6 +1,6 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
+using Autossential.Shared.Activities.Base;
+using Autossential.Shared.Activities.Localization;
 using System;
 using System.Activities;
 using System.Activities.Expressions;

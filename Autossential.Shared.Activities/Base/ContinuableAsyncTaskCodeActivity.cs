@@ -1,11 +1,11 @@
-﻿using Autossential.Activities.Localization;
+﻿using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Autossential.Activities.Base
+namespace Autossential.Shared.Activities.Base
 {
     public abstract class ContinuableAsyncTaskCodeActivity : AsyncTaskCodeActivity
     {

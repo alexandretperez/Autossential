@@ -1,6 +1,6 @@
 ﻿using Autossential.Activities.Design.Designers;
 using Autossential.Activities.Design.PropertyEditors;
-using Autossential.Activities.Localization;
+using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;

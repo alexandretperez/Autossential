@@ -5,7 +5,7 @@ using System.Activities;
 using System.IO;
 using System.Linq;
 
-namespace Autossential
+namespace Autossential.Shared
 {
     public sealed class ExpressionServiceLanguage
     {

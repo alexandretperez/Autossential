@@ -33,4 +33,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <Import Project="..\Autossential.Shared\Autossential.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Autossential.Shared.Activities\Autossential.Shared.Activities.projitems" Label="Shared" />
+
 </Project>

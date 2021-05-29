@@ -2,7 +2,7 @@
 using System.Activities.Statements;
 using System.ComponentModel;
 
-namespace Autossential.Activities.Base
+namespace Autossential.Shared.Activities.Base
 {
     public abstract class ScopeActivity : NativeActivity
     {

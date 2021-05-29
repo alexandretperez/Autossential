@@ -1,11 +1,12 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Activities.Localization;
+using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
+using Autossential.Shared.Activities.Base;
 
 namespace Autossential.Activities
 {

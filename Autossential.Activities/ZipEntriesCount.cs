@@ -1,5 +1,6 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Properties;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
 using System.ComponentModel;

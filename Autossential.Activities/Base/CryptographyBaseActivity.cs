@@ -1,7 +1,8 @@
-﻿using Autossential.Activities.Localization;
+﻿using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using Autossential.Enums;
 using Autossential.Security;
+using Autossential.Shared;
 using System;
 using System.Activities;
 using System.Collections.Generic;

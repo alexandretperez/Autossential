@@ -1,5 +1,5 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Activities.Localization;
+using Autossential.Shared.Activities.Localization;
 using Autossential.Activities.Properties;
 using Autossential.Security;
 using Autossential.Utils;
