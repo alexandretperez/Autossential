@@ -21,16 +21,29 @@
 
     <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="220">
 
-        <StackPanel>
-            <Label Content="Stopwatch (In/Out)"/>
-            <sapv:ExpressionTextBox
-                ExpressionType="{Binding ModelItem.Properties[StopwatchObj].PropertyType.GenericTypeArguments[0]}"
-                OwnerActivity="{Binding ModelItem}"
-                UseLocationExpression="True"
-                Expression="{Binding ModelItem.StopwatchObj, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}}"
-                />
-            <ComboBox Name="cbMethods" SelectedValue="{Binding Path=ModelItem.Method, Mode=TwoWay}" Margin="0,10,0,0"/>
-        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+                <Label Content="Stopwatch (In/Out)" Grid.Row="0"/>
+                <sapv:ExpressionTextBox Grid.Row="1"
+                    ExpressionType="{Binding ModelItem.Properties[StopwatchObj].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="True"
+                    Expression="{Binding ModelItem.StopwatchObj, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    />
+                <ComboBox Grid.Row="1" Grid.Column="2"
+                    Name="cbMethods" 
+                    SelectedValue="{Binding Path=ModelItem.Method, Mode=TwoWay}"/>
+            
+        </Grid>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

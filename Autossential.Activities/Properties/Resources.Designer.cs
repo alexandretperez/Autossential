@@ -393,7 +393,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The key used to decrypt the data.'.
+        /// Looks up a localized string similar to 'The key used to decrypt the data. Can be a plain text or a SecureString.'.
         /// </summary>
         public static string DecryptDataTable_Key_Description {
             get {
@@ -465,7 +465,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The key used to decrypt the text.'.
+        /// Looks up a localized string similar to 'The key used to decrypt the text. Can be a plain text or a SecureString.'.
         /// </summary>
         public static string DecryptText_Key_Description {
             get {
@@ -582,7 +582,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The key used to encrypt the data.'.
+        /// Looks up a localized string similar to 'The key used to encrypt the data. Can be a plain text or a SecureString.'.
         /// </summary>
         public static string EncryptDataTable_Key_Description {
             get {
@@ -663,7 +663,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The key used to encrypt the text.'.
+        /// Looks up a localized string similar to 'The key used to encrypt the text. Can be a plain text or a SecureString.'.
         /// </summary>
         public static string EncryptText_Key_Description {
             get {
@@ -1086,7 +1086,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Stopwatch.'.
+        /// Looks up a localized string similar to 'Stopwatch'.
         /// </summary>
         public static string Stopwatch_StopwatchObj_DisplayName {
             get {
@@ -1311,7 +1311,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'Returns the number of entries from a Zip file.'.
+        /// Looks up a localized string similar to 'Returns the number of entries (files and folders) from a Zip archive.'.
         /// </summary>
         public static string ZipEntriesCount_Description {
             get {
@@ -1320,11 +1320,38 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The number of entries contained in the zip archive.'.
+        /// Looks up a localized string similar to 'The number of entries (files and folders) in the zip archive.'.
         /// </summary>
         public static string ZipEntriesCount_EntriesCount_Description {
             get {
                 return ResourceManager.GetString(ResourceNames.ZipEntriesCount_EntriesCount_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Please provide an output variable for at least one of the available options.'.
+        /// </summary>
+        public static string ZipEntriesCount_ErrorMsg_OutputMissing {
+            get {
+                return ResourceManager.GetString(ResourceNames.ZipEntriesCount_ErrorMsg_OutputMissing, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns the number of file entries in the zip archive.'.
+        /// </summary>
+        public static string ZipEntriesCount_FilesCount_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ZipEntriesCount_FilesCount_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns the number of folder entries in the zip archive.'.
+        /// </summary>
+        public static string ZipEntriesCount_FoldersCount_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ZipEntriesCount_FoldersCount_Description, _resourceCulture);
             }
         }
         
@@ -2069,6 +2096,21 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'ZipEntriesCount_EntriesCount_Description'.
             /// </summary>
             public const string ZipEntriesCount_EntriesCount_Description = "ZipEntriesCount_EntriesCount_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_ErrorMsg_OutputMissing'.
+            /// </summary>
+            public const string ZipEntriesCount_ErrorMsg_OutputMissing = "ZipEntriesCount_ErrorMsg_OutputMissing";
+            
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_FilesCount_Description'.
+            /// </summary>
+            public const string ZipEntriesCount_FilesCount_Description = "ZipEntriesCount_FilesCount_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_FoldersCount_Description'.
+            /// </summary>
+            public const string ZipEntriesCount_FoldersCount_Description = "ZipEntriesCount_FoldersCount_Description";
             
             /// <summary>
             /// Stores the resource name 'ZipEntriesCount_ZipFilePath_Description'.

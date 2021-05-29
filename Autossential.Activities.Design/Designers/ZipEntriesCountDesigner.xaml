@@ -43,15 +43,6 @@
                                         ModelItem="{Binding ModelItem}"
                                         Filter="Zip Files (*.zip)|*.zip"
                                         CheckFileExists="False" />
-
-            <Label Content="EntriesCount (Output)" Grid.Row="2" />
-            <sapv:ExpressionTextBox
-                Grid.Row="3"
-                ExpressionType="{Binding ModelItem.Properties[EntriesCount].PropertyType.GenericTypeArguments[0]}"
-                OwnerActivity="{Binding ModelItem}"
-                UseLocationExpression="True"
-                Margin="0,0,0,0"
-                Expression="{Binding ModelItem.EntriesCount, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" />
         </Grid>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

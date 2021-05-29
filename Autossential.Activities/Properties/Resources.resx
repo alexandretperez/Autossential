@@ -254,7 +254,7 @@
     <comment>property description</comment>
   </data>
   <data name="DecryptDataTable_Key_Description" xml:space="preserve">
-    <value>The key used to decrypt the data.</value>
+    <value>The key used to decrypt the data. Can be a plain text or a SecureString.</value>
     <comment>property description</comment>
   </data>
   <data name="DecryptDataTable_OutputDataTable_Description" xml:space="preserve">
@@ -286,7 +286,7 @@
     <comment>property description</comment>
   </data>
   <data name="DecryptText_Key_Description" xml:space="preserve">
-    <value>The key used to decrypt the text.</value>
+    <value>The key used to decrypt the text. Can be a plain text or a SecureString.</value>
     <comment>property description</comment>
   </data>
   <data name="DecryptText_Result_Description" xml:space="preserve">
@@ -338,7 +338,7 @@
     <comment>property description</comment>
   </data>
   <data name="EncryptDataTable_Key_Description" xml:space="preserve">
-    <value>The key used to encrypt the data.</value>
+    <value>The key used to encrypt the data. Can be a plain text or a SecureString.</value>
     <comment>property description</comment>
   </data>
   <data name="EncryptDataTable_OutputDataTable_Description" xml:space="preserve">
@@ -374,7 +374,7 @@
     <comment>property description</comment>
   </data>
   <data name="EncryptText_Key_Description" xml:space="preserve">
-    <value>The key used to encrypt the text.</value>
+    <value>The key used to encrypt the text. Can be a plain text or a SecureString.</value>
     <comment>property description</comment>
   </data>
   <data name="EncryptText_Result_Description" xml:space="preserve">
@@ -562,7 +562,7 @@
     <comment>property description</comment>
   </data>
   <data name="Stopwatch_StopwatchObj_DisplayName" xml:space="preserve">
-    <value>Stopwatch.</value>
+    <value>Stopwatch</value>
     <comment>property name</comment>
   </data>
   <data name="Unzip_Description" xml:space="preserve">
@@ -634,11 +634,23 @@
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_Description" xml:space="preserve">
-    <value>Returns the number of entries from a Zip file.</value>
+    <value>Returns the number of entries (files and folders) from a Zip archive.</value>
     <comment>activity description</comment>
   </data>
   <data name="ZipEntriesCount_EntriesCount_Description" xml:space="preserve">
-    <value>The number of entries contained in the zip archive.</value>
+    <value>The number of entries (files and folders) in the zip archive.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ZipEntriesCount_ErrorMsg_OutputMissing" xml:space="preserve">
+    <value>Please provide an output variable for at least one of the available options.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="ZipEntriesCount_FilesCount_Description" xml:space="preserve">
+    <value>Returns the number of file entries in the zip archive.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ZipEntriesCount_FoldersCount_Description" xml:space="preserve">
+    <value>Returns the number of folder entries in the zip archive.</value>
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_ZipFilePath_Description" xml:space="preserve">
