@@ -17,6 +17,7 @@ namespace Autossential.Activities
             base.CacheMetadata(metadata);
 
             if (Text == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Text)));
+            if (Result == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Result)));
         }
 
         protected override void Execute(CodeActivityContext context)

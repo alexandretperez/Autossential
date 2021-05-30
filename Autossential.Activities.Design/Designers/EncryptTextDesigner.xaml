@@ -20,35 +20,22 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="10"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <StackPanel>
+            <c:CryptographyBaseControl KeyToolTip="The key used to encrypt the text" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-            <Label Content="Algorithm" Grid.Row="0" Grid.Column="0"/>
-            <ComboBox Grid.Row="1" Grid.Column="0" Name="cbAlgorithms" SelectedValue="{Binding Path=ModelItem.Algorithm, Mode=TwoWay}" />
-
-            <Label Content="Key" Grid.Row="0" Grid.Column="2"/>
-            <sapv:ExpressionTextBox
+                <Label Content="Text" Grid.Row="0" Grid.Column="0"/>
+                <sapv:ExpressionTextBox
                 Grid.Row="1" 
-                Grid.Column="2"
-                ExpressionType="{Binding ModelItem.Properties[Key].PropertyType.GenericTypeArguments[0]}"
-                OwnerActivity="{Binding ModelItem}"
-                UseLocationExpression="False"
-                Expression="{Binding ModelItem.Key, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                />
-
-            <Label Content="Text" Grid.Row="2" Grid.Column="0"/>
-            <sapv:ExpressionTextBox
-                Grid.Row="3" 
                 Grid.Column="0"
                 ExpressionType="{Binding ModelItem.Properties[Text].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
@@ -56,15 +43,16 @@
                 Expression="{Binding ModelItem.Text, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
                 />
 
-            <Label Content="Result (Output)" Grid.Row="2" Grid.Column="2"/>
-            <sapv:ExpressionTextBox
-                Grid.Row="3" 
+                <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2"/>
+                <sapv:ExpressionTextBox
+                Grid.Row="1" 
                 Grid.Column="2"
                 ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
                 Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
                 />
-        </Grid>
+            </Grid>
+        </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

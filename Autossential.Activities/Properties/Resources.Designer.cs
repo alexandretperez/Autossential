@@ -393,15 +393,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The key used to decrypt the data. Can be a plain text or a SecureString.'.
-        /// </summary>
-        public static string DecryptDataTable_Key_Description {
-            get {
-                return ResourceManager.GetString(ResourceNames.DecryptDataTable_Key_Description, _resourceCulture);
-            }
-        }
-        
-        /// <summary>
         /// Looks up a localized string similar to 'The decrypted DataTable.'.
         /// </summary>
         public static string DecryptDataTable_OutputDataTable_Description {
@@ -461,15 +452,6 @@ namespace Autossential.Activities.Properties {
         public static string DecryptText_Iterations_Description {
             get {
                 return ResourceManager.GetString(ResourceNames.DecryptText_Iterations_Description, _resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to 'The key used to decrypt the text. Can be a plain text or a SecureString.'.
-        /// </summary>
-        public static string DecryptText_Key_Description {
-            get {
-                return ResourceManager.GetString(ResourceNames.DecryptText_Key_Description, _resourceCulture);
             }
         }
         
@@ -582,15 +564,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        /// Looks up a localized string similar to 'The key used to encrypt the data. Can be a plain text or a SecureString.'.
-        /// </summary>
-        public static string EncryptDataTable_Key_Description {
-            get {
-                return ResourceManager.GetString(ResourceNames.EncryptDataTable_Key_Description, _resourceCulture);
-            }
-        }
-        
-        /// <summary>
         /// Looks up a localized string similar to 'The encrypted DataTable.'.
         /// </summary>
         public static string EncryptDataTable_OutputDataTable_Description {
@@ -659,15 +632,6 @@ namespace Autossential.Activities.Properties {
         public static string EncryptText_Iterations_Description {
             get {
                 return ResourceManager.GetString(ResourceNames.EncryptText_Iterations_Description, _resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to 'The key used to encrypt the text. Can be a plain text or a SecureString.'.
-        /// </summary>
-        public static string EncryptText_Key_Description {
-            get {
-                return ResourceManager.GetString(ResourceNames.EncryptText_Key_Description, _resourceCulture);
             }
         }
         
@@ -1578,11 +1542,6 @@ namespace Autossential.Activities.Properties {
             public const string DecryptDataTable_Iterations_Description = "DecryptDataTable_Iterations_Description";
             
             /// <summary>
-            /// Stores the resource name 'DecryptDataTable_Key_Description'.
-            /// </summary>
-            public const string DecryptDataTable_Key_Description = "DecryptDataTable_Key_Description";
-            
-            /// <summary>
             /// Stores the resource name 'DecryptDataTable_OutputDataTable_Description'.
             /// </summary>
             public const string DecryptDataTable_OutputDataTable_Description = "DecryptDataTable_OutputDataTable_Description";
@@ -1616,11 +1575,6 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'DecryptText_Iterations_Description'.
             /// </summary>
             public const string DecryptText_Iterations_Description = "DecryptText_Iterations_Description";
-            
-            /// <summary>
-            /// Stores the resource name 'DecryptText_Key_Description'.
-            /// </summary>
-            public const string DecryptText_Key_Description = "DecryptText_Key_Description";
             
             /// <summary>
             /// Stores the resource name 'DecryptText_Result_Description'.
@@ -1683,11 +1637,6 @@ namespace Autossential.Activities.Properties {
             public const string EncryptDataTable_Iterations_Description = "EncryptDataTable_Iterations_Description";
             
             /// <summary>
-            /// Stores the resource name 'EncryptDataTable_Key_Description'.
-            /// </summary>
-            public const string EncryptDataTable_Key_Description = "EncryptDataTable_Key_Description";
-            
-            /// <summary>
             /// Stores the resource name 'EncryptDataTable_OutputDataTable_Description'.
             /// </summary>
             public const string EncryptDataTable_OutputDataTable_Description = "EncryptDataTable_OutputDataTable_Description";
@@ -1726,11 +1675,6 @@ namespace Autossential.Activities.Properties {
             /// Stores the resource name 'EncryptText_Iterations_Description'.
             /// </summary>
             public const string EncryptText_Iterations_Description = "EncryptText_Iterations_Description";
-            
-            /// <summary>
-            /// Stores the resource name 'EncryptText_Key_Description'.
-            /// </summary>
-            public const string EncryptText_Key_Description = "EncryptText_Key_Description";
             
             /// <summary>
             /// Stores the resource name 'EncryptText_Result_Description'.

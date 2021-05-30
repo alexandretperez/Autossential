@@ -1,5 +1,6 @@
-﻿using Autossential.Enums;
-using Autossential.Utils;
+﻿using Autossential.Activities.Base;
+using Autossential.Activities.Design.Helpers;
+using System.Activities.Presentation.Model;
 
 namespace Autossential.Activities.Design.Designers
 {
@@ -9,10 +10,19 @@ namespace Autossential.Activities.Design.Designers
         public DecryptTextDesigner()
         {
             InitializeComponent();
+        }
 
-            cbAlgorithms.ItemsSource = EnumUtil.EnumAsDictionary<SymmetricAlgorithms>();
-            cbAlgorithms.DisplayMemberPath = "Key";
-            cbAlgorithms.SelectedValuePath = "Value";
+        protected override void OnModelItemChanged(object newItem)
+        {
+            base.OnModelItemChanged(newItem);
+            if (newItem is ModelItem modelItem)
+                modelItem.PropertyChanged += ModelItem_PropertyChanged;
+        }
+
+        private void ModelItem_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(CryptographyBaseActivity.UseSecureKey))
+                CryptographyBaseActivityHelper.NormalizeCryptoKeys(ModelItem);
         }
     }
 }

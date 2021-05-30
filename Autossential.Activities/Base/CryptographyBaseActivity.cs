@@ -1,13 +1,13 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Autossential.Enums;
 using Autossential.Security;
 using Autossential.Shared;
+using Autossential.Shared.Activities.Localization;
 using System;
 using System.Activities;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Net;
 using System.Security;
 using System.Text;
 
@@ -25,7 +25,14 @@ namespace Autossential.Activities.Base
         [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument<int> Iterations { get; set; }
 
-        public InArgument Key { get; set; }
+        [Browsable(false)]
+        public InArgument<string> Key { get; set; }
+
+        [Browsable(false)]
+        public InArgument<SecureString> SecureKey { get; set; }
+
+        [Browsable(false)]
+        public bool UseSecureKey { get; set; }
 
         protected CryptographyBaseActivity()
         {
@@ -38,16 +45,9 @@ namespace Autossential.Activities.Base
             base.CacheMetadata(metadata);
 
             if (TextEncoding == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(TextEncoding)));
-            if (Key == null || (Key.ArgumentType != typeof(string) && Key.ArgumentType != typeof(SecureString)))
-            {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Key)));
-            }
-            else
-            {
-                var arg = new RuntimeArgument(nameof(Key), Key.ArgumentType, ArgumentDirection.In, true);
-                metadata.Bind(Key, arg);
-                metadata.AddArgument(arg);
-            }
+
+            if (UseSecureKey && SecureKey == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(SecureKey)));
+            if (!UseSecureKey && Key == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Key)));
         }
 
         protected virtual DataTable CreateCryptoDataTable(DataTable sourceDataTable, HashSet<int> cryptoColumns)
@@ -65,22 +65,14 @@ namespace Autossential.Activities.Base
 
         protected void ExecuteCrypto(CodeActivityContext context, Action<Crypto, string> action)
         {
-            var key = Key.Get(context);
             var iterations = Iterations.Get(context);
             var encoding = TextEncoding.Get(context);
-
-            string cryptoKey;
-            if (key is SecureString ssKey)
-            {
-                cryptoKey = new NetworkCredential(null, ssKey).Password;
-            }
-            else
-            {
-                cryptoKey = (string)key;
-            }
+            var key = UseSecureKey
+                ? new System.Net.NetworkCredential(null, SecureKey.Get(context)).Password
+                : Key.Get(context);
 
             using (var crypto = new Crypto(Algorithm, encoding, iterations))
-                action(crypto, cryptoKey);
+                action(crypto, key);
         }
     }
 }

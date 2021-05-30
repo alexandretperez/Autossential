@@ -253,10 +253,6 @@
     <value>The number of iterations to be used in operation. The default and minimum recommended is 1000.</value>
     <comment>property description</comment>
   </data>
-  <data name="DecryptDataTable_Key_Description" xml:space="preserve">
-    <value>The key used to decrypt the data. Can be a plain text or a SecureString.</value>
-    <comment>property description</comment>
-  </data>
   <data name="DecryptDataTable_OutputDataTable_Description" xml:space="preserve">
     <value>The decrypted DataTable.</value>
     <comment>property description</comment>
@@ -283,10 +279,6 @@
   </data>
   <data name="DecryptText_Iterations_Description" xml:space="preserve">
     <value>The number of iterations to be used in operation. The default and minimum recommended is 1000.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="DecryptText_Key_Description" xml:space="preserve">
-    <value>The key used to decrypt the text. Can be a plain text or a SecureString.</value>
     <comment>property description</comment>
   </data>
   <data name="DecryptText_Result_Description" xml:space="preserve">
@@ -337,10 +329,6 @@
     <value>The number of iterations to be used in operation. The default and minimum recommended is 1000.</value>
     <comment>property description</comment>
   </data>
-  <data name="EncryptDataTable_Key_Description" xml:space="preserve">
-    <value>The key used to encrypt the data. Can be a plain text or a SecureString.</value>
-    <comment>property description</comment>
-  </data>
   <data name="EncryptDataTable_OutputDataTable_Description" xml:space="preserve">
     <value>The encrypted DataTable.</value>
     <comment>property description</comment>
@@ -371,10 +359,6 @@
   </data>
   <data name="EncryptText_Iterations_Description" xml:space="preserve">
     <value>The number of iterations to be used in operation. The default and minimum recommended is 1000.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="EncryptText_Key_Description" xml:space="preserve">
-    <value>The key used to encrypt the text. Can be a plain text or a SecureString.</value>
     <comment>property description</comment>
   </data>
   <data name="EncryptText_Result_Description" xml:space="preserve">
