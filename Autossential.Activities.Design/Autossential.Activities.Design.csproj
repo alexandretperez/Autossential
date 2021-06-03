@@ -2,13 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
   </PropertyGroup>
 
   <PropertyGroup>
     <Description>
-      Provides a collection of activities that helps to handle with different data types and resources. 
-      The package is categorized by DataTable, File, Programming, Workflow, Security and Diagnostics.
+      Provides a collection of activities that helps to handle with different data types and resources. The package is categorized by DataTable, File, Programming, Workflow, Security and Diagnostics.
     </Description>
     <Authors>Alexandre Toledo Perez</Authors>
     <Company>Alexandre Toledo Perez</Company>
@@ -24,7 +23,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
-    <PackageVersion>2.0.3.$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
+    <PackageVersion>2.0.4.$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
   </PropertyGroup>
 
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">

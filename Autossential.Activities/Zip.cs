@@ -1,7 +1,6 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Autossential.Shared;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -11,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Autossential.Shared.Activities.Base;
 
 namespace Autossential.Activities
 {
@@ -21,14 +19,13 @@ namespace Autossential.Activities
 
         public InArgument<string> ZipFilePath { get; set; }
 
-        [LocalDisplayName("Encoding")]
-        [LocalCateg(nameof(Resources.Options_Category))]
+        // [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument<Encoding> TextEncoding { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        // [LocalCateg(nameof(Resources.Options_Category))]
         public bool AutoRenaming { get; set; } = true;
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        // [LocalCateg(nameof(Resources.Options_Category))]
         public CompressionLevel CompressionLevel { get; set; }
 
         public OutArgument<int> FilesCount { get; set; }

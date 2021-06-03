@@ -1,5 +1,4 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -8,16 +7,12 @@ using System.Runtime.ExceptionServices;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Check Point")]
     public sealed class CheckPoint : CodeActivity
     {
-        [LocalCateg("")]
         public InArgument<bool> Expression { get; set; }
 
-        [LocalCateg("")]
         public InArgument<Exception> Exception { get; set; }
 
-        [LocalCateg("")]
         [Browsable(true)]
         public Dictionary<string, InArgument> Data { get; } = new Dictionary<string, InArgument>();
 

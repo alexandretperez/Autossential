@@ -1,11 +1,9 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Properties;
 using System.Activities;
-using System.ComponentModel;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Decrypt Text")]
     public sealed class DecryptText : CryptographyBaseActivity
     {
         public InArgument<string> Text { get; set; }

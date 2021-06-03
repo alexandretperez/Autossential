@@ -1,13 +1,11 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
 using System.IO;
 using System.IO.Compression;
 using System.Threading;
 using System.Threading.Tasks;
-using Autossential.Shared.Activities.Base;
 
 namespace Autossential.Activities
 {
@@ -17,7 +15,7 @@ namespace Autossential.Activities
 
         public InArgument<string> ExtractTo { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        // [LocalCateg(nameof(Resources.Options_Category))]
         public bool Overwrite { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

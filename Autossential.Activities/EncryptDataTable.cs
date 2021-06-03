@@ -1,32 +1,28 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Shared.Activities.Localization;
+
 using Autossential.Activities.Properties;
 using Autossential.Security;
+
 using Autossential.Utils;
 using System;
 using System.Activities;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Encrypt DataTable")]
     public sealed class EncryptDataTable : CryptographyBaseActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataTable> OutputDataTable { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument Columns { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument<string> Sort { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public bool ParallelProcessing { get; set; } = true;
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

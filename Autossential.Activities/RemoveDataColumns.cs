@@ -2,13 +2,11 @@
 using Autossential.Utils;
 using System.Activities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Remove Data Columns")]
     public class RemoveDataColumns : CodeActivity
     {
         public InOutArgument<DataTable> DataTable { get; set; }

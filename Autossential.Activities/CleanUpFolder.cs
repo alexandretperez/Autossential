@@ -1,10 +1,8 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Extensions;
+﻿using Autossential.Extensions;
 using Autossential.Models;
 using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -13,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Clean Up Folder")]
     public sealed class CleanUpFolder : ContinuableAsyncTaskCodeActivity
     {
         public InArgument<string> Folder { get; set; }

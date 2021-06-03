@@ -1,29 +1,21 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
 using System.Activities.Validation;
-using System.ComponentModel;
 using System.IO;
 using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Autossential.Shared.Activities.Base;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Wait File")]
     public sealed class WaitFile : ContinuableAsyncTaskCodeActivity
     {
-        [LocalCateg("")]
-        [LocalDescription(nameof(Resources.Common_Timeout))]
         public InArgument<int> Timeout { get; set; } = 30000;
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public bool WaitForExist { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public int Interval { get; set; } = 500;
 
         public InArgument<string> FilePath { get; set; }

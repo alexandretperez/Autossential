@@ -1,11 +1,9 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Properties;
 using System.Activities;
-using System.ComponentModel;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Encrypt Text")]
     public sealed class EncryptText : CryptographyBaseActivity
     {
         public InArgument<string> Text { get; set; }

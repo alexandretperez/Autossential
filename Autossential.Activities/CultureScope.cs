@@ -1,19 +1,14 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
-using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
-using Autossential.Shared.Activities.Base;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Culture Scope")]
     public sealed class CultureScope : ScopeActivity
     {
-        [LocalCateg("")]
         public InArgument<string> CultureName { get; set; }
 
         private readonly CultureInfo _originalCulture;

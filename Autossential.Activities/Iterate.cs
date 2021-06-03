@@ -1,6 +1,6 @@
 ﻿using Autossential.Activities.Properties;
 using Autossential.Shared.Activities.Base;
-using Autossential.Shared.Activities.Localization;
+
 using System;
 using System.Activities;
 using System.Activities.Expressions;
@@ -12,8 +12,6 @@ namespace Autossential.Activities
         public InArgument<int> Iterations { get; set; }
 
         public OutArgument<int> Index { get; set; }
-
-        [LocalCateg(nameof(Resources.Output_Category))]
         public bool Reverse { get; set; }
 
         protected override void CacheMetadata(NativeActivityMetadata metadata)

@@ -1,9 +1,7 @@
-﻿using Autossential.Activities.Base;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
-using System.ComponentModel;
 using System.IO.Compression;
 using System.Linq;
 using System.Threading;
@@ -11,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Zip Entries Count")]
     public sealed class ZipEntriesCount : ContinuableAsyncTaskCodeActivity
     {
         public InArgument<string> ZipFilePath { get; set; }
@@ -25,7 +22,7 @@ namespace Autossential.Activities
             base.CacheMetadata(metadata);
 
             if (ZipFilePath == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(ZipFilePath)));
-            if (EntriesCount == null && FilesCount == null && FoldersCount == null) 
+            if (EntriesCount == null && FilesCount == null && FoldersCount == null)
                 metadata.AddValidationError(Resources.ZipEntriesCount_ErrorMsg_OutputMissing);
         }
 

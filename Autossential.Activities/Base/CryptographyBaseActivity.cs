@@ -2,7 +2,7 @@
 using Autossential.Enums;
 using Autossential.Security;
 using Autossential.Shared;
-using Autossential.Shared.Activities.Localization;
+
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -15,14 +15,8 @@ namespace Autossential.Activities.Base
 {
     public abstract class CryptographyBaseActivity : CodeActivity
     {
-        [LocalCateg(nameof(Resources.Options_Category))]
         public SymmetricAlgorithms Algorithm { get; set; }
-
-        [LocalCateg(nameof(Resources.Options_Category))]
-        [LocalDisplayName("Encoding")]
         public InArgument<Encoding> TextEncoding { get; set; }
-
-        [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument<int> Iterations { get; set; }
 
         [Browsable(false)]

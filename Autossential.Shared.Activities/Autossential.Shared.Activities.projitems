@@ -12,8 +12,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Base\AsyncTaskCodeActivity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Base\ContinuableAsyncTaskCodeActivity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Base\ScopeActivity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Localization\LocalCategAttribute.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Localization\LocalDescriptionAttribute.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Localization\LocalDisplayNameAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Properties\" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,0 @@
-Flow: Producer
-
-MaxFailsCount: 3
-
-FailsResetMode: Always
-
-Assets:
-    MyAsset1: FirstAsset
-    MyAsset2: SecondAsset

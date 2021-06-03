@@ -1,30 +1,22 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Autossential.Enums;
+
 using Autossential.Utils;
 using System;
 using System.Activities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Remove Empty Rows")]
     public sealed class RemoveEmptyRows : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
 
         public OutArgument<DataTable> OutputDataTable { get; set; }
-
-        [LocalCateg(nameof(Resources.Options_Category))]
         public DataRowValuesMode Mode { get; set; }
-
-        [LocalCateg(nameof(Resources.RemoveEmptyRows_CustomOptions_Category))]
         public InArgument Columns { get; set; }
-
-        [LocalCateg(nameof(Resources.RemoveEmptyRows_CustomOptions_Category))]
         public ConditionOperator Operator { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)

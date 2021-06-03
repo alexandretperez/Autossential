@@ -1,25 +1,20 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Autossential.Extensions;
+
 using System.Activities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Enumerate Files")]
     public sealed class EnumerateFiles : CodeActivity
     {
         public InArgument Path { get; set; }
         public InArgument SearchPattern { get; set; }
-
-        [LocalCateg(nameof(Resources.Options_Category))]
         public SearchOption SearchOption { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public FileAttributes Exclusions { get; set; } = FileAttributes.Hidden
                                                         | FileAttributes.System
                                                         | FileAttributes.Temporary

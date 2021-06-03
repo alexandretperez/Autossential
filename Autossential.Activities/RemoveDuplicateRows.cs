@@ -3,13 +3,11 @@ using Autossential.Utils;
 using System;
 using System.Activities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Remove Duplicate Rows")]
     public sealed class RemoveDuplicateRows : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }

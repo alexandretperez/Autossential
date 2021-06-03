@@ -149,6 +149,10 @@
     <value>Checks if a given expression is true, if not, thrown the specified exception.</value>
     <comment>activity description</comment>
   </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>Check Point</value>
+    <comment>activity name</comment>
+  </data>
   <data name="CheckPoint_Exception_Description" xml:space="preserve">
     <value>The exception that will be thrown if the expression is not true.</value>
     <comment>property description</comment>
@@ -164,6 +168,10 @@
   <data name="CleanUpFolder_Description" xml:space="preserve">
     <value>Deletes all files and folders from a specified folder.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+    <value>Clean Up Folder</value>
+    <comment>activity name</comment>
   </data>
   <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
     <value>The folder path to be cleaned up.</value>
@@ -205,9 +213,17 @@
     <value>Changes the culture of the current thread and then restore it after the activity execution is completed. Note that this activity does not create a new thread. Therefore, its not recommended use it into a Parallel activity since it can generate unexpected results.</value>
     <comment>activity description</comment>
   </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>Culture Scope</value>
+    <comment>activity name</comment>
+  </data>
   <data name="DataRowToDictionary_Description" xml:space="preserve">
     <value>Converts a DataRow to Dictionary.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="DataRowToDictionary_DisplayName" xml:space="preserve">
+    <value>DataRow To Dictionary</value>
+    <comment>activity name</comment>
   </data>
   <data name="DataRowToDictionary_InputDataRow_Description" xml:space="preserve">
     <value>The input DataRow.</value>
@@ -245,6 +261,10 @@
     <value>Decrypts the data of a DataTable using the specified algorithm and key.</value>
     <comment>activity description</comment>
   </data>
+  <data name="DecryptDataTable_DisplayName" xml:space="preserve">
+    <value>Decrypt DataTable</value>
+    <comment>activity name</comment>
+  </data>
   <data name="DecryptDataTable_InputDataTable_Description" xml:space="preserve">
     <value>The DataTable to be decrypted.</value>
     <comment>property description</comment>
@@ -277,6 +297,10 @@
     <value>Decrypts the text using the specified algorithm and key.</value>
     <comment>activity description</comment>
   </data>
+  <data name="DecryptText_DisplayName" xml:space="preserve">
+    <value>Decrypt Text</value>
+    <comment>activity name</comment>
+  </data>
   <data name="DecryptText_Iterations_Description" xml:space="preserve">
     <value>The number of iterations to be used in operation. The default and minimum recommended is 1000.</value>
     <comment>property description</comment>
@@ -296,6 +320,10 @@
   <data name="DictionaryToDataTable_Description" xml:space="preserve">
     <value>Converts a Dictionary to DataTable.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="DictionaryToDataTable_DisplayName" xml:space="preserve">
+    <value>Dictionary To DataTable</value>
+    <comment>activity name</comment>
   </data>
   <data name="DictionaryToDataTable_InputDictionary_Description" xml:space="preserve">
     <value>The input Dictionary.</value>
@@ -320,6 +348,10 @@
   <data name="EncryptDataTable_Description" xml:space="preserve">
     <value>Encrypts the data of a DataTable using the specified algorithm and key.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="EncryptDataTable_DisplayName" xml:space="preserve">
+    <value>Encrypt DataTable</value>
+    <comment>activity name</comment>
   </data>
   <data name="EncryptDataTable_InputDataTable_Description" xml:space="preserve">
     <value>The DataTable to be encrypted.</value>
@@ -354,7 +386,7 @@
     <comment>activity description</comment>
   </data>
   <data name="EncryptText_DisplayName" xml:space="preserve">
-    <value>Encrypt Text.</value>
+    <value>Encrypt Text</value>
     <comment>activity name</comment>
   </data>
   <data name="EncryptText_Iterations_Description" xml:space="preserve">
@@ -376,6 +408,10 @@
   <data name="EnumerateFiles_Description" xml:space="preserve">
     <value>Returns an enumerable collection of full file names that match a search pattern (or collection of patterns) and enumeration options in a specified path (or collection of paths).</value>
     <comment>activity description</comment>
+  </data>
+  <data name="EnumerateFiles_DisplayName" xml:space="preserve">
+    <value>Enumerate Files</value>
+    <comment>activity name</comment>
   </data>
   <data name="EnumerateFiles_Exclusions_Description" xml:space="preserve">
     <value>Excludes from the enumeration the files with any of the specified attributes.</value>
@@ -465,6 +501,10 @@
     <value>Promotes the first row of values to new column headers.</value>
     <comment>activity description</comment>
   </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>Promote Headers</value>
+    <comment>activity name</comment>
+  </data>
   <data name="PromoteHeaders_EmptyColumnName_Description" xml:space="preserve">
     <value>Replaces an empty column name by the value of this property.</value>
     <comment>property description</comment>
@@ -489,6 +529,10 @@
     <value>Removes the specified columns from a DataTable</value>
     <comment>activity description</comment>
   </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>Remove Data Columns</value>
+    <comment>activity name</comment>
+  </data>
   <data name="RemoveDuplicateRows_Columns_Description" xml:space="preserve">
     <value>The column names or column indexes to be analyzed on duplicate rows comparison. Can be either a collection of string or int.</value>
     <comment>property description</comment>
@@ -496,6 +540,10 @@
   <data name="RemoveDuplicateRows_Description" xml:space="preserve">
     <value>Removes the duplicate rows from a DataTable keeping only the first occurrence. Allows specify a limited number of columns for this comparison.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="RemoveDuplicateRows_DisplayName" xml:space="preserve">
+    <value>Remove Duplicate Rows</value>
+    <comment>activity name</comment>
   </data>
   <data name="RemoveDuplicateRows_InputDataTable_Description" xml:space="preserve">
     <value>The DataTable to remove duplicated rows.</value>
@@ -516,6 +564,10 @@
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
     <value>Removes the empty rows from a DataTable.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Remove Empty Rows</value>
+    <comment>activity name</comment>
   </data>
   <data name="RemoveEmptyRows_InputDataTable_Description" xml:space="preserve">
     <value>The input DataTable.</value>
@@ -589,6 +641,10 @@
     <value>Waits until the file be available.</value>
     <comment>activity description</comment>
   </data>
+  <data name="WaitFile_DisplayName" xml:space="preserve">
+    <value>Wait File</value>
+    <comment>activity name</comment>
+  </data>
   <data name="WaitFile_ErrorMsg_FilePathDoesNotExists" xml:space="preserve">
     <value>The specified file path does not exists.</value>
     <comment>error message</comment>
@@ -620,6 +676,10 @@
   <data name="ZipEntriesCount_Description" xml:space="preserve">
     <value>Returns the number of entries (files and folders) from a Zip archive.</value>
     <comment>activity description</comment>
+  </data>
+  <data name="ZipEntriesCount_DisplayName" xml:space="preserve">
+    <value>Zip Entries Count</value>
+    <comment>activity name</comment>
   </data>
   <data name="ZipEntriesCount_EntriesCount_Description" xml:space="preserve">
     <value>The number of entries (files and folders) in the zip archive.</value>

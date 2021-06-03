@@ -9,6 +9,8 @@
     <Import_RootNamespace>Autossential.Shared.Activities.Design</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ActivitiesAttributesBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\OppositeBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MembersAttributesBuilder.cs" />
   </ItemGroup>
 </Project>

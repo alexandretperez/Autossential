@@ -1,6 +1,5 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
-using Autossential.Enums;
+﻿using Autossential.Enums;
+
 using System.Activities;
 
 namespace Autossential.Activities
@@ -9,7 +8,6 @@ namespace Autossential.Activities
     {
         public InOutArgument<System.Diagnostics.Stopwatch> StopwatchObj { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
         public StopwatchMethods Method { get; set; }
 
         protected override void Execute(CodeActivityContext context)

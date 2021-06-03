@@ -1,12 +1,10 @@
 ﻿using Autossential.Activities.Properties;
 using System.Activities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 
 namespace Autossential.Activities
 {
-    [DisplayName("DataRow To Dictionary")]
     public sealed class DataRowToDictionary : CodeActivity
     {
         public InArgument<DataRow> InputDataRow { get; set; }

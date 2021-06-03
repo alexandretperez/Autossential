@@ -1,24 +1,22 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
+
 using System;
 using System.Activities;
 using System.Activities.Expressions;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 
 namespace Autossential.Activities
 {
-    [DisplayName("Promote Headers")]
     public sealed class PromoteHeaders : CodeActivity
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataTable> OutputDataTable { get; set; }
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        // [LocalCateg(nameof(Resources.Options_Category))]
         public bool AutoRename { get; set; } = true;
 
-        [LocalCateg(nameof(Resources.Options_Category))]
+        // [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument<string> EmptyColumnName { get; set; } = new InArgument<string>("Empty");
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
@@ -36,7 +34,6 @@ namespace Autossential.Activities
                     metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(EmptyColumnName)));
                 }
             }
-
 
             base.CacheMetadata(metadata);
         }

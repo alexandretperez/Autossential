@@ -1,5 +1,4 @@
-﻿using Autossential.Shared.Activities.Localization;
-using Autossential.Activities.Properties;
+﻿using Autossential.Activities.Properties;
 using Autossential.Enums;
 using Autossential.Utils;
 using System;
@@ -14,14 +13,8 @@ namespace Autossential.Activities
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public OutArgument<DataRow> Result { get; set; }
-
-        [LocalCateg(nameof(Resources.Output_Category))]
         public bool Detached { get; set; }
-
-        [LocalCateg(nameof(Resources.Options_Category))]
         public AggregateFunction Function { get; set; } = AggregateFunction.Sum;
-
-        [LocalCateg(nameof(Resources.Options_Category))]
         public InArgument Columns { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
