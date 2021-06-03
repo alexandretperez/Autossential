@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace Autossential.Utils
+namespace Autossential.Shared.Utils
 {
     public static class EnumUtil
     {

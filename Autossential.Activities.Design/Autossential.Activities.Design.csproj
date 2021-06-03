@@ -34,8 +34,6 @@
   
   <ItemGroup>
     <None Remove="Controls\CryptographyBaseControl.xaml" />
-    <None Remove="Controls\FilePickerControl.xaml" />
-    <None Remove="Controls\FolderPickerControl.xaml" />
     <None Remove="Designers\AggregateDesigner.xaml" />
     <None Remove="Designers\CheckPointDesigner.xaml" />
     <None Remove="Designers\CleanUpFolderDesigner.xaml" />
@@ -93,12 +91,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="Controls\FilePickerControl.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </Page>
-    <Page Include="Controls\FolderPickerControl.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </Page>
     <Page Include="Designers\AggregateDesigner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
@@ -198,5 +190,7 @@
   </ItemGroup>
 
   <Import Project="..\Autossential.Shared.Activities.Design\Autossential.Shared.Activities.Design.projitems" Label="Shared" />
+
+  <Import Project="..\Autossential.Shared\Autossential.Shared.projitems" Label="Shared" />
 
 </Project>

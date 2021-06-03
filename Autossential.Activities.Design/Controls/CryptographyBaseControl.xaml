@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Activities.Design.Controls" xmlns:converters="clr-namespace:Autossential.Shared.Activities.Design.Converters"
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" xmlns:converters="clr-namespace:Autossential.Shared.Activities.Design.Converters"
              x:Name="cbc">
 
     <UserControl.Resources>

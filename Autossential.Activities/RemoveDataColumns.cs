@@ -1,5 +1,5 @@
 ﻿using Autossential.Activities.Properties;
-using Autossential.Utils;
+using Autossential.Shared.Utils;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;

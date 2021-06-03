@@ -1,5 +1,4 @@
-﻿using Autossential.Shared;
-using Autossential.Utils;
+﻿using Autossential.Shared.Utils;
 using Microsoft.Win32;
 using System;
 using System.Activities;
@@ -9,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 
-namespace Autossential.Activities.Design.Controls
+namespace Autossential.Shared.Activities.Design.Controls
 {
     // Interaction logic for FilePickerControl.xaml
     public partial class FilePickerControl
@@ -49,8 +48,10 @@ namespace Autossential.Activities.Design.Controls
                 Multiselect = Multiselect
             };
 
-            if (string.IsNullOrEmpty(ofd.Filter))
+            if (string.IsNullOrEmpty(Filter))
                 ofd.Filter = "All files (*.*)|*.*";
+            else
+                ofd.Filter = Filter;
 
             if (string.IsNullOrWhiteSpace(Title))
                 Title = "Select file(s)";

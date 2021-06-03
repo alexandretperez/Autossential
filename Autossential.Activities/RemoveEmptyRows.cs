@@ -1,7 +1,7 @@
 ﻿using Autossential.Activities.Properties;
 using Autossential.Enums;
 
-using Autossential.Utils;
+using Autossential.Shared.Utils;
 using System;
 using System.Activities;
 using System.Collections.Generic;

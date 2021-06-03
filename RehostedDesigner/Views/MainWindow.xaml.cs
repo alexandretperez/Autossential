@@ -129,12 +129,12 @@ namespace RehostedWorkflowDesigner.Views
             try
             {
                 new Autossential.Activities.Design.DesignerMetadata().Register();
-                //new Autossential.Configuration.Activities.Design.DesignerMetadata().Register();
+                new Autossential.Configuration.Activities.Design.DesignerMetadata().Register();
 
                 _wfToolbox = new ToolboxControl();
 
                 AppDomain.CurrentDomain.Load("Autossential.Activities");
-                //AppDomain.CurrentDomain.Load("Autossential.Configuration.Activities");
+                AppDomain.CurrentDomain.Load("Autossential.Configuration.Activities");
                 var assemblies = AppDomain.CurrentDomain.GetAssemblies().OrderBy(p => p.GetName().Name);
 
                 int activitiesCount = 0;

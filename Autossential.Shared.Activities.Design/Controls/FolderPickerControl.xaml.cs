@@ -3,7 +3,7 @@ using System.Activities.Presentation.Model;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace Autossential.Activities.Design.Controls
+namespace Autossential.Shared.Activities.Design.Controls
 {
     // Interaction logic for FolderPickerControl.xaml
     public partial class FolderPickerControl

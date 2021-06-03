@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Autossential.Utils
+namespace Autossential.Shared.Utils
 {
     public static class IOUtil
     {

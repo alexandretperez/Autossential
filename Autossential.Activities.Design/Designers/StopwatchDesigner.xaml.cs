@@ -1,5 +1,5 @@
 ﻿using Autossential.Enums;
-using Autossential.Utils;
+using Autossential.Shared.Utils;
 
 namespace Autossential.Activities.Design.Designers
 {

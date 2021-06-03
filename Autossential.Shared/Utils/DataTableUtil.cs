@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 
-namespace Autossential.Utils
+namespace Autossential.Shared.Utils
 {
     public static class DataTableUtil
     {

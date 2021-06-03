@@ -10,5 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ExpressionServiceLanguage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\DataTableUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\EnumUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\IOUtil.cs" />
   </ItemGroup>
 </Project>

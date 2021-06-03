@@ -1,5 +1,5 @@
 ﻿using Autossential.Enums;
-using Autossential.Utils;
+using Autossential.Shared.Utils;
 using System.Windows;
 
 namespace Autossential.Activities.Design.Controls

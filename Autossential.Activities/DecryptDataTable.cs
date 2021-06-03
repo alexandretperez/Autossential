@@ -3,7 +3,7 @@
 using Autossential.Activities.Properties;
 using Autossential.Security;
 
-using Autossential.Utils;
+using Autossential.Shared.Utils;
 using System;
 using System.Activities;
 using System.Collections.Concurrent;

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Autossential.Activities.Design.Controls
+namespace Autossential.Shared.Activities.Design.Controls
 {
     public class ActivityDecoratorControl : ContentControl
     {
