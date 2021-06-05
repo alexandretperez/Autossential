@@ -25,6 +25,9 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
+            if (Body == null)
+                return;
+
             var exit = context.CreateBookmark(OnExit, BookmarkOptions.NonBlocking);
             context.Properties.Add(Exit.BOOKMARK_NAME, exit);
             context.ScheduleAction(Body, onFaulted: OnFaulted);

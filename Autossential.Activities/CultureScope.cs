@@ -27,6 +27,9 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
+            if (Body == null)
+                return;
+
             var culture = CultureName.Get(context);
             SetCulture(CultureInfo.CreateSpecificCulture(culture));
             context.ScheduleAction(Body, OnCompleted, OnFaulted);

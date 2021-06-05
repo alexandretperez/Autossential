@@ -40,7 +40,6 @@ namespace Autossential.Activities.Design
                     Resources.Options_Category);
 
                 // DATA TABLE
-
                 builder
                     .Register<Aggregate, AggregateDesigner>(dataTable, m =>
                     {
@@ -60,7 +59,6 @@ namespace Autossential.Activities.Design
                     .Register<PromoteHeaders, PromoteHeadersDesigner>(dataTable, m => m.Register(p => p.EmptyColumnName, new CategoryAttribute(Resources.Options_Category)));
 
                 // FILE
-
                 builder
                     .Register<CleanUpFolder, CleanUpFolderDesigner>(file, m =>
                     {
@@ -72,14 +70,12 @@ namespace Autossential.Activities.Design
                     .Register<WaitFile, WaitFileDesigner>(file, m => m.Register(p => p.Timeout, new CategoryAttribute()));
 
                 // FILE COMPRESSION
-
                 builder
                     .Register<Zip, ZipDesigner>(fileCompression)
                     .Register<ZipEntriesCount, ZipEntriesCountDesigner>(fileCompression)
                     .Register<Unzip, UnzipDesigner>(fileCompression);
 
                 // CHECKPOINT
-
                 builder
                     .Register<CheckPoint, CheckPointDesigner>(workflow, m =>
                         m.Register(new EditorAttribute(typeof(ArgumentDictionaryPropertyEditor), typeof(DialogPropertyValueEditor)), p => p.Data))
@@ -88,15 +84,13 @@ namespace Autossential.Activities.Design
                     .Register<Next, NextDesigner>(workflow)
                     .Register<Iterate, IterateDesigner>(workflow, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.Reverse));
 
-                // CULTURE SCOPE
-
+                // PROGRAMMING
                 builder
                     .Register<CultureScope, CultureScopeDesigner>(programming)
                     .Register<Decrement, DecrementDesigner>(programming)
                     .Register<Increment, IncrementDesigner>(programming);
 
                 // SECURITY
-
                 Action<MembersAttributesBuilder> cryptoBase = m =>
                 {
                     m.Register<CryptographyBaseActivity>(new CategoryAttribute(Resources.Options_Category),
@@ -121,7 +115,6 @@ namespace Autossential.Activities.Design
                     .Register<EncryptText, EncryptTextDesigner>(security, cryptoBase);
 
                 // DIAGNOSTICS
-
                 builder
                     .Register<Stopwatch, StopwatchDesigner>(diagnostics);
             });
