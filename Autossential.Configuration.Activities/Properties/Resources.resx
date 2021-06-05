@@ -125,6 +125,22 @@
     <value>Input</value>
     <comment>category</comment>
   </data>
+  <data name="MergeConfig_Description" xml:space="preserve">
+    <value>Merges two ConfigSection objects in a way that the destination object values are overwritten by the source object. This also applies to sub-sections.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="MergeConfig_Destination_Description" xml:space="preserve">
+    <value>The ConfigSection object to which the source ConfigSection is merged.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MergeConfig_DisplayName" xml:space="preserve">
+    <value>Merge Config</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="MergeConfig_Source_Description" xml:space="preserve">
+    <value>The ConfigSection object to be added to the destination ConfigSection.</value>
+    <comment>property description</comment>
+  </data>
   <data name="Options_Category" xml:space="preserve">
     <value>Options</value>
     <comment>category</comment>
@@ -132,5 +148,29 @@
   <data name="Output_Category" xml:space="preserve">
     <value>Output</value>
     <comment>category</comment>
+  </data>
+  <data name="ReadConfigFile_Description" xml:space="preserve">
+    <value>Generates a ConfigSection object by reading a configuration text file formatted on YAML standards.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="ReadConfigFile_DisplayName" xml:space="preserve">
+    <value>Read Config File</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="ReadConfigFile_FilePath_Description" xml:space="preserve">
+    <value>The configuration file path. The file must be formatted on YAML standards. The supported extensions are *.yaml, *.yml and *.txt.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReadConfigFile_Result_Description" xml:space="preserve">
+    <value>A ConfigSection object representing the configuration file.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Validation_TypeError" xml:space="preserve">
+    <value>Please provide a value of type {0} for {1}.</value>
+    <comment>validation</comment>
+  </data>
+  <data name="Validation_ValueError" xml:space="preserve">
+    <value>Please provide a value for {0}.</value>
+    <comment>validation</comment>
   </data>
 </root>

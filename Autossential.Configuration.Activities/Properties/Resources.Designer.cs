@@ -105,6 +105,42 @@ namespace Autossential.Configuration.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Merges two ConfigSection objects in a way that the destination object values are overwritten by the source object. This also applies to sub-sections.'.
+        /// </summary>
+        public static string MergeConfig_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.MergeConfig_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The ConfigSection object to which the source ConfigSection is merged.'.
+        /// </summary>
+        public static string MergeConfig_Destination_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.MergeConfig_Destination_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Merge Config'.
+        /// </summary>
+        public static string MergeConfig_DisplayName {
+            get {
+                return ResourceManager.GetString(ResourceNames.MergeConfig_DisplayName, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The ConfigSection object to be added to the destination ConfigSection.'.
+        /// </summary>
+        public static string MergeConfig_Source_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.MergeConfig_Source_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Options'.
         /// </summary>
         public static string Options_Category {
@@ -123,6 +159,79 @@ namespace Autossential.Configuration.Activities.Properties {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Generates a ConfigSection object by reading a configuration text file formatted on YAML standards.'.
+        /// </summary>
+        public static string ReadConfigFile_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ReadConfigFile_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Read Config File'.
+        /// </summary>
+        public static string ReadConfigFile_DisplayName {
+            get {
+                return ResourceManager.GetString(ResourceNames.ReadConfigFile_DisplayName, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'The configuration file path. The file must be formatted on YAML standards. The supported extensions are *.yaml, *.yml and *.txt.'.
+        /// </summary>
+        public static string ReadConfigFile_FilePath_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ReadConfigFile_FilePath_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'A ConfigSection object representing the configuration file.'.
+        /// </summary>
+        public static string ReadConfigFile_Result_Description {
+            get {
+                return ResourceManager.GetString(ResourceNames.ReadConfigFile_Result_Description, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Please provide a value of type {0} for {1}.'.
+        /// </summary>
+        public static string Validation_TypeError {
+            get {
+                return ResourceManager.GetString(ResourceNames.Validation_TypeError, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Please provide a value for {0}.'.
+        /// </summary>
+        public static string Validation_ValueError {
+            get {
+                return ResourceManager.GetString(ResourceNames.Validation_ValueError, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Formats a localized string similar to 'Please provide a value of type {0} for {1}.'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <param name="arg1">An object (1) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string Validation_TypeErrorFormat(object arg0, object arg1) {
+            return string.Format(_resourceCulture, Validation_TypeError, arg0, arg1);
+        }
+        
+        /// <summary>
+        /// Formats a localized string similar to 'Please provide a value for {0}.'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string Validation_ValueErrorFormat(object arg0) {
+            return string.Format(_resourceCulture, Validation_ValueError, arg0);
+        }
+        
+        /// <summary>
         /// Lists all the resource names as constant string fields.
         /// </summary>
         public class ResourceNames {
@@ -138,6 +247,26 @@ namespace Autossential.Configuration.Activities.Properties {
             public const string InputOutput_Category = "InputOutput_Category";
             
             /// <summary>
+            /// Stores the resource name 'MergeConfig_Description'.
+            /// </summary>
+            public const string MergeConfig_Description = "MergeConfig_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'MergeConfig_Destination_Description'.
+            /// </summary>
+            public const string MergeConfig_Destination_Description = "MergeConfig_Destination_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'MergeConfig_DisplayName'.
+            /// </summary>
+            public const string MergeConfig_DisplayName = "MergeConfig_DisplayName";
+            
+            /// <summary>
+            /// Stores the resource name 'MergeConfig_Source_Description'.
+            /// </summary>
+            public const string MergeConfig_Source_Description = "MergeConfig_Source_Description";
+            
+            /// <summary>
             /// Stores the resource name 'Options_Category'.
             /// </summary>
             public const string Options_Category = "Options_Category";
@@ -146,6 +275,36 @@ namespace Autossential.Configuration.Activities.Properties {
             /// Stores the resource name 'Output_Category'.
             /// </summary>
             public const string Output_Category = "Output_Category";
+            
+            /// <summary>
+            /// Stores the resource name 'ReadConfigFile_Description'.
+            /// </summary>
+            public const string ReadConfigFile_Description = "ReadConfigFile_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'ReadConfigFile_DisplayName'.
+            /// </summary>
+            public const string ReadConfigFile_DisplayName = "ReadConfigFile_DisplayName";
+            
+            /// <summary>
+            /// Stores the resource name 'ReadConfigFile_FilePath_Description'.
+            /// </summary>
+            public const string ReadConfigFile_FilePath_Description = "ReadConfigFile_FilePath_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'ReadConfigFile_Result_Description'.
+            /// </summary>
+            public const string ReadConfigFile_Result_Description = "ReadConfigFile_Result_Description";
+            
+            /// <summary>
+            /// Stores the resource name 'Validation_TypeError'.
+            /// </summary>
+            public const string Validation_TypeError = "Validation_TypeError";
+            
+            /// <summary>
+            /// Stores the resource name 'Validation_ValueError'.
+            /// </summary>
+            public const string Validation_ValueError = "Validation_ValueError";
         }
     }
 }

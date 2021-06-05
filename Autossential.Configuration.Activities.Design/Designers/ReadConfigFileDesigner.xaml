@@ -44,7 +44,7 @@
                 Filter="All Supported Files|*.yaml;*.yml;*.txt|YAML Files|*.yaml;*.yml|Text Files|*.txt"
                 ModelItem="{Binding ModelItem}" />
 
-            <Label Content="ExtractTo" Grid.Row="2" />
+            <Label Content="Result" Grid.Row="2" />
             <sapv:ExpressionTextBox
                 Grid.Row="3"
                 ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"

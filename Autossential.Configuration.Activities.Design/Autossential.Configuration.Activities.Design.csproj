@@ -4,15 +4,29 @@
     <TargetFramework>net461</TargetFramework>
     <PackageId>Autossential.Configuration.Activities</PackageId>
     <Authors>Alexandre Toledo Perez</Authors>
-    <Product>Autossential.Configuration</Product>
+    <Product>Autossential.Configuration.Activities.Design</Product>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
     <Version>1.0.0</Version>
+    <Description>Provides a collection of activities that helps to handle with different data types and resources.
+The package is categorized by DataTable, File, Programming, Workflow, Security and Diagnostics.
+</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/alexandretperez/Autossential</PackageProjectUrl>
+    <PackageIcon>packageIcon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/alexandretperez/Autossential</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Custom Activity Windows Workflow Foundation UiPath Configuration</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Designers\Default.xaml" />
+    <None Remove="Designers\MergeConfigDesigner.xaml" />
     <None Remove="Designers\ReadConfigFileDesigner.xaml" />
     <None Remove="Themes\Icons.xaml" />
+    <None Include="packageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +44,9 @@
   </Target>
 
   <ItemGroup>
+    <Page Include="Designers\MergeConfigDesigner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
     <Page Include="Themes\Default.xaml">
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

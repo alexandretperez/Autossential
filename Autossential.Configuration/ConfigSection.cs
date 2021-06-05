@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Autossential.Configuration.Activities")]
@@ -77,6 +78,19 @@ namespace Autossential.Configuration
 
         public string Name { get; }
 
+        public string FullName()
+        {
+            var list = new List<string>() { Name };
+            var section = this;
+            while (section.Parent != null)
+            {
+                list.Add(section.Parent.Name);
+                section = section.Parent;
+            }
+            list.Reverse();
+            return string.Join(SectionDelimiter.ToString(), list.ToArray());
+        }
+
         public object this[string keyPath]
         {
             get
@@ -112,21 +126,40 @@ namespace Autossential.Configuration
 
             var section = this;
             foreach (var key in keyPath.Split(SectionDelimiter))
+            {
+                if (!section._settings.ContainsKey(key))
+                    return null;
+
                 section = (ConfigSection)section._settings[key];
+            }
 
             _cache[keyPath] = section;
             return section;
         }
 
-        public Dictionary<string, ConfigSection> _cache = new Dictionary<string, ConfigSection>(StringComparer.OrdinalIgnoreCase);
+        public ConfigSection Section(string keyPath, bool asCopy)
+        {
+            var section = Section(keyPath);
+            if (section == null)
+                return null;
+
+            return asCopy ? section.Copy() : section;
+        }
+
+        public ConfigSection Copy()
+        {
+            return new ConfigSection(Name, _settings.ToDictionary(p => (object)p.Key, p => p.Value));
+        }
+
+        private readonly Dictionary<string, ConfigSection> _cache = new Dictionary<string, ConfigSection>(StringComparer.OrdinalIgnoreCase);
 
         public bool HasSection(string keyPath) => Section(keyPath) != null;
 
-        public void Merge(ConfigSection other)
+        internal void Merge(ConfigSection other)
         {
             foreach (var item in other)
             {
-                if (_settings.ContainsKey(item.Key) 
+                if (_settings.ContainsKey(item.Key)
                     && _settings[item.Key] is ConfigSection mainSection
                     && item.Value is ConfigSection otherSection)
                 {

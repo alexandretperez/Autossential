@@ -24,6 +24,7 @@ namespace Autossential.Configuration.Activities.Design
                     Resources.Options_Category);
 
                 builder.Register<ReadConfigFile, ReadConfigFileDesigner>(configuration);
+                builder.Register<MergeConfig, MergeConfigDesigner>(configuration);
             });
         }
     }
