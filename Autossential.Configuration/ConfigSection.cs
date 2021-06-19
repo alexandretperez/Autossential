@@ -177,9 +177,4 @@ namespace Autossential.Configuration
             }
         }
     }
-
-    public static class ConfigSectionExtensions
-    {
-        
-    }
 }
