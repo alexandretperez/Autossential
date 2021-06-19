@@ -7,9 +7,7 @@
     <Product>Autossential.Configuration.Activities.Design</Product>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
     <Version>1.0.0</Version>
-    <Description>Provides a collection of activities that helps to handle with different data types and resources.
-The package is categorized by DataTable, File, Programming, Workflow, Security and Diagnostics.
-</Description>
+    <Description>Provides activities to interact with YAML configuration files and generate a built-in ConfigSection object to handle with this resource.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/alexandretperez/Autossential</PackageProjectUrl>
     <PackageIcon>packageIcon.png</PackageIcon>

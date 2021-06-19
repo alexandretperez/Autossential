@@ -39,7 +39,7 @@
                 Margin="0,0,23,0"
                 Expression="{Binding ModelItem.FilePath, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
             <c:FilePickerControl Grid.Row="1" HorizontalAlignment="Right"
-                PropertyName="ZipFilePath"
+                PropertyName="FilePath"
                 CheckFileExists="True"
                 Filter="All Supported Files|*.yaml;*.yml;*.txt|YAML Files|*.yaml;*.yml|Text Files|*.txt"
                 ModelItem="{Binding ModelItem}" />

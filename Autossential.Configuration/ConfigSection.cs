@@ -155,6 +155,12 @@ namespace Autossential.Configuration
 
         public bool HasSection(string keyPath) => Section(keyPath) != null;
 
+        public bool HasKey(string keyPath)
+        {
+            ResolveKeyPath(keyPath, out ConfigSection section, out string key);
+            return section._settings.ContainsKey(key);
+        }
+
         internal void Merge(ConfigSection other)
         {
             foreach (var item in other)
@@ -170,5 +176,10 @@ namespace Autossential.Configuration
                 _settings[item.Key] = item.Value;
             }
         }
+    }
+
+    public static class ConfigSectionExtensions
+    {
+        
     }
 }
