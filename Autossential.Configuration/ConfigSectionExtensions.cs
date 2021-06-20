@@ -17,6 +17,14 @@ namespace Autossential.Configuration
             catch { return defaultValue; }
         }
 
+        public static string AsString(this ConfigSection section, string keyPath, string defaultValue = default)
+        {
+            var value = section[keyPath];
+            if (value == null) return defaultValue;
+            if (value is string valueStr) return valueStr;
+            return value?.ToString() ?? defaultValue;
+        }
+
         public static int AsInt(this ConfigSection section, string keyPath, int defaultValue = default)
             => StructValue(section[keyPath], defaultValue);
 

@@ -40,9 +40,9 @@ namespace Autossential.Configuration
             }
         }
 
-        internal static string RootName { get; set; }
+        public static string RootName { get; internal set; }
 
-        internal static char SectionDelimiter { get; set; }
+        public static char SectionDelimiter { get; internal set; }
 
         internal static Dictionary<object, object> Deserialize(string yamlContent)
         {
